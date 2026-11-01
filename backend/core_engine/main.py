@@ -26,6 +26,7 @@ app = FastAPI(
     title="DAA Course Learning Path API",
     description="Backend API for AI-assisted prerequisite-aware course learning path generator.",
     version=settings.version,
+    redirect_slashes=False,
 )
 
 # Enable CORS for frontend integration
@@ -169,6 +170,8 @@ def read_root():
 
 @app.get("/api/v1/health", response_model=HealthResponse, tags=["Health"])
 @app.get("/api/health", response_model=HealthResponse, tags=["Health"], include_in_schema=False)
+@app.get("/v1/health", response_model=HealthResponse, tags=["Health"], include_in_schema=False)
+@app.get("/health", response_model=HealthResponse, tags=["Health"], include_in_schema=False)
 def get_health() -> HealthResponse:
     return HealthResponse(
         status="healthy",
@@ -179,6 +182,8 @@ def get_health() -> HealthResponse:
 
 @app.get("/api/v1/courses", tags=["Courses"])
 @app.get("/api/courses", tags=["Courses"], include_in_schema=False)
+@app.get("/v1/courses", tags=["Courses"], include_in_schema=False)
+@app.get("/courses", tags=["Courses"], include_in_schema=False)
 def get_curated_courses() -> List[Dict[str, Any]]:
     """Returns the complete curated catalog of courses from the Knowledge Base."""
     kb = get_default_knowledge_base()
@@ -187,6 +192,8 @@ def get_curated_courses() -> List[Dict[str, Any]]:
 
 @app.get("/api/v1/ai/status", response_model=AIStatusResponse, tags=["AI Engine"])
 @app.get("/api/ai/status", response_model=AIStatusResponse, tags=["AI Engine"], include_in_schema=False)
+@app.get("/v1/ai/status", response_model=AIStatusResponse, tags=["AI Engine"], include_in_schema=False)
+@app.get("/ai/status", response_model=AIStatusResponse, tags=["AI Engine"], include_in_schema=False)
 def get_ai_status() -> AIStatusResponse:
     """Safe diagnostic endpoint reporting AI configuration status without secrets."""
     diag = settings.get_ai_diagnostic()
@@ -223,6 +230,20 @@ def get_ai_status() -> AIStatusResponse:
 )
 @app.post(
     "/api/learning-path",
+    response_model=LearningPathResponse,
+    status_code=status.HTTP_200_OK,
+    tags=["Learning Path"],
+    include_in_schema=False,
+)
+@app.post(
+    "/v1/learning-path",
+    response_model=LearningPathResponse,
+    status_code=status.HTTP_200_OK,
+    tags=["Learning Path"],
+    include_in_schema=False,
+)
+@app.post(
+    "/learning-path",
     response_model=LearningPathResponse,
     status_code=status.HTTP_200_OK,
     tags=["Learning Path"],

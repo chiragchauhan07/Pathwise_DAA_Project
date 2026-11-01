@@ -127,3 +127,4 @@ Benchmarks executed on standard development hardware (Windows 11, AMD64, Python 
 - Even on dense graphs with **$|V| = 1000$ and $|E| = 49,950$ edges**, Kahn's algorithm completes in under **5.0 milliseconds**.
 - Cycle detection on 1000-vertex cyclic graphs completes in **0.70 milliseconds**.
 - The explicit call stack in DFS eliminates recursion limits, supporting arbitrarily deep prerequisite chains.
+

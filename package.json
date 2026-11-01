@@ -1,0 +1,11 @@
+{
+  "name": "pathwise-fullstack",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Pathwise — AI-Assisted, Prerequisite-Aware Course Learning Path Generator",
+  "scripts": {
+    "build": "npm --prefix final_frontend install && npm --prefix final_frontend run build",
+    "test": "npm --prefix final_frontend test",
+    "typecheck": "npm --prefix final_frontend run typecheck"
+  }
+}

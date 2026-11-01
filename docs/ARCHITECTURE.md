@@ -126,3 +126,4 @@ When a user submits a learning goal and list of target courses:
    - If an input cannot be mapped to an academic subject, a clean HTTP 400 error (`CourseResolutionError`) explains why and suggests valid alternatives.
 3. **Circular Dependencies:**
    - If user input or an external syllabus creates a prerequisite cycle, Kahn's algorithm and iterative DFS catch it instantly and return HTTP 400 (`CycleError`) detailing the circular chain: e.g. `Calculus I -> Calculus II -> Calculus I`.
+

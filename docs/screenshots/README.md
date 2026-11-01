@@ -21,3 +21,4 @@ This directory contains visual captures of the Pathwise application in action.
 ### 1.4 AI Engine & Status Inspector
 * **File:** `ai_status_telemetry.png` (interactive at `/ai`)
 * **Description:** Transparent diagnostics displaying Gemini 2.5 Flash Lite readiness, response confidence, course resolution status, and prompt/response telemetry without exposing private credentials.
+

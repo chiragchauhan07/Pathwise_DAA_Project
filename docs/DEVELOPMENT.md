@@ -151,3 +151,4 @@ Before submitting a Pull Request or pushing changes:
 4. [ ] Frontend builds cleanly: `npm --prefix final_frontend run build`
 5. [ ] Frontend typechecks: `npm --prefix final_frontend run typecheck`
 6. [ ] Zero secrets or `.env` files in git status: `git status`
+

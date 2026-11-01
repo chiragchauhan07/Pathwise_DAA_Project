@@ -1,7 +1,7 @@
 # Pathwise — AI-Assisted, Prerequisite-Aware Course Learning Path Generator
 
 <div align="center">
-  <img src="final_frontend/public/logo.svg" alt="Pathwise Logo" width="320"/>
+  <img src="final_frontend/public/favicon.svg" alt="Pathwise Logo" width="320"/>
   <p><strong>A deterministic Graph Algorithm engine paired with Google Gemini 2.5 Flash Lite for intelligent, prerequisite-aware academic course planning.</strong></p>
 
   [![Python](https://img.shields.io/badge/Python-3.10%20%7C%203.11%20%7C%203.12-3776AB?logo=python&logoColor=white)](https://www.python.org/)

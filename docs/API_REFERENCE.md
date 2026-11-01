@@ -230,3 +230,4 @@ Pathwise returns structured JSON error payloads with standard HTTP status codes:
   }
 }
 ```
+
