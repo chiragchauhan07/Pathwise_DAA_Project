@@ -1,0 +1,3230 @@
+{
+  "version": "2.0.0",
+  "description": "Curated Knowledge Base for Pathwise Course Learning Path Generator.",
+  "courses": [
+    {
+      "course_id": "programming_fundamentals",
+      "name": "Programming Fundamentals",
+      "aliases": [
+        "Intro to Programming",
+        "Introduction to Programming"
+      ],
+      "category": "Programming Fundamentals",
+      "description": "Language-independent basics of programming: variables, control flow, functions, simple data types, and basic problem decomposition.",
+      "difficulty": "beginner",
+      "learning_outcomes": [
+        "Understand fundamental programming constructs",
+        "Write basic modular functions",
+        "Decompose algorithmic problems"
+      ],
+      "main_topics": [
+        "Variables and Expressions",
+        "Conditionals and Branching",
+        "Loops and Iteration",
+        "Functions and Scope"
+      ],
+      "skills_gained": [
+        "Problem decomposition",
+        "Control flow mastery",
+        "Basic debugging"
+      ],
+      "assumed_knowledge": "Basic secondary-school mathematics and logical reasoning.",
+      "difficulty_rationale": "Introductory level; designed for beginners with no prior coding experience.",
+      "typical_audience": "First-year computer science, engineering, or general students beginning software development."
+    },
+    {
+      "course_id": "c_programming",
+      "name": "C Programming",
+      "aliases": [
+        "C Language",
+        "C"
+      ],
+      "category": "Programming Fundamentals",
+      "description": "Procedural programming in C, including pointers, manual memory management, arrays, structs, and file I/O.",
+      "difficulty": "beginner",
+      "learning_outcomes": [
+        "Manipulate memory directly with pointers",
+        "Manage dynamic memory allocation safely",
+        "Implement low-level data records"
+      ],
+      "main_topics": [
+        "Pointers and Memory Addresses",
+        "Dynamic Memory (malloc/free)",
+        "Structs and Unions",
+        "File I/O"
+      ],
+      "skills_gained": [
+        "Manual memory management",
+        "Pointer arithmetic",
+        "Low-level system interaction"
+      ],
+      "assumed_knowledge": "Basic programming fundamentals (loops, conditionals, functions).",
+      "difficulty_rationale": "Manual memory management and pointer semantics require careful attention to system behavior.",
+      "typical_audience": "Computer science undergraduates and systems programmers."
+    },
+    {
+      "course_id": "python_programming",
+      "name": "Python Programming",
+      "aliases": [
+        "Python",
+        "Programming with Python"
+      ],
+      "category": "Programming Fundamentals",
+      "description": "Programming in Python: syntax, built-in data structures, functions, modules, and file handling, with an introduction to common libraries.",
+      "difficulty": "beginner",
+      "learning_outcomes": [
+        "Write idiomatic Python scripts",
+        "Utilize built-in data collections effectively",
+        "Leverage modules and standard libraries"
+      ],
+      "main_topics": [
+        "Python Syntax and Data Types",
+        "Lists, Dictionaries, Sets",
+        "Comprehensions and Generators",
+        "Exception Handling and File I/O"
+      ],
+      "skills_gained": [
+        "Rapid prototyping",
+        "Scripting and automation",
+        "Standard library utilization"
+      ],
+      "assumed_knowledge": "Basic programming fundamentals.",
+      "difficulty_rationale": "Readable high-level syntax makes Python accessible for beginners while supporting rich idioms.",
+      "typical_audience": "Students and practitioners entering software development, data science, or automation."
+    },
+    {
+      "course_id": "object_oriented_programming",
+      "name": "Object-Oriented Programming",
+      "aliases": [
+        "OOP",
+        "Object Oriented Programming"
+      ],
+      "category": "Programming Fundamentals",
+      "description": "Object-oriented concepts: classes, objects, encapsulation, inheritance, polymorphism, and abstraction, independent of any one language.",
+      "difficulty": "intermediate",
+      "learning_outcomes": [
+        "Design object-oriented class hierarchies",
+        "Apply encapsulation, inheritance, and polymorphism",
+        "Utilize design patterns for modularity"
+      ],
+      "main_topics": [
+        "Classes and Objects",
+        "Encapsulation and Information Hiding",
+        "Inheritance and Subtyping",
+        "Polymorphism and Dynamic Dispatch"
+      ],
+      "skills_gained": [
+        "Object-oriented architecture",
+        "Code reuse",
+        "Interface design"
+      ],
+      "assumed_knowledge": "Comfort with at least one programming language and modular decomposition.",
+      "difficulty_rationale": "Requires shift from procedural to conceptual abstraction and class hierarchies.",
+      "typical_audience": "Undergraduate students preparing for large-scale software engineering."
+    },
+    {
+      "course_id": "java_programming",
+      "name": "Java Programming",
+      "aliases": [
+        "Java",
+        "Core Java"
+      ],
+      "category": "Programming Fundamentals",
+      "description": "Programming in Java: class-based design, interfaces, exceptions, collections, and basic concurrency.",
+      "difficulty": "intermediate",
+      "learning_outcomes": [
+        "Implement robust class hierarchies in Java",
+        "Utilize the Java Collections Framework",
+        "Handle multi-threading and runtime exceptions"
+      ],
+      "main_topics": [
+        "JVM Architecture",
+        "Java Collections Framework",
+        "Interfaces and Abstract Classes",
+        "Concurrency Basics"
+      ],
+      "skills_gained": [
+        "Enterprise Java development",
+        "Strong type modeling",
+        "Exception-safe programming"
+      ],
+      "assumed_knowledge": "Programming fundamentals and basic object-oriented principles.",
+      "difficulty_rationale": "Strict statically typed object orientation and extensive standard API require moderate practice.",
+      "typical_audience": "Computer science students and prospective enterprise software developers."
+    },
+    {
+      "course_id": "data_structures",
+      "name": "Data Structures",
+      "aliases": [
+        "DS",
+        "Data Structures and Algorithms (Data Structures part)"
+      ],
+      "category": "Core Computer Science",
+      "description": "Design, implementation, and use of arrays, linked lists, stacks, queues, trees, heaps, hash tables, and graphs, with basic operation costs.",
+      "difficulty": "intermediate",
+      "learning_outcomes": [
+        "Implement linear and non-linear data structures",
+        "Analyze runtime and space complexity with Big-O",
+        "Select optimal data structures for given problems"
+      ],
+      "main_topics": [
+        "Arrays and Linked Lists",
+        "Stacks and Queues",
+        "Trees and Binary Search Trees",
+        "Hash Tables",
+        "Heaps and Priority Queues"
+      ],
+      "skills_gained": [
+        "Data organization",
+        "Algorithmic thinking",
+        "Complexity analysis"
+      ],
+      "assumed_knowledge": "Procedural programming and object-oriented fundamentals.",
+      "difficulty_rationale": "Abstract pointer-based data manipulation and asymptotic analysis require disciplined problem-solving.",
+      "typical_audience": "Second-year computer science and software engineering students."
+    },
+    {
+      "course_id": "design_and_analysis_of_algorithms",
+      "name": "Design and Analysis of Algorithms",
+      "aliases": [
+        "DAA",
+        "Algorithms",
+        "Analysis of Algorithms"
+      ],
+      "category": "Core Computer Science",
+      "description": "Algorithm design paradigms (divide and conquer, greedy, dynamic programming, graph algorithms) and analysis of correctness and time/space complexity.",
+      "difficulty": "advanced",
+      "learning_outcomes": [
+        "Design efficient algorithms using standard paradigms",
+        "Prove correctness and derive recurrence relations",
+        "Classify computational complexity and NP-completeness"
+      ],
+      "main_topics": [
+        "Divide and Conquer",
+        "Greedy Algorithms",
+        "Dynamic Programming",
+        "Graph Traversal (BFS/DFS)",
+        "Topological Sorting and Shortest Paths",
+        "NP-Completeness"
+      ],
+      "skills_gained": [
+        "Asymptotic proof writing",
+        "Optimal algorithm design",
+        "Graph algorithm implementation"
+      ],
+      "assumed_knowledge": "Data structures and discrete mathematics.",
+      "difficulty_rationale": "Requires strong mathematical maturity, formal proofs, and rigorous asymptotic complexity analysis.",
+      "typical_audience": "Intermediate to advanced computer science students."
+    },
+    {
+      "course_id": "discrete_mathematics",
+      "name": "Discrete Mathematics",
+      "aliases": [
+        "Discrete Math",
+        "Discrete Structures"
+      ],
+      "category": "Core Computer Science",
+      "description": "Logic, sets, relations, functions, proof techniques, counting, recurrences, and basic graph theory.",
+      "difficulty": "intermediate",
+      "learning_outcomes": [
+        "Write formal mathematical proofs",
+        "Apply set theory, relations, and combinatorics",
+        "Model computational structures mathematically"
+      ],
+      "main_topics": [
+        "Propositional and Predicate Logic",
+        "Proof Techniques (Induction, Contradiction)",
+        "Set Theory and Functions",
+        "Combinatorics and Counting",
+        "Relations and Equivalence"
+      ],
+      "skills_gained": [
+        "Formal deductive logic",
+        "Combinatorial reasoning",
+        "Proof construction"
+      ],
+      "assumed_knowledge": "High school algebra and geometry.",
+      "difficulty_rationale": "Transition from computational math to abstract deductive proof-based mathematics.",
+      "typical_audience": "Foundational computer science, mathematics, and data science students."
+    },
+    {
+      "course_id": "computer_organization_and_architecture",
+      "name": "Computer Organization and Architecture",
+      "aliases": [
+        "COA",
+        "Computer Architecture",
+        "Computer Organization"
+      ],
+      "category": "Core Computer Science",
+      "description": "Digital logic basics, instruction sets, processor datapath, memory hierarchy, I/O, and introductory pipelining.",
+      "difficulty": "intermediate",
+      "learning_outcomes": [
+        "Master core principles of Computer Organization and Architecture",
+        "Apply theoretical models in Computer Organization and Architecture to practical systems",
+        "Analyze and evaluate Computer Organization and Architecture solutions"
+      ],
+      "main_topics": [
+        "Computer Organization and Architecture Fundamentals",
+        "Architectural Patterns",
+        "System Evaluation",
+        "Advanced Applications"
+      ],
+      "skills_gained": [
+        "Computer Organization and Architecture problem solving",
+        "Analytical modeling",
+        "System design"
+      ],
+      "assumed_knowledge": "Standard computer science and mathematical background.",
+      "difficulty_rationale": "Classified as intermediate based on prerequisite depth and conceptual abstraction.",
+      "typical_audience": "Undergraduate students in computer science and related fields."
+    },
+    {
+      "course_id": "operating_systems",
+      "name": "Operating Systems",
+      "aliases": [
+        "OS"
+      ],
+      "category": "Core Computer Science",
+      "description": "Processes, threads, scheduling, synchronization, memory management, file systems, and I/O management.",
+      "difficulty": "intermediate",
+      "learning_outcomes": [
+        "Understand process scheduling and concurrency",
+        "Analyze virtual memory paging and segmentation",
+        "Implement synchronization primitives safely"
+      ],
+      "main_topics": [
+        "Processes and Threads",
+        "CPU Scheduling",
+        "Synchronization (Semaphores, Mutexes)",
+        "Virtual Memory and Paging",
+        "File Systems and I/O"
+      ],
+      "skills_gained": [
+        "Systems programming",
+        "Deadlock prevention",
+        "Concurrent execution debugging"
+      ],
+      "assumed_knowledge": "Computer organization, C programming, and data structures.",
+      "difficulty_rationale": "Concurrency race conditions and low-level kernel abstractions require systems-level intuition.",
+      "typical_audience": "Junior-level computer science and computer engineering undergraduates."
+    },
+    {
+      "course_id": "database_management_systems",
+      "name": "Database Management Systems",
+      "aliases": [
+        "DBMS",
+        "Databases",
+        "Database Systems"
+      ],
+      "category": "Core Computer Science",
+      "description": "Relational model, SQL, schema design and normalization, transactions, indexing, and basic query processing.",
+      "difficulty": "intermediate",
+      "learning_outcomes": [
+        "Model relational databases using ER diagrams and normalization",
+        "Formulate complex queries in SQL and relational algebra",
+        "Analyze transaction ACID properties and indexing"
+      ],
+      "main_topics": [
+        "Relational Model",
+        "SQL DDL/DML",
+        "Normalization (1NF-BCNF)",
+        "Indexing and B-Trees",
+        "Transactions and ACID"
+      ],
+      "skills_gained": [
+        "Relational schema design",
+        "Query optimization",
+        "Transaction management"
+      ],
+      "assumed_knowledge": "Data structures and basic set theory.",
+      "difficulty_rationale": "Combines declarative querying with storage internals and concurrency guarantees.",
+      "typical_audience": "Undergraduate students in software development and data management."
+    },
+    {
+      "course_id": "computer_networks",
+      "name": "Computer Networks",
+      "aliases": [
+        "Networking",
+        "CN"
+      ],
+      "category": "Core Computer Science",
+      "description": "Layered network architecture, TCP/IP, routing, transport protocols, application protocols, and basic network performance.",
+      "difficulty": "intermediate",
+      "learning_outcomes": [
+        "Trace packet flow through the OSI/TCP-IP 5-layer model",
+        "Analyze routing and reliable transport protocols",
+        "Understand application-layer protocols (HTTP, DNS)"
+      ],
+      "main_topics": [
+        "TCP/IP Layering",
+        "Application Layer (DNS, HTTP)",
+        "Transport Layer (TCP, UDP, Congestion Control)",
+        "Network Layer (IP, Routing)",
+        "Link Layer and Ethernet"
+      ],
+      "skills_gained": [
+        "Network socket programming",
+        "Protocol debugging",
+        "Packet flow tracing"
+      ],
+      "assumed_knowledge": "Data structures and basic operating systems concepts.",
+      "difficulty_rationale": "Requires grasping distributed protocol coordination, latency, and packet loss dynamics.",
+      "typical_audience": "Computer science and information technology undergraduates."
+    },
+    {
+      "course_id": "theory_of_computation",
+      "name": "Theory of Computation",
+      "aliases": [
+        "TOC",
+        "Automata Theory",
+        "Formal Languages and Automata"
+      ],
+      "category": "Core Computer Science",
+      "description": "Finite automata, regular and context-free languages, Turing machines, decidability, and an introduction to complexity.",
+      "difficulty": "advanced",
+      "learning_outcomes": [
+        "Master core principles of Theory of Computation",
+        "Apply theoretical models in Theory of Computation to practical systems",
+        "Analyze and evaluate Theory of Computation solutions"
+      ],
+      "main_topics": [
+        "Theory of Computation Fundamentals",
+        "Architectural Patterns",
+        "System Evaluation",
+        "Advanced Applications"
+      ],
+      "skills_gained": [
+        "Theory of Computation problem solving",
+        "Analytical modeling",
+        "System design"
+      ],
+      "assumed_knowledge": "Standard computer science and mathematical background.",
+      "difficulty_rationale": "Classified as advanced based on prerequisite depth and conceptual abstraction.",
+      "typical_audience": "Undergraduate students in computer science and related fields."
+    },
+    {
+      "course_id": "compiler_design",
+      "name": "Compiler Design",
+      "aliases": [
+        "Compilers",
+        "Compiler Construction"
+      ],
+      "category": "Core Computer Science",
+      "description": "Phases of a compiler: lexical analysis, parsing, semantic analysis, intermediate code, optimization, and code generation.",
+      "difficulty": "advanced",
+      "learning_outcomes": [
+        "Master core principles of Compiler Design",
+        "Apply theoretical models in Compiler Design to practical systems",
+        "Analyze and evaluate Compiler Design solutions"
+      ],
+      "main_topics": [
+        "Compiler Design Fundamentals",
+        "Architectural Patterns",
+        "System Evaluation",
+        "Advanced Applications"
+      ],
+      "skills_gained": [
+        "Compiler Design problem solving",
+        "Analytical modeling",
+        "System design"
+      ],
+      "assumed_knowledge": "Standard computer science and mathematical background.",
+      "difficulty_rationale": "Classified as advanced based on prerequisite depth and conceptual abstraction.",
+      "typical_audience": "Undergraduate students in computer science and related fields."
+    },
+    {
+      "course_id": "software_engineering",
+      "name": "Software Engineering",
+      "aliases": [
+        "SE",
+        "Software Development Life Cycle"
+      ],
+      "category": "Core Computer Science",
+      "description": "Requirements, design, process models, testing, version control, maintenance, and teamwork in building software systems.",
+      "difficulty": "intermediate",
+      "learning_outcomes": [
+        "Master core principles of Software Engineering",
+        "Apply theoretical models in Software Engineering to practical systems",
+        "Analyze and evaluate Software Engineering solutions"
+      ],
+      "main_topics": [
+        "Software Engineering Fundamentals",
+        "Architectural Patterns",
+        "System Evaluation",
+        "Advanced Applications"
+      ],
+      "skills_gained": [
+        "Software Engineering problem solving",
+        "Analytical modeling",
+        "System design"
+      ],
+      "assumed_knowledge": "Standard computer science and mathematical background.",
+      "difficulty_rationale": "Classified as intermediate based on prerequisite depth and conceptual abstraction.",
+      "typical_audience": "Undergraduate students in computer science and related fields."
+    },
+    {
+      "course_id": "linear_algebra",
+      "name": "Linear Algebra",
+      "aliases": [
+        "LA"
+      ],
+      "category": "Mathematics and Statistics",
+      "description": "Vectors, matrices, linear systems, vector spaces, linear transformations, eigenvalues, and decompositions.",
+      "difficulty": "intermediate",
+      "learning_outcomes": [
+        "Master core principles of Linear Algebra",
+        "Apply theoretical models in Linear Algebra to practical systems",
+        "Analyze and evaluate Linear Algebra solutions"
+      ],
+      "main_topics": [
+        "Linear Algebra Fundamentals",
+        "Architectural Patterns",
+        "System Evaluation",
+        "Advanced Applications"
+      ],
+      "skills_gained": [
+        "Linear Algebra problem solving",
+        "Analytical modeling",
+        "System design"
+      ],
+      "assumed_knowledge": "Standard computer science and mathematical background.",
+      "difficulty_rationale": "Classified as intermediate based on prerequisite depth and conceptual abstraction.",
+      "typical_audience": "Undergraduate students in computer science and related fields."
+    },
+    {
+      "course_id": "calculus",
+      "name": "Calculus",
+      "aliases": [
+        "Differential and Integral Calculus",
+        "Engineering Calculus"
+      ],
+      "category": "Mathematics and Statistics",
+      "description": "Limits, differentiation, integration, series, and an introduction to multivariable calculus.",
+      "difficulty": "intermediate",
+      "learning_outcomes": [
+        "Master core principles of Calculus",
+        "Apply theoretical models in Calculus to practical systems",
+        "Analyze and evaluate Calculus solutions"
+      ],
+      "main_topics": [
+        "Calculus Fundamentals",
+        "Architectural Patterns",
+        "System Evaluation",
+        "Advanced Applications"
+      ],
+      "skills_gained": [
+        "Calculus problem solving",
+        "Analytical modeling",
+        "System design"
+      ],
+      "assumed_knowledge": "Standard computer science and mathematical background.",
+      "difficulty_rationale": "Classified as intermediate based on prerequisite depth and conceptual abstraction.",
+      "typical_audience": "Undergraduate students in computer science and related fields."
+    },
+    {
+      "course_id": "probability_and_statistics",
+      "name": "Probability and Statistics",
+      "aliases": [
+        "Probability & Statistics",
+        "Statistics and Probability"
+      ],
+      "category": "Mathematics and Statistics",
+      "description": "Probability, random variables, common distributions, expectation, estimation, hypothesis testing, and basic regression.",
+      "difficulty": "intermediate",
+      "learning_outcomes": [
+        "Master core principles of Probability and Statistics",
+        "Apply theoretical models in Probability and Statistics to practical systems",
+        "Analyze and evaluate Probability and Statistics solutions"
+      ],
+      "main_topics": [
+        "Probability and Statistics Fundamentals",
+        "Architectural Patterns",
+        "System Evaluation",
+        "Advanced Applications"
+      ],
+      "skills_gained": [
+        "Probability and Statistics problem solving",
+        "Analytical modeling",
+        "System design"
+      ],
+      "assumed_knowledge": "Standard computer science and mathematical background.",
+      "difficulty_rationale": "Classified as intermediate based on prerequisite depth and conceptual abstraction.",
+      "typical_audience": "Undergraduate students in computer science and related fields."
+    },
+    {
+      "course_id": "numerical_methods",
+      "name": "Numerical Methods",
+      "aliases": [
+        "Numerical Analysis",
+        "Computational Methods"
+      ],
+      "category": "Mathematics and Statistics",
+      "description": "Numerical solution of equations, interpolation, numerical integration and differentiation, linear systems, and error analysis.",
+      "difficulty": "intermediate",
+      "learning_outcomes": [
+        "Master core principles of Numerical Methods",
+        "Apply theoretical models in Numerical Methods to practical systems",
+        "Analyze and evaluate Numerical Methods solutions"
+      ],
+      "main_topics": [
+        "Numerical Methods Fundamentals",
+        "Architectural Patterns",
+        "System Evaluation",
+        "Advanced Applications"
+      ],
+      "skills_gained": [
+        "Numerical Methods problem solving",
+        "Analytical modeling",
+        "System design"
+      ],
+      "assumed_knowledge": "Standard computer science and mathematical background.",
+      "difficulty_rationale": "Classified as intermediate based on prerequisite depth and conceptual abstraction.",
+      "typical_audience": "Undergraduate students in computer science and related fields."
+    },
+    {
+      "course_id": "optimization",
+      "name": "Optimization",
+      "aliases": [
+        "Mathematical Optimization",
+        "Optimization Techniques"
+      ],
+      "category": "Mathematics and Statistics",
+      "description": "Formulation and solution of optimization problems: linear programming, convex optimization, and gradient-based methods.",
+      "difficulty": "advanced",
+      "learning_outcomes": [
+        "Master core principles of Optimization",
+        "Apply theoretical models in Optimization to practical systems",
+        "Analyze and evaluate Optimization solutions"
+      ],
+      "main_topics": [
+        "Optimization Fundamentals",
+        "Architectural Patterns",
+        "System Evaluation",
+        "Advanced Applications"
+      ],
+      "skills_gained": [
+        "Optimization problem solving",
+        "Analytical modeling",
+        "System design"
+      ],
+      "assumed_knowledge": "Standard computer science and mathematical background.",
+      "difficulty_rationale": "Classified as advanced based on prerequisite depth and conceptual abstraction.",
+      "typical_audience": "Undergraduate students in computer science and related fields."
+    },
+    {
+      "course_id": "artificial_intelligence",
+      "name": "Artificial Intelligence",
+      "aliases": [
+        "AI",
+        "Intro to AI"
+      ],
+      "category": "Artificial Intelligence and Data Science",
+      "description": "Foundations of AI: intelligent agents, search, knowledge representation, logical and probabilistic reasoning, and planning.",
+      "difficulty": "intermediate",
+      "learning_outcomes": [
+        "Master core principles of Artificial Intelligence",
+        "Apply theoretical models in Artificial Intelligence to practical systems",
+        "Analyze and evaluate Artificial Intelligence solutions"
+      ],
+      "main_topics": [
+        "Artificial Intelligence Fundamentals",
+        "Architectural Patterns",
+        "System Evaluation",
+        "Advanced Applications"
+      ],
+      "skills_gained": [
+        "Artificial Intelligence problem solving",
+        "Analytical modeling",
+        "System design"
+      ],
+      "assumed_knowledge": "Standard computer science and mathematical background.",
+      "difficulty_rationale": "Classified as intermediate based on prerequisite depth and conceptual abstraction.",
+      "typical_audience": "Undergraduate students in computer science and related fields."
+    },
+    {
+      "course_id": "machine_learning",
+      "name": "Machine Learning",
+      "aliases": [
+        "ML"
+      ],
+      "category": "Artificial Intelligence and Data Science",
+      "description": "Supervised and unsupervised learning, model training and evaluation, generalization, and core algorithms such as regression, trees, SVMs, and clustering.",
+      "difficulty": "intermediate",
+      "learning_outcomes": [
+        "Train supervised and unsupervised learning models",
+        "Evaluate models using cross-validation and loss metrics",
+        "Formulate learning as mathematical optimization"
+      ],
+      "main_topics": [
+        "Linear and Logistic Regression",
+        "Decision Trees and Ensemble Methods",
+        "Support Vector Machines",
+        "Clustering (K-Means)",
+        "Overfitting and Regularization"
+      ],
+      "skills_gained": [
+        "Predictive modeling",
+        "Feature engineering",
+        "Empirical model evaluation"
+      ],
+      "assumed_knowledge": "Python programming, linear algebra, and multivariable calculus.",
+      "difficulty_rationale": "Blends probabilistic modeling, matrix algebra, and algorithmic optimization.",
+      "typical_audience": "Upper-division students and practitioners focusing on AI and data science."
+    },
+    {
+      "course_id": "deep_learning",
+      "name": "Deep Learning",
+      "aliases": [
+        "DL",
+        "Neural Networks and Deep Learning"
+      ],
+      "category": "Artificial Intelligence and Data Science",
+      "description": "Neural networks, backpropagation, CNNs, RNNs, attention, regularization, and training of deep models.",
+      "difficulty": "advanced",
+      "learning_outcomes": [
+        "Implement neural networks with backpropagation",
+        "Architect CNNs and RNNs for perception tasks",
+        "Tune regularization, learning rates, and optimizers"
+      ],
+      "main_topics": [
+        "Multilayer Perceptrons",
+        "Backpropagation and Autodiff",
+        "Convolutional Neural Networks",
+        "Recurrent Architectures and LSTMs",
+        "Attention Mechanisms"
+      ],
+      "skills_gained": [
+        "Deep neural network design",
+        "PyTorch/TensorFlow modeling",
+        "GPU-accelerated training"
+      ],
+      "assumed_knowledge": "Machine learning, linear algebra, calculus, and Python.",
+      "difficulty_rationale": "High-dimensional non-convex optimization and tensor programming require solid foundation.",
+      "typical_audience": "Advanced undergraduates, graduate students, and AI engineers."
+    },
+    {
+      "course_id": "natural_language_processing",
+      "name": "Natural Language Processing",
+      "aliases": [
+        "NLP",
+        "Computational Linguistics"
+      ],
+      "category": "Artificial Intelligence and Data Science",
+      "description": "Computational methods for text and language: tokenization, language models, tagging, parsing, embeddings, and text classification.",
+      "difficulty": "advanced",
+      "learning_outcomes": [
+        "Master core principles of Natural Language Processing",
+        "Apply theoretical models in Natural Language Processing to practical systems",
+        "Analyze and evaluate Natural Language Processing solutions"
+      ],
+      "main_topics": [
+        "Natural Language Processing Fundamentals",
+        "Architectural Patterns",
+        "System Evaluation",
+        "Advanced Applications"
+      ],
+      "skills_gained": [
+        "Natural Language Processing problem solving",
+        "Analytical modeling",
+        "System design"
+      ],
+      "assumed_knowledge": "Standard computer science and mathematical background.",
+      "difficulty_rationale": "Classified as advanced based on prerequisite depth and conceptual abstraction.",
+      "typical_audience": "Undergraduate students in computer science and related fields."
+    },
+    {
+      "course_id": "computer_vision",
+      "name": "Computer Vision",
+      "aliases": [
+        "CV"
+      ],
+      "category": "Artificial Intelligence and Data Science",
+      "description": "Image formation, feature extraction, recognition, detection, and segmentation using classical and learning-based methods.",
+      "difficulty": "advanced",
+      "learning_outcomes": [
+        "Master core principles of Computer Vision",
+        "Apply theoretical models in Computer Vision to practical systems",
+        "Analyze and evaluate Computer Vision solutions"
+      ],
+      "main_topics": [
+        "Computer Vision Fundamentals",
+        "Architectural Patterns",
+        "System Evaluation",
+        "Advanced Applications"
+      ],
+      "skills_gained": [
+        "Computer Vision problem solving",
+        "Analytical modeling",
+        "System design"
+      ],
+      "assumed_knowledge": "Standard computer science and mathematical background.",
+      "difficulty_rationale": "Classified as advanced based on prerequisite depth and conceptual abstraction.",
+      "typical_audience": "Undergraduate students in computer science and related fields."
+    },
+    {
+      "course_id": "data_science",
+      "name": "Data Science",
+      "aliases": [
+        "DS and Analytics",
+        "Introduction to Data Science"
+      ],
+      "category": "Artificial Intelligence and Data Science",
+      "description": "End-to-end data workflow: collection, cleaning, exploration, visualization, statistical analysis, and communicating results.",
+      "difficulty": "intermediate",
+      "learning_outcomes": [
+        "Master core principles of Data Science",
+        "Apply theoretical models in Data Science to practical systems",
+        "Analyze and evaluate Data Science solutions"
+      ],
+      "main_topics": [
+        "Data Science Fundamentals",
+        "Architectural Patterns",
+        "System Evaluation",
+        "Advanced Applications"
+      ],
+      "skills_gained": [
+        "Data Science problem solving",
+        "Analytical modeling",
+        "System design"
+      ],
+      "assumed_knowledge": "Standard computer science and mathematical background.",
+      "difficulty_rationale": "Classified as intermediate based on prerequisite depth and conceptual abstraction.",
+      "typical_audience": "Undergraduate students in computer science and related fields."
+    },
+    {
+      "course_id": "data_mining",
+      "name": "Data Mining",
+      "aliases": [
+        "Knowledge Discovery in Databases",
+        "KDD"
+      ],
+      "category": "Artificial Intelligence and Data Science",
+      "description": "Pattern discovery in large datasets: association rules, clustering, classification, anomaly detection, and preprocessing.",
+      "difficulty": "intermediate",
+      "learning_outcomes": [
+        "Master core principles of Data Mining",
+        "Apply theoretical models in Data Mining to practical systems",
+        "Analyze and evaluate Data Mining solutions"
+      ],
+      "main_topics": [
+        "Data Mining Fundamentals",
+        "Architectural Patterns",
+        "System Evaluation",
+        "Advanced Applications"
+      ],
+      "skills_gained": [
+        "Data Mining problem solving",
+        "Analytical modeling",
+        "System design"
+      ],
+      "assumed_knowledge": "Standard computer science and mathematical background.",
+      "difficulty_rationale": "Classified as intermediate based on prerequisite depth and conceptual abstraction.",
+      "typical_audience": "Undergraduate students in computer science and related fields."
+    },
+    {
+      "course_id": "reinforcement_learning",
+      "name": "Reinforcement Learning",
+      "aliases": [
+        "RL"
+      ],
+      "category": "Artificial Intelligence and Data Science",
+      "description": "Learning through interaction: Markov decision processes, dynamic programming, temporal-difference and policy-gradient methods.",
+      "difficulty": "advanced",
+      "learning_outcomes": [
+        "Master core principles of Reinforcement Learning",
+        "Apply theoretical models in Reinforcement Learning to practical systems",
+        "Analyze and evaluate Reinforcement Learning solutions"
+      ],
+      "main_topics": [
+        "Reinforcement Learning Fundamentals",
+        "Architectural Patterns",
+        "System Evaluation",
+        "Advanced Applications"
+      ],
+      "skills_gained": [
+        "Reinforcement Learning problem solving",
+        "Analytical modeling",
+        "System design"
+      ],
+      "assumed_knowledge": "Standard computer science and mathematical background.",
+      "difficulty_rationale": "Classified as advanced based on prerequisite depth and conceptual abstraction.",
+      "typical_audience": "Undergraduate students in computer science and related fields."
+    },
+    {
+      "course_id": "big_data_analytics",
+      "name": "Big Data Analytics",
+      "aliases": [
+        "Big Data"
+      ],
+      "category": "Modern Computing",
+      "description": "Storing and processing very large datasets with distributed frameworks (e.g. MapReduce and Spark-style processing) and scalable analytics.",
+      "difficulty": "advanced",
+      "learning_outcomes": [
+        "Master core principles of Big Data Analytics",
+        "Apply theoretical models in Big Data Analytics to practical systems",
+        "Analyze and evaluate Big Data Analytics solutions"
+      ],
+      "main_topics": [
+        "Big Data Analytics Fundamentals",
+        "Architectural Patterns",
+        "System Evaluation",
+        "Advanced Applications"
+      ],
+      "skills_gained": [
+        "Big Data Analytics problem solving",
+        "Analytical modeling",
+        "System design"
+      ],
+      "assumed_knowledge": "Standard computer science and mathematical background.",
+      "difficulty_rationale": "Classified as advanced based on prerequisite depth and conceptual abstraction.",
+      "typical_audience": "Undergraduate students in computer science and related fields."
+    },
+    {
+      "course_id": "cloud_computing",
+      "name": "Cloud Computing",
+      "aliases": [
+        "Cloud"
+      ],
+      "category": "Modern Computing",
+      "description": "Cloud service and deployment models, virtualization, containers, elasticity, storage, and cloud-based application deployment.",
+      "difficulty": "intermediate",
+      "learning_outcomes": [
+        "Master core principles of Cloud Computing",
+        "Apply theoretical models in Cloud Computing to practical systems",
+        "Analyze and evaluate Cloud Computing solutions"
+      ],
+      "main_topics": [
+        "Cloud Computing Fundamentals",
+        "Architectural Patterns",
+        "System Evaluation",
+        "Advanced Applications"
+      ],
+      "skills_gained": [
+        "Cloud Computing problem solving",
+        "Analytical modeling",
+        "System design"
+      ],
+      "assumed_knowledge": "Standard computer science and mathematical background.",
+      "difficulty_rationale": "Classified as intermediate based on prerequisite depth and conceptual abstraction.",
+      "typical_audience": "Undergraduate students in computer science and related fields."
+    },
+    {
+      "course_id": "cybersecurity",
+      "name": "Cybersecurity",
+      "aliases": [
+        "Information Security",
+        "Cyber Security"
+      ],
+      "category": "Modern Computing",
+      "description": "Security principles, threats and attacks, cryptography basics, authentication, network and system security, and risk management.",
+      "difficulty": "intermediate",
+      "learning_outcomes": [
+        "Master core principles of Cybersecurity",
+        "Apply theoretical models in Cybersecurity to practical systems",
+        "Analyze and evaluate Cybersecurity solutions"
+      ],
+      "main_topics": [
+        "Cybersecurity Fundamentals",
+        "Architectural Patterns",
+        "System Evaluation",
+        "Advanced Applications"
+      ],
+      "skills_gained": [
+        "Cybersecurity problem solving",
+        "Analytical modeling",
+        "System design"
+      ],
+      "assumed_knowledge": "Standard computer science and mathematical background.",
+      "difficulty_rationale": "Classified as intermediate based on prerequisite depth and conceptual abstraction.",
+      "typical_audience": "Undergraduate students in computer science and related fields."
+    },
+    {
+      "course_id": "generative_ai",
+      "name": "Generative AI",
+      "aliases": [
+        "GenAI",
+        "Generative Models"
+      ],
+      "category": "Modern Computing",
+      "description": "Models that generate text, images, and other content: autoencoders, GANs, diffusion models, and transformer-based generation, with responsible use.",
+      "difficulty": "advanced",
+      "learning_outcomes": [
+        "Master core principles of Generative AI",
+        "Apply theoretical models in Generative AI to practical systems",
+        "Analyze and evaluate Generative AI solutions"
+      ],
+      "main_topics": [
+        "Generative AI Fundamentals",
+        "Architectural Patterns",
+        "System Evaluation",
+        "Advanced Applications"
+      ],
+      "skills_gained": [
+        "Generative AI problem solving",
+        "Analytical modeling",
+        "System design"
+      ],
+      "assumed_knowledge": "Standard computer science and mathematical background.",
+      "difficulty_rationale": "Classified as advanced based on prerequisite depth and conceptual abstraction.",
+      "typical_audience": "Undergraduate students in computer science and related fields."
+    },
+    {
+      "course_id": "large_language_models",
+      "name": "Large Language Models",
+      "aliases": [
+        "LLMs",
+        "LLM"
+      ],
+      "category": "Modern Computing",
+      "description": "Transformer-based language models: pretraining, fine-tuning, prompting, evaluation, and limitations such as hallucination.",
+      "difficulty": "advanced",
+      "learning_outcomes": [
+        "Master core principles of Large Language Models",
+        "Apply theoretical models in Large Language Models to practical systems",
+        "Analyze and evaluate Large Language Models solutions"
+      ],
+      "main_topics": [
+        "Large Language Models Fundamentals",
+        "Architectural Patterns",
+        "System Evaluation",
+        "Advanced Applications"
+      ],
+      "skills_gained": [
+        "Large Language Models problem solving",
+        "Analytical modeling",
+        "System design"
+      ],
+      "assumed_knowledge": "Standard computer science and mathematical background.",
+      "difficulty_rationale": "Classified as advanced based on prerequisite depth and conceptual abstraction.",
+      "typical_audience": "Undergraduate students in computer science and related fields."
+    },
+    {
+      "course_id": "retrieval_augmented_generation",
+      "name": "Retrieval-Augmented Generation",
+      "aliases": [
+        "RAG"
+      ],
+      "category": "Modern Computing",
+      "description": "Grounding LLM outputs in external knowledge using document chunking, embeddings, vector search, and retrieval pipelines.",
+      "difficulty": "advanced",
+      "learning_outcomes": [
+        "Master core principles of Retrieval-Augmented Generation",
+        "Apply theoretical models in Retrieval-Augmented Generation to practical systems",
+        "Analyze and evaluate Retrieval-Augmented Generation solutions"
+      ],
+      "main_topics": [
+        "Retrieval-Augmented Generation Fundamentals",
+        "Architectural Patterns",
+        "System Evaluation",
+        "Advanced Applications"
+      ],
+      "skills_gained": [
+        "Retrieval-Augmented Generation problem solving",
+        "Analytical modeling",
+        "System design"
+      ],
+      "assumed_knowledge": "Standard computer science and mathematical background.",
+      "difficulty_rationale": "Classified as advanced based on prerequisite depth and conceptual abstraction.",
+      "typical_audience": "Undergraduate students in computer science and related fields."
+    },
+    {
+      "course_id": "mlops",
+      "name": "MLOps",
+      "aliases": [
+        "Machine Learning Operations",
+        "ML Operations"
+      ],
+      "category": "Modern Computing",
+      "description": "Deploying, monitoring, versioning, and maintaining machine learning systems in production, including pipelines and reproducibility.",
+      "difficulty": "advanced",
+      "learning_outcomes": [
+        "Master core principles of MLOps",
+        "Apply theoretical models in MLOps to practical systems",
+        "Analyze and evaluate MLOps solutions"
+      ],
+      "main_topics": [
+        "MLOps Fundamentals",
+        "Architectural Patterns",
+        "System Evaluation",
+        "Advanced Applications"
+      ],
+      "skills_gained": [
+        "MLOps problem solving",
+        "Analytical modeling",
+        "System design"
+      ],
+      "assumed_knowledge": "Standard computer science and mathematical background.",
+      "difficulty_rationale": "Classified as advanced based on prerequisite depth and conceptual abstraction.",
+      "typical_audience": "Undergraduate students in computer science and related fields."
+    },
+    {
+      "course_id": "c_plus_plus_programming",
+      "name": "C++ Programming",
+      "aliases": [
+        "C++",
+        "CPP",
+        "Programming in C++",
+        "Modern C++"
+      ],
+      "category": "Programming Fundamentals",
+      "difficulty": "intermediate",
+      "description": "Modern C++ development covering object-oriented design, templates, RAII, smart pointers, the Standard Template Library (STL), and move semantics.",
+      "learning_outcomes": [
+        "Apply RAII and smart pointers for deterministic resource management",
+        "Leverage Modern C++ STL containers and algorithms",
+        "Write generic programs using C++ templates"
+      ],
+      "main_topics": [
+        "Classes and Constructors",
+        "Resource Acquisition Is Initialization (RAII)",
+        "STL Containers and Iterators",
+        "Templates and Generic Programming",
+        "Move Semantics and Rvalue References"
+      ],
+      "skills_gained": [
+        "Performance-critical programming",
+        "STL mastery",
+        "Modern C++ idiom design"
+      ],
+      "assumed_knowledge": "Programming fundamentals and procedural C concepts.",
+      "difficulty_rationale": "Requires understanding explicit memory semantics, strict value categories, and template metaprogramming.",
+      "typical_audience": "Systems developers, game programmers, and competitive programmers."
+    },
+    {
+      "course_id": "programming_using_r",
+      "name": "Programming Using R",
+      "aliases": [
+        "R Programming",
+        "R Language",
+        "Introduction to R",
+        "Data Analysis with R"
+      ],
+      "category": "Programming Fundamentals",
+      "difficulty": "beginner",
+      "description": "Statistical computing and data manipulation with R: data frames, tidyverse, data visualization with ggplot2, and reproducible research.",
+      "learning_outcomes": [
+        "Manipulate tabular data using tidyverse packages",
+        "Produce publication-quality visualizations with ggplot2",
+        "Perform descriptive statistical modeling in R"
+      ],
+      "main_topics": [
+        "R Data Types and Vectors",
+        "Data Frames and Tibbles",
+        "Data Wrangling with dplyr",
+        "Visualization with ggplot2",
+        "R Markdown for Reproducibility"
+      ],
+      "skills_gained": [
+        "Statistical data wrangling",
+        "Data visualization",
+        "Reproducible exploratory analysis"
+      ],
+      "assumed_knowledge": "Basic secondary-school algebra; no prior programming experience required.",
+      "difficulty_rationale": "High-level interactive language with an expressive syntax for statistical datasets.",
+      "typical_audience": "Data analysts, bioinformaticians, social scientists, and statistics students."
+    },
+    {
+      "course_id": "functional_programming",
+      "name": "Functional Programming",
+      "aliases": [
+        "Functional Programming Concepts",
+        "FP",
+        "Declarative Programming",
+        "Principles of FP"
+      ],
+      "category": "Programming Fundamentals",
+      "difficulty": "intermediate",
+      "description": "Declarative programming paradigm centered on pure functions, immutability, higher-order functions, algebraic data types, pattern matching, and recursion.",
+      "learning_outcomes": [
+        "Reason about pure functions and referential transparency",
+        "Use higher-order functions and map/filter/reduce pipelines",
+        "Model domain data with algebraic types and pattern matching"
+      ],
+      "main_topics": [
+        "Pure Functions and Immutability",
+        "First-Class and Higher-Order Functions",
+        "Recursion and Tail Call Optimization",
+        "Algebraic Data Types",
+        "Monads and Functor Concepts"
+      ],
+      "skills_gained": [
+        "Immutability-based design",
+        "Declarative abstraction",
+        "Parallel-friendly code construction"
+      ],
+      "assumed_knowledge": "Programming fundamentals and discrete mathematics.",
+      "difficulty_rationale": "Shifts intuition away from mutable state and imperative control flow toward pure functional transforms.",
+      "typical_audience": "Software engineers and students seeking stronger formal modeling and concurrent safety."
+    },
+    {
+      "course_id": "technical_communication_and_academic_writing",
+      "name": "Technical Communication and Academic Writing",
+      "aliases": [
+        "Technical Communication",
+        "Academic Writing",
+        "Technical Writing",
+        "Tech Comm",
+        "Scientific Writing"
+      ],
+      "category": "Core Computer Science",
+      "difficulty": "beginner",
+      "description": "Principles of clear technical writing, research paper structuring, software documentation, peer review, and technical presentation.",
+      "learning_outcomes": [
+        "Draft clear software architecture and API specifications",
+        "Structure academic research papers and literature reviews",
+        "Communicate technical concepts clearly to diverse audiences"
+      ],
+      "main_topics": [
+        "Audience Analysis and Document Design",
+        "API and System Documentation",
+        "Research Paper Structure (IMRaD)",
+        "Citation and Academic Ethics",
+        "Technical Presentation Skills"
+      ],
+      "skills_gained": [
+        "Specification writing",
+        "Scholarly literature review",
+        "Executive technical briefing"
+      ],
+      "assumed_knowledge": "Undergraduate standing; no programming prerequisites required.",
+      "difficulty_rationale": "Focuses on clarity, organization, and scholarly conventions rather than formal mathematical rigor.",
+      "typical_audience": "Undergraduate and graduate students preparing for research or professional engineering careers."
+    },
+    {
+      "course_id": "graph_theory",
+      "name": "Graph Theory",
+      "aliases": [
+        "Introductory Graph Theory",
+        "Network Theory",
+        "Combinatorial Graph Theory"
+      ],
+      "category": "Mathematics",
+      "difficulty": "intermediate",
+      "description": "Mathematical study of graphs: connectivity, trees, Eulerian and Hamiltonian paths, planar graphs, graph coloring, and network flows.",
+      "learning_outcomes": [
+        "Prove fundamental structural theorems on connectivity and trees",
+        "Analyze chromatic numbers and planar graph properties",
+        "Model network flow and matching problems mathematically"
+      ],
+      "main_topics": [
+        "Graphs, Paths, and Cycles",
+        "Trees and Spanning Forests",
+        "Bipartite Graphs and Matchings",
+        "Planarity and Euler's Formula",
+        "Graph Coloring and Network Flows"
+      ],
+      "skills_gained": [
+        "Topological reasoning",
+        "Combinatorial proof techniques",
+        "Structural network modeling"
+      ],
+      "assumed_knowledge": "Discrete mathematics and mathematical proof techniques.",
+      "difficulty_rationale": "Abstract deductive mathematical proofs combined with combinatorial arguments.",
+      "typical_audience": "Computer science, mathematics, and operations research students."
+    },
+    {
+      "course_id": "web_development",
+      "name": "Web Development",
+      "aliases": [
+        "Web Dev",
+        "Full Stack Development",
+        "Frontend and Backend Web Development",
+        "Web Application Engineering"
+      ],
+      "category": "Core Computer Science",
+      "difficulty": "beginner",
+      "description": "Full-stack web application engineering: HTML5/CSS3 semantics, client-side JavaScript, responsive layout, RESTful HTTP APIs, and server-side backend integration.",
+      "learning_outcomes": [
+        "Build responsive client-side web interfaces",
+        "Implement RESTful backend web services",
+        "Integrate frontends with persistent databases"
+      ],
+      "main_topics": [
+        "DOM and Modern JavaScript (ES6+)",
+        "CSS Flexbox and Grid Layouts",
+        "HTTP Methods, Status Codes, and REST",
+        "Server-Side Scripting and Routing",
+        "Web Security Basics (CORS, CSRF, XSS)"
+      ],
+      "skills_gained": [
+        "Full-stack application development",
+        "RESTful API design",
+        "Responsive UI implementation"
+      ],
+      "assumed_knowledge": "Basic programming fundamentals.",
+      "difficulty_rationale": "Accessible initial syntax; integration across multiple languages and network layers requires organizational discipline.",
+      "typical_audience": "Students interested in software engineering, frontend, and web services."
+    },
+    {
+      "course_id": "mobile_app_development",
+      "name": "Mobile Application Development",
+      "aliases": [
+        "Mobile Computing",
+        "Android Development",
+        "iOS Development",
+        "Mobile App Dev"
+      ],
+      "category": "Core Computer Science",
+      "difficulty": "intermediate",
+      "description": "Engineering native and cross-platform mobile apps: mobile UI lifecycle, asynchronous event handling, sensor integration, local storage, and background services.",
+      "learning_outcomes": [
+        "Manage mobile activity and view lifecycles safely",
+        "Handle asynchronous background tasks and network calls",
+        "Store offline data using local relational databases"
+      ],
+      "main_topics": [
+        "Mobile UI Components and Layouts",
+        "App Lifecycle and State Preservation",
+        "Background Work and Services",
+        "Local Persistence (SQLite/Room)",
+        "Mobile Network Interaction"
+      ],
+      "skills_gained": [
+        "Mobile architecture",
+        "Touch interaction design",
+        "Resource-constrained optimization"
+      ],
+      "assumed_knowledge": "Object-oriented programming and basic user interface concepts.",
+      "difficulty_rationale": "Event-driven asynchronous lifecycles and mobile hardware constraints demand rigorous state management.",
+      "typical_audience": "Software engineering students targeting mobile platforms."
+    },
+    {
+      "course_id": "distributed_systems",
+      "name": "Distributed Systems",
+      "aliases": [
+        "Distributed Computing",
+        "Distributed Systems Engineering"
+      ],
+      "category": "Core Computer Science",
+      "difficulty": "advanced",
+      "description": "Principles of distributed computing: clock synchronization, consensus algorithms (Raft/Paxos), fault tolerance, replication, and distributed transactions.",
+      "learning_outcomes": [
+        "Analyze consistency models and the CAP theorem",
+        "Implement consensus protocols like Raft",
+        "Design fault-tolerant distributed services"
+      ],
+      "main_topics": [
+        "RPC and Network Communication",
+        "Logical Clocks and Event Ordering",
+        "Consensus (Paxos, Raft)",
+        "Replication and Consistency Models",
+        "Fault Tolerance and Partition Handling"
+      ],
+      "skills_gained": [
+        "Distributed protocol implementation",
+        "Consensus algorithm analysis",
+        "Fault tolerance engineering"
+      ],
+      "assumed_knowledge": "Operating systems, computer networks, and concurrent programming.",
+      "difficulty_rationale": "Asynchronous network partitions, partial failures, and non-deterministic concurrency make formal analysis challenging.",
+      "typical_audience": "Advanced undergraduates, graduate students, and cloud infrastructure engineers."
+    },
+    {
+      "course_id": "cryptography",
+      "name": "Cryptography and Network Security",
+      "aliases": [
+        "Applied Cryptography",
+        "Information Security and Cryptography",
+        "Crypto"
+      ],
+      "category": "Core Computer Science",
+      "difficulty": "advanced",
+      "description": "Mathematical and practical foundations of cryptography: symmetric ciphers, public-key cryptosystems (RSA, ECC), hash functions, digital signatures, and TLS.",
+      "learning_outcomes": [
+        "Evaluate security properties of symmetric and asymmetric cryptosystems",
+        "Analyze digital signature and key exchange protocols",
+        "Apply cryptographic primitives without security vulnerabilities"
+      ],
+      "main_topics": [
+        "Classical Ciphers and Shannon Secrecy",
+        "Symmetric Encryption (AES, Block Cipher Modes)",
+        "Public-Key Cryptography (Diffie-Hellman, RSA, ECC)",
+        "Cryptographic Hash Functions and MACs",
+        "TLS Handshake and Key Exchange"
+      ],
+      "skills_gained": [
+        "Cryptographic protocol analysis",
+        "Public key infrastructure design",
+        "Secure communication engineering"
+      ],
+      "assumed_knowledge": "Discrete mathematics, probability, and basic computer networking.",
+      "difficulty_rationale": "Relies on rigorous number theory, computational hardness assumptions, and subtle attack vectors.",
+      "typical_audience": "Students specializing in cybersecurity, privacy, and mathematical computer science."
+    },
+    {
+      "course_id": "information_retrieval",
+      "name": "Information Retrieval and Search",
+      "aliases": [
+        "Search Engine Technologies",
+        "Information Extraction",
+        "IR"
+      ],
+      "category": "AI and Data Science",
+      "difficulty": "intermediate",
+      "description": "Architecture of modern search engines: inverted index construction, vector space ranking (TF-IDF, BM25), crawling, link analysis (PageRank), and evaluation.",
+      "learning_outcomes": [
+        "Build inverted indexes for full-text search",
+        "Implement probabilistic ranking algorithms like BM25",
+        "Evaluate retrieval quality using Precision, Recall, and NDCG"
+      ],
+      "main_topics": [
+        "Boolean and Inverted Indexing",
+        "Tokenization, Stemming, and Stopwords",
+        "Vector Space Model and BM25",
+        "Web Crawling and PageRank",
+        "Retrieval Evaluation (MAP, NDCG)"
+      ],
+      "skills_gained": [
+        "Search index engineering",
+        "Ranking model formulation",
+        "Relevance metric benchmarking"
+      ],
+      "assumed_knowledge": "Data structures, algorithms, and basic linear algebra.",
+      "difficulty_rationale": "Combines scalable inverted index data structures with probabilistic ranking formulations.",
+      "typical_audience": "Students interested in search engines, NLP, and large-scale information systems."
+    },
+    {
+      "course_id": "computer_graphics",
+      "name": "Computer Graphics",
+      "aliases": [
+        "Intro to Computer Graphics",
+        "3D Computer Graphics",
+        "Rendering Systems"
+      ],
+      "category": "Core Computer Science",
+      "difficulty": "intermediate",
+      "description": "Foundations of 2D and 3D computer graphics: transformation matrices, rendering pipelines, rasterization, lighting models, ray tracing, and shaders.",
+      "learning_outcomes": [
+        "Formulate 3D geometric transformations using homogeneous coordinates",
+        "Implement standard lighting models (Phong, Blinn-Phong)",
+        "Write programmable vertex and fragment shaders"
+      ],
+      "main_topics": [
+        "Homogeneous Coordinates and Transformations",
+        "Viewing and Projection Matrices",
+        "Rasterization and Z-Buffering",
+        "Illumination and Shading",
+        "Ray Tracing Basics and Shaders"
+      ],
+      "skills_gained": [
+        "Linear algebra transformation coding",
+        "Shader programming (GLSL)",
+        "3D rendering pipeline architecture"
+      ],
+      "assumed_knowledge": "Linear algebra, multivariable calculus, and C/C++ or Python programming.",
+      "difficulty_rationale": "Heavy application of matrix geometry, projection coordinates, and real-time graphics pipelines.",
+      "typical_audience": "Students interested in visualization, game development, and simulation engineering."
+    },
+    {
+      "course_id": "human_computer_interaction",
+      "name": "Human-Computer Interaction",
+      "aliases": [
+        "HCI",
+        "User Experience Design",
+        "UI UX Engineering"
+      ],
+      "category": "Core Computer Science",
+      "difficulty": "beginner",
+      "description": "User-centered design principles, heuristic evaluation, cognitive walkthroughs, wireframing, prototyping, usability testing, and accessibility guidelines.",
+      "learning_outcomes": [
+        "Conduct user research and persona synthesis",
+        "Design interactive wireframes and high-fidelity prototypes",
+        "Perform heuristic usability evaluations and user testing"
+      ],
+      "main_topics": [
+        "User-Centered Design Lifecycle",
+        "Norman's Principles and Affordances",
+        "Prototyping and Wireframing",
+        "Heuristic Evaluation and Usability Metrics",
+        "Accessibility (WCAG) Standards"
+      ],
+      "skills_gained": [
+        "Usability benchmarking",
+        "Prototyping interaction flows",
+        "Accessible interface auditing"
+      ],
+      "assumed_knowledge": "Introductory computer science or software engineering principles.",
+      "difficulty_rationale": "Emphasizes qualitative human factors, cognitive psychology, and empirical user testing rather than algorithmic analysis.",
+      "typical_audience": "Product designers, frontend developers, and software engineering students."
+    },
+    {
+      "course_id": "robotics_and_autonomous_systems",
+      "name": "Robotics and Autonomous Systems",
+      "aliases": [
+        "Introduction to Robotics",
+        "Autonomous Systems",
+        "Robot Kinematics and Control"
+      ],
+      "category": "AI and Data Science",
+      "difficulty": "advanced",
+      "description": "Principles of robotic systems: forward and inverse kinematics, robot dynamics, sensor perception, state estimation (Kalman filters), path planning, and feedback control.",
+      "learning_outcomes": [
+        "Formulate forward and inverse kinematics for robotic manipulators",
+        "Implement Kalman filtering for noisy sensor state estimation",
+        "Plan collision-free trajectories using graph search and potential fields"
+      ],
+      "main_topics": [
+        "Spatial Transformations and Kinematics",
+        "Sensors and Actuators",
+        "State Estimation and Kalman Filtering",
+        "Motion and Path Planning (RRT, A*)",
+        "PID Feedback Control"
+      ],
+      "skills_gained": [
+        "Robotic kinematic modeling",
+        "State estimation filtering",
+        "Autonomous trajectory planning"
+      ],
+      "assumed_knowledge": "Linear algebra, calculus, differential equations, and introductory AI.",
+      "difficulty_rationale": "Integrates mechanical kinematics, probabilistic sensor state estimation, and continuous control mathematics.",
+      "typical_audience": "Robotics, aerospace, computer vision, and autonomous vehicle engineers."
+    },
+    {
+      "course_id": "parallel_and_concurrent_programming",
+      "name": "Parallel and Concurrent Programming",
+      "aliases": [
+        "Multithreading",
+        "Concurrent Computing",
+        "Parallel Processing",
+        "Concurrency"
+      ],
+      "category": "Core Computer Science",
+      "difficulty": "advanced",
+      "description": "High-performance parallel computing: multi-core shared memory (threads, OpenMP), lock-free data structures, message passing (MPI), and SIMD vectorization.",
+      "learning_outcomes": [
+        "Implement race-free multi-threaded programs using modern synchronization",
+        "Analyze speedup and scaling using Amdahl's and Gustafson's Laws",
+        "Write distributed-memory parallel jobs using MPI"
+      ],
+      "main_topics": [
+        "Amdahl's Law and Parallel Scaling",
+        "Threads, Mutexes, and Condition Variables",
+        "Atomic Operations and Lock-Free Queues",
+        "OpenMP Shared Memory Directives",
+        "MPI Distributed Memory Passing"
+      ],
+      "skills_gained": [
+        "Multi-core thread orchestration",
+        "Lock-free algorithm design",
+        "HPC cluster scaling"
+      ],
+      "assumed_knowledge": "Operating systems, computer architecture, and C/C++ programming.",
+      "difficulty_rationale": "Subtle non-deterministic timing, cache-coherence issues, and deadlocks demand deep systems discipline.",
+      "typical_audience": "Systems engineers, high-performance computing specialists, and backend infrastructure developers."
+    },
+    {
+      "course_id": "system_design",
+      "name": "System Design and Scalability",
+      "aliases": [
+        "Software Architecture and System Design",
+        "Large Scale System Design",
+        "High Availability Systems"
+      ],
+      "category": "Core Computer Science",
+      "difficulty": "advanced",
+      "description": "Architecting large-scale, highly available internet services: horizontal scaling, load balancing, caching tiers, database sharding, asynchronous message queues, and reliability.",
+      "learning_outcomes": [
+        "Design horizontally scalable architectures serving millions of users",
+        "Select appropriate caching, sharding, and partitioning strategies",
+        "Evaluate system trade-offs regarding latency, throughput, and consistency"
+      ],
+      "main_topics": [
+        "Horizontal vs Vertical Scaling",
+        "Load Balancers and Reverse Proxies",
+        "Caching Strategies (Redis/Memcached, CDN)",
+        "Database Sharding and Replication",
+        "Message Queues and Event-Driven Architecture"
+      ],
+      "skills_gained": [
+        "High-level architectural drafting",
+        "Capacity estimation",
+        "Resilience engineering"
+      ],
+      "assumed_knowledge": "Database systems, computer networks, and operating systems.",
+      "difficulty_rationale": "Requires balancing open-ended architectural trade-offs across distributed components under high load.",
+      "typical_audience": "Senior students, aspiring software architects, and production backend engineers."
+    },
+    {
+      "course_id": "devops_and_ci_cd",
+      "name": "DevOps and Continuous Integration",
+      "aliases": [
+        "DevOps",
+        "CI CD Pipelines",
+        "Site Reliability Engineering",
+        "SRE Fundamentals"
+      ],
+      "category": "Core Computer Science",
+      "difficulty": "intermediate",
+      "description": "Modern software delivery lifecycle: containerization with Docker, orchestration, automated testing pipelines, infrastructure as code, and observability monitoring.",
+      "learning_outcomes": [
+        "Containerize microservices using Docker",
+        "Construct automated CI/CD build and test pipelines",
+        "Provision infrastructure declaratively using Infrastructure-as-Code"
+      ],
+      "main_topics": [
+        "Version Control Workflows and Branching",
+        "Containerization with Docker",
+        "Continuous Integration / Continuous Deployment (CI/CD)",
+        "Infrastructure as Code (Terraform)",
+        "Monitoring, Metrics, and Alerting"
+      ],
+      "skills_gained": [
+        "Pipeline automation",
+        "Container deployment",
+        "Site reliability practices"
+      ],
+      "assumed_knowledge": "Software engineering, Linux command line, and basic networking.",
+      "difficulty_rationale": "Cross-disciplinary practice combining software development, systems administration, and automated cloud tooling.",
+      "typical_audience": "DevOps engineers, cloud developers, and modern software engineering practitioners."
+    },
+    {
+      "course_id": "quantum_computing",
+      "name": "Introduction to Quantum Computing",
+      "aliases": [
+        "Quantum Information Science",
+        "Quantum Algorithms",
+        "Quantum Computing Basics"
+      ],
+      "category": "Core Computer Science",
+      "difficulty": "advanced",
+      "description": "Principles of quantum information processing: qubits, superposition, quantum entanglement, quantum circuit design, and algorithms (Deutsch-Jozsa, Grover, Shor).",
+      "learning_outcomes": [
+        "Model multi-qubit states and unitary quantum logic gates",
+        "Analyze quantum speedup in Grover's search and Shor's factoring",
+        "Simulate quantum circuits using modern quantum programming frameworks"
+      ],
+      "main_topics": [
+        "Qubits, Superposition, and Measurement",
+        "Quantum Logic Gates and Unitary Matrices",
+        "Quantum Entanglement and Bell States",
+        "Grover's Search Algorithm",
+        "Shor's Factoring and Quantum Fourier Transform"
+      ],
+      "skills_gained": [
+        "Quantum circuit drafting",
+        "Linear operator calculation",
+        "Quantum complexity reasoning"
+      ],
+      "assumed_knowledge": "Linear algebra (complex vector spaces, eigenvalues) and discrete mathematics.",
+      "difficulty_rationale": "Counter-intuitive quantum mechanics principles combined with complex Hilbert space matrix transformations.",
+      "typical_audience": "Advanced students in theoretical computer science, physics, and cryptography."
+    },
+    {
+      "course_id": "data_visualization",
+      "name": "Data Visualization",
+      "aliases": [
+        "Visual Analytics",
+        "Information Visualization",
+        "Data Storytelling"
+      ],
+      "category": "AI and Data Science",
+      "difficulty": "beginner",
+      "description": "Visual encoding of quantitative and qualitative data: perception principles, color theory, exploratory plotting, and interactive dashboard engineering.",
+      "learning_outcomes": [
+        "Select appropriate graphical marks and channels for data types",
+        "Build interactive charts and dashboards",
+        "Avoid misleading visual representations of empirical data"
+      ],
+      "main_topics": [
+        "Visual Encoding Variables (Position, Length, Color)",
+        "Perceptual Psychology and Gestalt Principles",
+        "Statistical Plots (Scatter, Histograms, Boxplots)",
+        "Interactive Dashboards",
+        "Ethics in Data Presentation"
+      ],
+      "skills_gained": [
+        "Exploratory charting",
+        "Visual storytelling",
+        "Dashboard construction"
+      ],
+      "assumed_knowledge": "Basic statistics and introductory programming (Python or R).",
+      "difficulty_rationale": "Focuses on design judgment, visual cognition, and exploratory data communication.",
+      "typical_audience": "Data analysts, software engineers, scientists, and journalists."
+    },
+    {
+      "course_id": "time_series_analysis",
+      "name": "Time Series Analysis and Forecasting",
+      "aliases": [
+        "Time Series Forecasting",
+        "Temporal Data Analysis",
+        "Econometrics and Time Series"
+      ],
+      "category": "Mathematics",
+      "difficulty": "intermediate",
+      "description": "Statistical modeling of temporal data: stationarity, autocorrelation, ARIMA models, seasonal decomposition, exponential smoothing, and deep learning for forecasting.",
+      "learning_outcomes": [
+        "Test and transform non-stationary time series data",
+        "Fit and evaluate ARIMA and SARIMA forecasting models",
+        "Apply recurrent and transformer models to sequence forecasting"
+      ],
+      "main_topics": [
+        "Stationarity and Differencing",
+        "Autocorrelation and Partial Autocorrelation (ACF/PACF)",
+        "ARIMA and Seasonal ARIMA",
+        "Exponential Smoothing (Holt-Winters)",
+        "Deep Sequence Models for Forecasting"
+      ],
+      "skills_gained": [
+        "Temporal pattern decomposition",
+        "Forecast error evaluation",
+        "Statistical sequence forecasting"
+      ],
+      "assumed_knowledge": "Probability and statistics, calculus, and Python or R programming.",
+      "difficulty_rationale": "Requires understanding stochastic processes, lag operators, and non-trivial stationarity tests.",
+      "typical_audience": "Quantitative analysts, data scientists, economists, and operations researchers."
+    },
+    {
+      "course_id": "ai_ethics_and_governance",
+      "name": "AI Ethics, Safety, and Governance",
+      "aliases": [
+        "AI Ethics",
+        "Ethical AI",
+        "AI Safety and Alignment",
+        "Responsible AI"
+      ],
+      "category": "AI and Data Science",
+      "difficulty": "beginner",
+      "description": "Ethical, legal, and safety issues in artificial intelligence: algorithmic bias, fairness metrics, explainability, privacy rights, intellectual property, and AI alignment.",
+      "learning_outcomes": [
+        "Audit machine learning systems for demographic bias and disparate impact",
+        "Evaluate model explainability and transparency trade-offs",
+        "Formulate governance and safety policies for AI deployment"
+      ],
+      "main_topics": [
+        "Algorithmic Fairness and Disparate Impact",
+        "Model Interpretability (LIME, SHAP)",
+        "Data Privacy, Consent, and Differential Privacy",
+        "Generative AI Copyright and Content Provenance",
+        "AI Safety, Alignment, and Risk Regulation"
+      ],
+      "skills_gained": [
+        "Algorithmic auditing",
+        "Responsible AI policy drafting",
+        "Fairness metric evaluation"
+      ],
+      "assumed_knowledge": "Introductory knowledge of machine learning or software applications.",
+      "difficulty_rationale": "Focuses on socio-technical impact, policy frameworks, and ethical dilemma analysis.",
+      "typical_audience": "AI researchers, software engineers, policy makers, and product managers."
+    },
+    {
+      "course_id": "bioinformatics",
+      "name": "Computational Biology and Bioinformatics",
+      "aliases": [
+        "Computational Genomics",
+        "Bioinformatics Algorithms"
+      ],
+      "category": "AI and Data Science",
+      "difficulty": "intermediate",
+      "description": "Algorithmic methods in molecular biology: sequence alignment (Needleman-Wunsch, Smith-Waterman), genome assembly, phylogenetic trees, and structural prediction.",
+      "learning_outcomes": [
+        "Implement dynamic programming algorithms for DNA/protein sequence alignment",
+        "Analyze genome assembly graph algorithms (De Bruijn graphs)",
+        "Use computational tools to query biological databases"
+      ],
+      "main_topics": [
+        "Molecular Biology Basics (DNA, RNA, Proteins)",
+        "Pairwise Sequence Alignment",
+        "Multiple Sequence Alignment and BLAST",
+        "Genome Assembly via De Bruijn Graphs",
+        "Phylogenetic Tree Construction"
+      ],
+      "skills_gained": [
+        "Biological sequence analysis",
+        "Genomic graph algorithms",
+        "Bioinformatics pipeline usage"
+      ],
+      "assumed_knowledge": "Data structures, algorithms, and basic programming.",
+      "difficulty_rationale": "Bridges sophisticated dynamic programming and graph algorithms with biological domain complexity.",
+      "typical_audience": "Computer scientists and biologists interested in computational life sciences."
+    },
+    {
+      "course_id": "nosql_databases",
+      "name": "NoSQL and Distributed Data Stores",
+      "aliases": [
+        "NoSQL Systems",
+        "Document and Key Value Stores",
+        "Distributed Databases"
+      ],
+      "category": "Core Computer Science",
+      "difficulty": "intermediate",
+      "description": "Non-relational data modeling and distributed databases: document stores (MongoDB), key-value stores (Redis), wide-column stores (Cassandra), and graph databases (Neo4j).",
+      "learning_outcomes": [
+        "Design denormalized document schemas for rapid querying",
+        "Evaluate trade-offs between consistency and partition tolerance in distributed stores",
+        "Query graph databases using Cypher"
+      ],
+      "main_topics": [
+        "CAP Theorem and PACELC",
+        "Document Stores and JSON Schemas",
+        "Key-Value Stores and In-Memory Caching",
+        "Wide-Column Distributed Storage",
+        "Graph Databases and Pattern Matching"
+      ],
+      "skills_gained": [
+        "NoSQL schema design",
+        "Distributed key-value caching",
+        "Graph database querying"
+      ],
+      "assumed_knowledge": "Relational databases and basic computer networks.",
+      "difficulty_rationale": "Contrasts normalized relational constraints with eventual consistency and schema-on-read trade-offs.",
+      "typical_audience": "Backend engineers, data architects, and cloud application developers."
+    },
+    {
+      "course_id": "blockchain_and_web3",
+      "name": "Blockchain and Distributed Ledgers",
+      "aliases": [
+        "Blockchain Technology",
+        "Decentralized Systems",
+        "Smart Contracts and Cryptoeconomics"
+      ],
+      "category": "Core Computer Science",
+      "difficulty": "intermediate",
+      "description": "Architectures of decentralized ledgers: cryptographic hashing, Merkle trees, consensus mechanisms (Proof of Work, Proof of Stake), smart contracts, and decentralized apps.",
+      "learning_outcomes": [
+        "Explain cryptographic immutability using Merkle trees and hash chains",
+        "Compare Byzantine fault-tolerant consensus mechanisms",
+        "Develop and test secure smart contracts"
+      ],
+      "main_topics": [
+        "Cryptographic Hash Pointers and Merkle Trees",
+        "Decentralized Consensus (PoW, PoS)",
+        "Bitcoin Protocol and UTXO Model",
+        "Ethereum Virtual Machine and Smart Contracts",
+        "Security Vulnerabilities (Reentrancy, Front-running)"
+      ],
+      "skills_gained": [
+        "Smart contract coding",
+        "Decentralized protocol verification",
+        "Cryptoeconomic analysis"
+      ],
+      "assumed_knowledge": "Computer networks, cryptography basics, and object-oriented programming.",
+      "difficulty_rationale": "Combines peer-to-peer networking, game-theoretic economic incentives, and irreversible smart contract execution.",
+      "typical_audience": "Software developers and students interested in decentralized applications."
+    },
+    {
+      "course_id": "embedded_systems",
+      "name": "Embedded Systems and IoT",
+      "aliases": [
+        "Internet of Things",
+        "IoT",
+        "Microcontroller Programming",
+        "Embedded Software"
+      ],
+      "category": "Core Computer Science",
+      "difficulty": "intermediate",
+      "description": "Microcontroller hardware-software interface: GPIO, interrupts, hardware timers, communication buses (UART, SPI, I2C), ADC, and low-power IoT network stacks.",
+      "learning_outcomes": [
+        "Write bare-metal C programs for ARM microcontrollers",
+        "Interface sensors and actuators via SPI, I2C, and UART",
+        "Implement interrupt service routines with predictable latency"
+      ],
+      "main_topics": [
+        "Microcontroller Architecture and Memory Mapping",
+        "GPIO and Hardware Interrupts",
+        "Timers, PWM, and Analog-to-Digital Conversion",
+        "Serial Buses (UART, I2C, SPI)",
+        "Low-Power Modes and Real-Time Constraints"
+      ],
+      "skills_gained": [
+        "Microcontroller firmware coding",
+        "Hardware debugging with oscilloscopes/logic analyzers",
+        "Serial bus protocol interfacing"
+      ],
+      "assumed_knowledge": "C programming and computer organization.",
+      "difficulty_rationale": "Demands close attention to hardware registers, memory maps, electrical timings, and real-time responsiveness.",
+      "typical_audience": "Computer engineering, robotics, and hardware-software systems students."
+    },
+    {
+      "course_id": "knowledge_graphs",
+      "name": "Knowledge Graphs and Semantic Web",
+      "aliases": [
+        "Ontologies and Knowledge Bases",
+        "Semantic Web",
+        "Graph AI and Knowledge Representation"
+      ],
+      "category": "AI and Data Science",
+      "difficulty": "intermediate",
+      "description": "Structured knowledge representation: RDF triples, OWL ontologies, SPARQL graph queries, knowledge graph embeddings, entity resolution, and link prediction.",
+      "learning_outcomes": [
+        "Model domain schemas using OWL and RDFS ontologies",
+        "Execute complex graph queries using SPARQL",
+        "Train knowledge graph embeddings for link prediction"
+      ],
+      "main_topics": [
+        "Resource Description Framework (RDF) and Triples",
+        "Ontology Engineering (OWL/RDFS)",
+        "SPARQL Query Language",
+        "Entity Linking and Canonicalization",
+        "Knowledge Graph Embeddings (TransE, RotatE)"
+      ],
+      "skills_gained": [
+        "Ontology modeling",
+        "SPARQL graph querying",
+        "Knowledge extraction and reasoning"
+      ],
+      "assumed_knowledge": "Discrete mathematics, data structures, and database systems.",
+      "difficulty_rationale": "Blends formal first-order logic semantics with practical graph databases and modern neural graph embeddings.",
+      "typical_audience": "AI researchers, data architects, search engine developers, and semantic data engineers."
+    },
+    {
+      "course_id": "speech_and_audio_processing",
+      "name": "Speech and Audio Processing",
+      "aliases": [
+        "Speech Recognition",
+        "Automatic Speech Recognition",
+        "Digital Audio Processing",
+        "ASR"
+      ],
+      "category": "AI and Data Science",
+      "difficulty": "advanced",
+      "description": "Digital processing and recognition of acoustic signals: Fourier transforms, Mel-Frequency Cepstral Coefficients (MFCCs), acoustic modeling, and end-to-end ASR.",
+      "learning_outcomes": [
+        "Compute audio spectrograms and filterbank features",
+        "Implement acoustic feature extraction pipelines",
+        "Architect end-to-end deep neural speech recognition models"
+      ],
+      "main_topics": [
+        "Continuous and Discrete Fourier Transforms",
+        "Spectrograms and MFCC Feature Extraction",
+        "Hidden Markov Models for Speech",
+        "End-to-End ASR (CTC Loss, Whisper, Conformer)",
+        "Text-to-Speech Synthesis Basics"
+      ],
+      "skills_gained": [
+        "Digital signal analysis",
+        "Audio feature extraction",
+        "Speech recognition pipeline construction"
+      ],
+      "assumed_knowledge": "Calculus, linear algebra, signals basics, and deep learning.",
+      "difficulty_rationale": "High-dimensional continuous temporal signals require combined signal processing math and deep learning architectures.",
+      "typical_audience": "Machine learning engineers, computational linguists, and audio technology researchers."
+    },
+    {
+      "course_id": "multimodal_deep_learning",
+      "name": "Multimodal Deep Learning",
+      "aliases": [
+        "Multimodal AI",
+        "Vision Language Models",
+        "Cross-Modal Machine Learning"
+      ],
+      "category": "AI and Data Science",
+      "difficulty": "advanced",
+      "description": "Architectures integrating multiple sensory modalities: contrastive learning (CLIP), cross-attention fusion, vision-language models, and multimodal generation.",
+      "learning_outcomes": [
+        "Train cross-modal contrastive representations using CLIP",
+        "Architect cross-attention fusion layers for vision and text",
+        "Evaluate multimodal reasoning on benchmark visual QA datasets"
+      ],
+      "main_topics": [
+        "Joint vs Coordinated Multimodal Representations",
+        "Contrastive Vision-Language Pretraining (CLIP)",
+        "Visual Question Answering and Image Captioning",
+        "Cross-Attention and Multimodal Transformer Fusion",
+        "Diffusion and Cross-Modal Generative Models"
+      ],
+      "skills_gained": [
+        "Vision-language model fine-tuning",
+        "Cross-modal embedding alignment",
+        "Multimodal evaluation"
+      ],
+      "assumed_knowledge": "Deep learning, computer vision, and natural language processing.",
+      "difficulty_rationale": "Requires reconciling disparate tensor modalities (pixels, tokens, audio) in high-dimensional joint spaces.",
+      "typical_audience": "Advanced AI researchers and engineers building frontier multimodal systems."
+    },
+    {
+      "course_id": "linux_system_administration",
+      "name": "Linux System Administration and Scripting",
+      "aliases": [
+        "Linux Administration",
+        "Shell Scripting and Unix",
+        "Unix Tools",
+        "Bash Scripting"
+      ],
+      "category": "Core Computer Science",
+      "difficulty": "beginner",
+      "description": "Practical Unix/Linux administration: file permissions, shell scripting (Bash), process management, systemd services, SSH, package management, and system logs.",
+      "learning_outcomes": [
+        "Write robust automated shell scripts with error handling",
+        "Configure user permissions, ownership, and PAM security",
+        "Manage systemd daemon services and diagnose system logs"
+      ],
+      "main_topics": [
+        "Unix Philosophy and Filesystem Hierarchy",
+        "Bash Scripting, Pipes, and Redirection",
+        "User/Group Permissions and ACLs",
+        "Process Management (kill, ps, top, systemd)",
+        "SSH Configuration, Firewalls, and Networking Basics"
+      ],
+      "skills_gained": [
+        "Shell automation",
+        "Linux server operations",
+        "System diagnostic troubleshooting"
+      ],
+      "assumed_knowledge": "Basic computer literacy and introductory programming.",
+      "difficulty_rationale": "Command-line driven operating environment requiring memorization and practice with Unix utilities.",
+      "typical_audience": "All computer science, software engineering, and cybersecurity students."
+    },
+    {
+      "course_id": "discrete_optimization",
+      "name": "Discrete Optimization and Combinatorial Algorithms",
+      "aliases": [
+        "Combinatorial Optimization",
+        "Integer Programming",
+        "Constraint Satisfaction"
+      ],
+      "category": "Mathematics",
+      "difficulty": "advanced",
+      "description": "Exact and heuristic techniques for NP-hard discrete problems: branch and bound, integer linear programming (ILP), dynamic programming, cutting planes, and local search.",
+      "learning_outcomes": [
+        "Formulate industrial scheduling and routing problems as integer linear programs",
+        "Implement branch-and-bound algorithms with effective bounding functions",
+        "Apply metaheuristics like simulated annealing and genetic algorithms"
+      ],
+      "main_topics": [
+        "Linear Programming Duality and Simplex Method",
+        "Integer Linear Programming Formulation",
+        "Branch and Bound / Branch and Cut",
+        "Constraint Satisfaction Problems",
+        "Metaheuristics (Simulated Annealing, Tabu Search)"
+      ],
+      "skills_gained": [
+        "Mathematical problem formulation",
+        "Solver usage (Gurobi/OR-Tools)",
+        "Combinatorial algorithm design"
+      ],
+      "assumed_knowledge": "Algorithms, linear algebra, and mathematical optimization.",
+      "difficulty_rationale": "NP-hard computational complexity requires subtle mathematical bounding and combinatorial trade-offs.",
+      "typical_audience": "Operations researchers, algorithms engineers, and logistics specialists."
+    },
+    {
+      "course_id": "bayesian_data_analysis",
+      "name": "Bayesian Data Analysis and Inference",
+      "aliases": [
+        "Bayesian Methods",
+        "Bayesian Statistics",
+        "Probabilistic Modeling"
+      ],
+      "category": "Mathematics",
+      "difficulty": "advanced",
+      "description": "Probabilistic programming and Bayesian modeling: prior/posterior distributions, conjugate priors, Markov Chain Monte Carlo (MCMC, Gibbs, HMC), and Stan/PyMC.",
+      "learning_outcomes": [
+        "Formulate hierarchical Bayesian generative models",
+        "Estimate posterior distributions using MCMC and PyMC",
+        "Evaluate model fit using posterior predictive checks"
+      ],
+      "main_topics": [
+        "Bayes' Rule and Probability as Degree of Belief",
+        "Prior Selection and Conjugate Families",
+        "Markov Chain Monte Carlo (Metropolis-Hastings, Gibbs)",
+        "Hamiltonian Monte Carlo and NUTS",
+        "Probabilistic Programming with PyMC/Stan"
+      ],
+      "skills_gained": [
+        "Hierarchical probabilistic modeling",
+        "MCMC diagnostics",
+        "Uncertainty quantification"
+      ],
+      "assumed_knowledge": "Probability and statistics, multivariable calculus, and Python.",
+      "difficulty_rationale": "Requires shifting from frequentist p-values to high-dimensional probabilistic integrals and MCMC diagnostics.",
+      "typical_audience": "Data scientists, statisticians, and probabilistic machine learning researchers."
+    },
+    {
+      "course_id": "deep_reinforcement_learning",
+      "name": "Deep Reinforcement Learning",
+      "aliases": [
+        "Deep RL",
+        "Actor Critic Methods",
+        "Policy Gradient Algorithms"
+      ],
+      "category": "AI and Data Science",
+      "difficulty": "advanced",
+      "description": "Combining deep neural networks with reinforcement learning: Deep Q-Networks (DQN), policy gradients (REINFORCE), actor-critic methods (PPO, SAC), and model-based RL.",
+      "learning_outcomes": [
+        "Implement Deep Q-Learning with experience replay and target networks",
+        "Derive and program policy gradient methods like PPO",
+        "Train autonomous agents in simulated physics environments"
+      ],
+      "main_topics": [
+        "Markov Decision Processes Review",
+        "Deep Q-Networks (DQN, Double DQN)",
+        "Policy Gradient Theorem and REINFORCE",
+        "Actor-Critic Architectures (A2C, PPO, SAC)",
+        "Exploration Strategies and Reward Shaping"
+      ],
+      "skills_gained": [
+        "Deep RL agent training",
+        "Continuous control optimization",
+        "Simulation benchmarking"
+      ],
+      "assumed_knowledge": "Reinforcement learning, deep learning, and multivariable calculus.",
+      "difficulty_rationale": "High training instability, hyperparameter sensitivity, and non-stationary target distributions.",
+      "typical_audience": "Robotics researchers, game AI developers, and advanced AI scientists."
+    },
+    {
+      "course_id": "edge_ai",
+      "name": "Edge AI and TinyML",
+      "aliases": [
+        "TinyML",
+        "Embedded AI",
+        "On-Device Machine Learning"
+      ],
+      "category": "AI and Data Science",
+      "difficulty": "advanced",
+      "description": "Deploying machine learning models to resource-constrained devices: model quantization (INT8), pruning, knowledge distillation, hardware acceleration, and edge runtimes.",
+      "learning_outcomes": [
+        "Quantize floating-point neural networks to INT8 with minimal accuracy loss",
+        "Deploy optimized models onto microcontrollers and mobile edge accelerators",
+        "Profile latency, memory footprint, and power consumption on hardware"
+      ],
+      "main_topics": [
+        "Edge vs Cloud Inference Trade-offs",
+        "Post-Training Quantization and QAT",
+        "Structured and Unstructured Model Pruning",
+        "Knowledge Distillation",
+        "Edge Runtimes (TFLite Micro, ONNX Runtime)"
+      ],
+      "skills_gained": [
+        "Model compression",
+        "On-device profiling",
+        "Embedded inference deployment"
+      ],
+      "assumed_knowledge": "Deep learning, embedded systems, and C/C++ or Python.",
+      "difficulty_rationale": "Requires aggressive optimization across hardware cache, memory limits, and numerical accuracy.",
+      "typical_audience": "Embedded engineers, IoT architects, and mobile ML engineers."
+    },
+    {
+      "course_id": "information_theory",
+      "name": "Information Theory and Coding",
+      "aliases": [
+        "Coding Theory",
+        "Shannon Information Theory",
+        "Data Compression and Transmission"
+      ],
+      "category": "Mathematics",
+      "difficulty": "advanced",
+      "description": "Mathematical foundations of communication: Shannon entropy, mutual information, source coding theorem, channel capacity theorem, and error-correcting codes.",
+      "learning_outcomes": [
+        "Calculate entropy, relative entropy, and mutual information",
+        "Design optimal lossless compression codes (Huffman, Arithmetic)",
+        "Calculate the Shannon channel capacity for noisy channels"
+      ],
+      "main_topics": [
+        "Entropy and Information Measures",
+        "Asymptotic Equipartition Property",
+        "Lossless Data Compression and Huffman Coding",
+        "Channel Capacity and Noisy-Channel Coding Theorem",
+        "Linear Block and Error-Correcting Codes"
+      ],
+      "skills_gained": [
+        "Information-theoretic bounds calculation",
+        "Compression coding design",
+        "Channel capacity analysis"
+      ],
+      "assumed_knowledge": "Probability and statistics, discrete mathematics, and linear algebra.",
+      "difficulty_rationale": "Rigorous probability theory, limits, and abstract asymptotic communication bounds.",
+      "typical_audience": "Communication engineers, theorists, cryptographers, and machine learning theorists."
+    },
+    {
+      "course_id": "game_theory",
+      "name": "Algorithmic Game Theory and Mechanism Design",
+      "aliases": [
+        "Game Theory",
+        "Economic Game Theory",
+        "Strategic Decision Making"
+      ],
+      "category": "Mathematics",
+      "difficulty": "advanced",
+      "description": "Strategic decision making in computational systems: Nash equilibrium, zero-sum games, mechanism design, auctions, Price of Anarchy, and multi-agent coordination.",
+      "learning_outcomes": [
+        "Compute pure and mixed strategy Nash equilibria",
+        "Design incentive-compatible mechanisms and auctions",
+        "Bound the Price of Anarchy in decentralized network routing"
+      ],
+      "main_topics": [
+        "Normal-Form and Extensive-Form Games",
+        "Nash Equilibrium and Minimax Theorem",
+        "Price of Anarchy and Congestion Games",
+        "Mechanism Design and VCG Auctions",
+        "Algorithmic Computation of Equilibria"
+      ],
+      "skills_gained": [
+        "Strategic modeling",
+        "Incentive design",
+        "Equilibrium analysis"
+      ],
+      "assumed_knowledge": "Discrete mathematics, probability, and algorithms.",
+      "difficulty_rationale": "Combines non-cooperative game theory, microeconomic incentives, and algorithmic complexity.",
+      "typical_audience": "Computer scientists, quantitative economists, and blockchain protocol architects."
+    },
+    {
+      "course_id": "vector_databases_and_embeddings",
+      "name": "Vector Databases and Similarity Search",
+      "aliases": [
+        "Vector Search",
+        "ANN Search",
+        "Embedding Stores",
+        "Semantic Search Engines"
+      ],
+      "category": "AI and Data Science",
+      "difficulty": "intermediate",
+      "description": "High-dimensional similarity search: dense embeddings, distance metrics (Cosine, Euclidean), approximate nearest neighbors (HNSW, IVF-PQ), and vector store engines.",
+      "learning_outcomes": [
+        "Implement approximate nearest neighbor algorithms like HNSW",
+        "Index and query high-dimensional embeddings in vector stores",
+        "Evaluate latency and recall trade-offs for semantic search"
+      ],
+      "main_topics": [
+        "High-Dimensional Vector Spaces and Curse of Dimensionality",
+        "Distance Metrics (Cosine, Dot Product, L2)",
+        "Hierarchical Navigable Small World (HNSW) Graphs",
+        "Inverted File with Product Quantization (IVF-PQ)",
+        "Production Vector Databases (Milvus, Qdrant, Chroma)"
+      ],
+      "skills_gained": [
+        "Vector index configuration",
+        "Approximate search tuning",
+        "Embedding pipeline deployment"
+      ],
+      "assumed_knowledge": "Data structures, linear algebra, and basic machine learning.",
+      "difficulty_rationale": "Balances high-dimensional geometry trade-offs with scalable graph indexing data structures.",
+      "typical_audience": "AI engineers, search developers, and RAG application builders."
+    }
+  ],
+  "prerequisites": [
+    {
+      "relationship_id": "programming_fundamentals_to_c_programming",
+      "source_course_id": "programming_fundamentals",
+      "target_course_id": "c_programming",
+      "relationship_type": "required",
+      "explanation": "C assumes familiarity with variables, control flow, and functions before pointers and manual memory management make sense.",
+      "confidence": 0.9,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "programming_fundamentals_to_object_oriented_programming",
+      "source_course_id": "programming_fundamentals",
+      "target_course_id": "object_oriented_programming",
+      "relationship_type": "required",
+      "explanation": "Classes and objects build on basic constructs such as variables, functions, and control flow. The prerequisite is language-independent.",
+      "confidence": 0.85,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "object_oriented_programming_to_java_programming",
+      "source_course_id": "object_oriented_programming",
+      "target_course_id": "java_programming",
+      "relationship_type": "recommended",
+      "explanation": "Java is class-based, so OOP concepts ease learning it. Java is also taught as a first language, so this is not strictly required.",
+      "confidence": 0.75,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "programming_fundamentals_to_data_structures",
+      "source_course_id": "programming_fundamentals",
+      "target_course_id": "data_structures",
+      "relationship_type": "required",
+      "explanation": "Familiarity with variables, control flow, functions, and basic programming constructs helps learners understand data structures and implement operations on them.",
+      "confidence": 0.9,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "data_structures_to_design_and_analysis_of_algorithms",
+      "source_course_id": "data_structures",
+      "target_course_id": "design_and_analysis_of_algorithms",
+      "relationship_type": "required",
+      "explanation": "Algorithm design and analysis use lists, trees, heaps, hash tables, and graphs, and rely on knowing their operation costs.",
+      "confidence": 0.9,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "discrete_mathematics_to_design_and_analysis_of_algorithms",
+      "source_course_id": "discrete_mathematics",
+      "target_course_id": "design_and_analysis_of_algorithms",
+      "relationship_type": "recommended",
+      "explanation": "Induction, recurrences, and counting underpin correctness proofs and complexity analysis. Depth of math required varies by curriculum.",
+      "confidence": 0.8,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "discrete_mathematics_to_theory_of_computation",
+      "source_course_id": "discrete_mathematics",
+      "target_course_id": "theory_of_computation",
+      "relationship_type": "required",
+      "explanation": "Sets, relations, logic, and proof techniques are used throughout automata and formal-language theory.",
+      "confidence": 0.85,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "programming_fundamentals_to_computer_organization_and_architecture",
+      "source_course_id": "programming_fundamentals",
+      "target_course_id": "computer_organization_and_architecture",
+      "relationship_type": "recommended",
+      "explanation": "Prior programming makes instruction-level concepts easier to relate to code, but many courses start from digital logic without it.",
+      "confidence": 0.6,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "computer_organization_and_architecture_to_operating_systems",
+      "source_course_id": "computer_organization_and_architecture",
+      "target_course_id": "operating_systems",
+      "relationship_type": "required",
+      "explanation": "Processes, interrupts, memory management, and I/O are explained in terms of processor and memory organization.",
+      "confidence": 0.8,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "data_structures_to_operating_systems",
+      "source_course_id": "data_structures",
+      "target_course_id": "operating_systems",
+      "relationship_type": "recommended",
+      "explanation": "Queues, trees, hash tables, and linked lists are used in scheduling, memory management, and file systems.",
+      "confidence": 0.75,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "c_programming_to_operating_systems",
+      "source_course_id": "c_programming",
+      "target_course_id": "operating_systems",
+      "relationship_type": "recommended",
+      "explanation": "OS concepts and labs are commonly presented in C or C-like code; other systems languages can substitute.",
+      "confidence": 0.7,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "data_structures_to_database_management_systems",
+      "source_course_id": "data_structures",
+      "target_course_id": "database_management_systems",
+      "relationship_type": "recommended",
+      "explanation": "Indexing, hashing, and B-trees draw on data-structure knowledge. Introductory SQL-focused courses can be taken without it.",
+      "confidence": 0.75,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "operating_systems_to_computer_networks",
+      "source_course_id": "operating_systems",
+      "target_course_id": "computer_networks",
+      "relationship_type": "recommended",
+      "explanation": "Sockets, processes, and I/O handling help in understanding the transport layer and network software. Many networks courses do not strictly require OS.",
+      "confidence": 0.6,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "theory_of_computation_to_compiler_design",
+      "source_course_id": "theory_of_computation",
+      "target_course_id": "compiler_design",
+      "relationship_type": "required",
+      "explanation": "Lexical analysis and parsing rely on regular expressions, finite automata, and context-free grammars.",
+      "confidence": 0.85,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "data_structures_to_compiler_design",
+      "source_course_id": "data_structures",
+      "target_course_id": "compiler_design",
+      "relationship_type": "required",
+      "explanation": "Symbol tables, parse trees, syntax trees, and graphs are core compiler data structures.",
+      "confidence": 0.8,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "computer_organization_and_architecture_to_compiler_design",
+      "source_course_id": "computer_organization_and_architecture",
+      "target_course_id": "compiler_design",
+      "relationship_type": "recommended",
+      "explanation": "Code generation and optimization target machine instruction sets and memory hierarchies.",
+      "confidence": 0.7,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "object_oriented_programming_to_software_engineering",
+      "source_course_id": "object_oriented_programming",
+      "target_course_id": "software_engineering",
+      "relationship_type": "recommended",
+      "explanation": "Object-oriented design is a common basis for software design and modelling, though SE can also be taught with other paradigms.",
+      "confidence": 0.75,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "calculus_to_probability_and_statistics",
+      "source_course_id": "calculus",
+      "target_course_id": "probability_and_statistics",
+      "relationship_type": "recommended",
+      "explanation": "Continuous random variables and expectation use integration; introductory statistics courses may avoid calculus.",
+      "confidence": 0.8,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "linear_algebra_to_numerical_methods",
+      "source_course_id": "linear_algebra",
+      "target_course_id": "numerical_methods",
+      "relationship_type": "required",
+      "explanation": "Solving linear systems, matrix factorizations, and eigenvalue methods require linear algebra.",
+      "confidence": 0.85,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "calculus_to_numerical_methods",
+      "source_course_id": "calculus",
+      "target_course_id": "numerical_methods",
+      "relationship_type": "required",
+      "explanation": "Numerical differentiation, integration, root finding, and error analysis presuppose calculus and Taylor series.",
+      "confidence": 0.85,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "programming_fundamentals_to_numerical_methods",
+      "source_course_id": "programming_fundamentals",
+      "target_course_id": "numerical_methods",
+      "relationship_type": "recommended",
+      "explanation": "Numerical algorithms are implemented and tested in code, so basic programming is helpful.",
+      "confidence": 0.7,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "calculus_to_optimization",
+      "source_course_id": "calculus",
+      "target_course_id": "optimization",
+      "relationship_type": "required",
+      "explanation": "Gradients, derivatives, and stationary conditions are fundamental to continuous optimization.",
+      "confidence": 0.8,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "linear_algebra_to_optimization",
+      "source_course_id": "linear_algebra",
+      "target_course_id": "optimization",
+      "relationship_type": "recommended",
+      "explanation": "Linear and convex optimization are expressed with vectors and matrices. Depth required varies by course.",
+      "confidence": 0.8,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "data_structures_to_artificial_intelligence",
+      "source_course_id": "data_structures",
+      "target_course_id": "artificial_intelligence",
+      "relationship_type": "recommended",
+      "explanation": "Search, planning, and graph-based representations use queues, stacks, trees, and graphs.",
+      "confidence": 0.8,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "probability_and_statistics_to_artificial_intelligence",
+      "source_course_id": "probability_and_statistics",
+      "target_course_id": "artificial_intelligence",
+      "relationship_type": "recommended",
+      "explanation": "Uncertainty and probabilistic reasoning topics use probability. Many AI courses can be started without it.",
+      "confidence": 0.75,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "discrete_mathematics_to_artificial_intelligence",
+      "source_course_id": "discrete_mathematics",
+      "target_course_id": "artificial_intelligence",
+      "relationship_type": "optional",
+      "explanation": "Propositional and predicate logic support the knowledge-representation topics, but are not needed to begin.",
+      "confidence": 0.6,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "probability_and_statistics_to_machine_learning",
+      "source_course_id": "probability_and_statistics",
+      "target_course_id": "machine_learning",
+      "relationship_type": "required",
+      "explanation": "Learning from data, likelihood, bias-variance, and evaluation rely on probability and statistics.",
+      "confidence": 0.85,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "linear_algebra_to_machine_learning",
+      "source_course_id": "linear_algebra",
+      "target_course_id": "machine_learning",
+      "relationship_type": "recommended",
+      "explanation": "Vectors, matrices, and decompositions support many algorithms. The amount required depends on the depth and type of machine learning course.",
+      "confidence": 0.85,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "optimization_to_machine_learning",
+      "source_course_id": "optimization",
+      "target_course_id": "machine_learning",
+      "relationship_type": "recommended",
+      "explanation": "Model training is optimization, but applied courses use it as a black box.",
+      "confidence": 0.6,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "python_programming_to_machine_learning",
+      "source_course_id": "python_programming",
+      "target_course_id": "machine_learning",
+      "relationship_type": "recommended",
+      "explanation": "Python is the most common language for ML practice, but R, Julia, or other languages can be used; programming ability is the underlying need.",
+      "confidence": 0.75,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "machine_learning_to_deep_learning",
+      "source_course_id": "machine_learning",
+      "target_course_id": "deep_learning",
+      "relationship_type": "recommended",
+      "explanation": "Understanding machine learning concepts, model training, loss functions, and generalization provides useful preparation for studying neural networks. Some deep learning courses are self-contained.",
+      "confidence": 0.85,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "calculus_to_deep_learning",
+      "source_course_id": "calculus",
+      "target_course_id": "deep_learning",
+      "relationship_type": "recommended",
+      "explanation": "Backpropagation uses the chain rule and partial derivatives; practitioner-focused courses may only need the intuition.",
+      "confidence": 0.65,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "machine_learning_to_natural_language_processing",
+      "source_course_id": "machine_learning",
+      "target_course_id": "natural_language_processing",
+      "relationship_type": "recommended",
+      "explanation": "Text classification, sequence labeling, and language modelling use ML methods and evaluation.",
+      "confidence": 0.8,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "deep_learning_to_natural_language_processing",
+      "source_course_id": "deep_learning",
+      "target_course_id": "natural_language_processing",
+      "relationship_type": "optional",
+      "explanation": "Modern neural NLP builds on deep learning, but classical NLP can be studied without it.",
+      "confidence": 0.6,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "machine_learning_to_computer_vision",
+      "source_course_id": "machine_learning",
+      "target_course_id": "computer_vision",
+      "relationship_type": "recommended",
+      "explanation": "Recognition and detection use ML concepts such as classification, features, and evaluation.",
+      "confidence": 0.8,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "deep_learning_to_computer_vision",
+      "source_course_id": "deep_learning",
+      "target_course_id": "computer_vision",
+      "relationship_type": "recommended",
+      "explanation": "Modern vision systems are largely CNN- and transformer-based. Classical-only vision courses do not need it.",
+      "confidence": 0.8,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "linear_algebra_to_computer_vision",
+      "source_course_id": "linear_algebra",
+      "target_course_id": "computer_vision",
+      "relationship_type": "recommended",
+      "explanation": "Image transformations, camera geometry, and feature methods use matrices and vectors.",
+      "confidence": 0.7,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "probability_and_statistics_to_data_science",
+      "source_course_id": "probability_and_statistics",
+      "target_course_id": "data_science",
+      "relationship_type": "required",
+      "explanation": "Exploratory analysis, inference, and interpreting results require statistics fundamentals.",
+      "confidence": 0.85,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "python_programming_to_data_science",
+      "source_course_id": "python_programming",
+      "target_course_id": "data_science",
+      "relationship_type": "recommended",
+      "explanation": "Python is a common data-science language; R or other tools are valid alternatives.",
+      "confidence": 0.75,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "probability_and_statistics_to_data_mining",
+      "source_course_id": "probability_and_statistics",
+      "target_course_id": "data_mining",
+      "relationship_type": "recommended",
+      "explanation": "Association measures, clustering evaluation, and anomaly detection draw on statistics.",
+      "confidence": 0.8,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "database_management_systems_to_data_mining",
+      "source_course_id": "database_management_systems",
+      "target_course_id": "data_mining",
+      "relationship_type": "recommended",
+      "explanation": "Data mining works on stored data and uses SQL-style access and preprocessing.",
+      "confidence": 0.7,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "probability_and_statistics_to_reinforcement_learning",
+      "source_course_id": "probability_and_statistics",
+      "target_course_id": "reinforcement_learning",
+      "relationship_type": "required",
+      "explanation": "Markov decision processes, expectations, and stochastic policies require probability.",
+      "confidence": 0.8,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "machine_learning_to_reinforcement_learning",
+      "source_course_id": "machine_learning",
+      "target_course_id": "reinforcement_learning",
+      "relationship_type": "recommended",
+      "explanation": "Function approximation, generalization, and training concepts from ML help in studying RL.",
+      "confidence": 0.75,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "deep_learning_to_reinforcement_learning",
+      "source_course_id": "deep_learning",
+      "target_course_id": "reinforcement_learning",
+      "relationship_type": "optional",
+      "explanation": "Deep RL combines neural networks with RL, but classical RL does not require deep learning.",
+      "confidence": 0.65,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "database_management_systems_to_big_data_analytics",
+      "source_course_id": "database_management_systems",
+      "target_course_id": "big_data_analytics",
+      "relationship_type": "recommended",
+      "explanation": "Understanding data models, queries, and storage helps in understanding distributed data processing.",
+      "confidence": 0.8,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "data_science_to_big_data_analytics",
+      "source_course_id": "data_science",
+      "target_course_id": "big_data_analytics",
+      "relationship_type": "recommended",
+      "explanation": "Analytics concepts and workflows are scaled up in big data settings.",
+      "confidence": 0.7,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "operating_systems_to_cloud_computing",
+      "source_course_id": "operating_systems",
+      "target_course_id": "cloud_computing",
+      "relationship_type": "recommended",
+      "explanation": "Virtualization, containers, and resource management extend OS concepts.",
+      "confidence": 0.8,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "computer_networks_to_cloud_computing",
+      "source_course_id": "computer_networks",
+      "target_course_id": "cloud_computing",
+      "relationship_type": "recommended",
+      "explanation": "Cloud services rely on networking concepts such as addressing, load balancing, and distributed communication.",
+      "confidence": 0.75,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "computer_networks_to_cybersecurity",
+      "source_course_id": "computer_networks",
+      "target_course_id": "cybersecurity",
+      "relationship_type": "recommended",
+      "explanation": "Many threats and defenses (firewalls, TLS, intrusion detection) operate at the network level.",
+      "confidence": 0.85,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "operating_systems_to_cybersecurity",
+      "source_course_id": "operating_systems",
+      "target_course_id": "cybersecurity",
+      "relationship_type": "recommended",
+      "explanation": "Access control, process isolation, and memory protection are central to system security.",
+      "confidence": 0.8,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "discrete_mathematics_to_cybersecurity",
+      "source_course_id": "discrete_mathematics",
+      "target_course_id": "cybersecurity",
+      "relationship_type": "optional",
+      "explanation": "Cryptography uses number theory and combinatorics, but introductory security can be studied without it.",
+      "confidence": 0.55,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "deep_learning_to_generative_ai",
+      "source_course_id": "deep_learning",
+      "target_course_id": "generative_ai",
+      "relationship_type": "recommended",
+      "explanation": "Generative models such as GANs, diffusion models, and transformers are built on neural networks. Applied courses on using generative tools need less preparation.",
+      "confidence": 0.85,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "deep_learning_to_large_language_models",
+      "source_course_id": "deep_learning",
+      "target_course_id": "large_language_models",
+      "relationship_type": "recommended",
+      "explanation": "LLMs are deep transformer networks; training, attention, and optimization concepts come from deep learning.",
+      "confidence": 0.85,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "natural_language_processing_to_large_language_models",
+      "source_course_id": "natural_language_processing",
+      "target_course_id": "large_language_models",
+      "relationship_type": "recommended",
+      "explanation": "Tokenization, language modelling, embeddings, and evaluation are NLP foundations for LLMs.",
+      "confidence": 0.75,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "large_language_models_to_retrieval_augmented_generation",
+      "source_course_id": "large_language_models",
+      "target_course_id": "retrieval_augmented_generation",
+      "relationship_type": "required",
+      "explanation": "RAG augments an LLM with retrieved context; understanding prompting, context windows, and limitations is needed.",
+      "confidence": 0.85,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "database_management_systems_to_retrieval_augmented_generation",
+      "source_course_id": "database_management_systems",
+      "target_course_id": "retrieval_augmented_generation",
+      "relationship_type": "optional",
+      "explanation": "Indexing and querying concepts help with retrieval components, but vector-search tooling can be learned directly.",
+      "confidence": 0.55,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "machine_learning_to_mlops",
+      "source_course_id": "machine_learning",
+      "target_course_id": "mlops",
+      "relationship_type": "required",
+      "explanation": "MLOps manages the ML lifecycle, so it assumes understanding of training, evaluation, and model behaviour.",
+      "confidence": 0.85,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "software_engineering_to_mlops",
+      "source_course_id": "software_engineering",
+      "target_course_id": "mlops",
+      "relationship_type": "recommended",
+      "explanation": "Version control, testing, CI/CD, and maintainability practices carry over to ML systems.",
+      "confidence": 0.8,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "cloud_computing_to_mlops",
+      "source_course_id": "cloud_computing",
+      "target_course_id": "mlops",
+      "relationship_type": "recommended",
+      "explanation": "Production ML is commonly deployed on cloud infrastructure and containers.",
+      "confidence": 0.75,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "programming_fundamentals_to_c_plus_plus_programming",
+      "source_course_id": "programming_fundamentals",
+      "target_course_id": "c_plus_plus_programming",
+      "relationship_type": "required",
+      "explanation": "C++ builds directly on core programming concepts like variables, control flow, and functions.",
+      "confidence": 0.95,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "object_oriented_programming_to_c_plus_plus_programming",
+      "source_course_id": "object_oriented_programming",
+      "target_course_id": "c_plus_plus_programming",
+      "relationship_type": "recommended",
+      "explanation": "Knowledge of object-oriented principles facilitates understanding C++ class design and inheritance.",
+      "confidence": 0.85,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "programming_fundamentals_to_programming_using_r",
+      "source_course_id": "programming_fundamentals",
+      "target_course_id": "programming_using_r",
+      "relationship_type": "recommended",
+      "explanation": "Prior programming experience provides helpful intuition for R scripting and data operations.",
+      "confidence": 0.8,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "programming_using_r_to_data_science",
+      "source_course_id": "programming_using_r",
+      "target_course_id": "data_science",
+      "relationship_type": "recommended",
+      "explanation": "R is widely utilized for statistical computing and exploratory data analysis in data science.",
+      "confidence": 0.85,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "programming_fundamentals_to_functional_programming",
+      "source_course_id": "programming_fundamentals",
+      "target_course_id": "functional_programming",
+      "relationship_type": "required",
+      "explanation": "Functional programming requires foundational fluency with functions, expressions, and evaluation.",
+      "confidence": 0.9,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "data_structures_to_functional_programming",
+      "source_course_id": "data_structures",
+      "target_course_id": "functional_programming",
+      "relationship_type": "recommended",
+      "explanation": "Understanding standard data structures aids in appreciating immutable trees and functional lists.",
+      "confidence": 0.8,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "discrete_mathematics_to_graph_theory",
+      "source_course_id": "discrete_mathematics",
+      "target_course_id": "graph_theory",
+      "relationship_type": "required",
+      "explanation": "Graph theory relies fundamentally on discrete relations, set theory, and formal proof techniques.",
+      "confidence": 0.95,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "graph_theory_to_design_and_analysis_of_algorithms",
+      "source_course_id": "graph_theory",
+      "target_course_id": "design_and_analysis_of_algorithms",
+      "relationship_type": "recommended",
+      "explanation": "Deep understanding of graph properties enhances the design of optimal graph traversal and network flow algorithms.",
+      "confidence": 0.85,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "programming_fundamentals_to_web_development",
+      "source_course_id": "programming_fundamentals",
+      "target_course_id": "web_development",
+      "relationship_type": "required",
+      "explanation": "Web engineering requires programming fundamentals for client-side logic and backend scripting.",
+      "confidence": 0.95,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "web_development_to_mobile_app_development",
+      "source_course_id": "web_development",
+      "target_course_id": "mobile_app_development",
+      "relationship_type": "optional",
+      "explanation": "Web frontend concepts provide useful background for responsive UI and API consumption in mobile apps.",
+      "confidence": 0.75,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "object_oriented_programming_to_mobile_app_development",
+      "source_course_id": "object_oriented_programming",
+      "target_course_id": "mobile_app_development",
+      "relationship_type": "recommended",
+      "explanation": "Mobile application frameworks heavily utilize object-oriented architectures and component lifecycles.",
+      "confidence": 0.85,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "operating_systems_to_distributed_systems",
+      "source_course_id": "operating_systems",
+      "target_course_id": "distributed_systems",
+      "relationship_type": "required",
+      "explanation": "Distributed systems build on process coordination, concurrency, memory models, and networking.",
+      "confidence": 0.95,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "computer_networks_to_distributed_systems",
+      "source_course_id": "computer_networks",
+      "target_course_id": "distributed_systems",
+      "relationship_type": "required",
+      "explanation": "Understanding socket communication and packet transfer is essential for distributed protocol analysis.",
+      "confidence": 0.95,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "discrete_mathematics_to_cryptography",
+      "source_course_id": "discrete_mathematics",
+      "target_course_id": "cryptography",
+      "relationship_type": "required",
+      "explanation": "Modern cryptography relies on modular arithmetic, number theory, and computational hardness.",
+      "confidence": 0.95,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "computer_networks_to_cryptography",
+      "source_course_id": "computer_networks",
+      "target_course_id": "cryptography",
+      "relationship_type": "recommended",
+      "explanation": "Network protocols provide the operational context for transport-layer security and key exchange.",
+      "confidence": 0.85,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "cryptography_to_cybersecurity",
+      "source_course_id": "cryptography",
+      "target_course_id": "cybersecurity",
+      "relationship_type": "recommended",
+      "explanation": "Cryptographic ciphers form the foundational defense mechanisms for securing digital infrastructure.",
+      "confidence": 0.9,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "data_structures_to_information_retrieval",
+      "source_course_id": "data_structures",
+      "target_course_id": "information_retrieval",
+      "relationship_type": "required",
+      "explanation": "Search engines rely on inverted indices, hash maps, and tree structures for efficient query evaluation.",
+      "confidence": 0.9,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "linear_algebra_to_computer_graphics",
+      "source_course_id": "linear_algebra",
+      "target_course_id": "computer_graphics",
+      "relationship_type": "required",
+      "explanation": "3D graphics rendering is grounded in linear matrix transformations and vector projections.",
+      "confidence": 0.95,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "c_programming_to_computer_graphics",
+      "source_course_id": "c_programming",
+      "target_course_id": "computer_graphics",
+      "relationship_type": "recommended",
+      "explanation": "Low-level shader programming and rendering APIs often utilize C and memory buffers.",
+      "confidence": 0.8,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "linear_algebra_to_robotics_and_autonomous_systems",
+      "source_course_id": "linear_algebra",
+      "target_course_id": "robotics_and_autonomous_systems",
+      "relationship_type": "required",
+      "explanation": "Kinematics and coordinate frames require coordinate transformation matrices and vector spaces.",
+      "confidence": 0.95,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "artificial_intelligence_to_robotics_and_autonomous_systems",
+      "source_course_id": "artificial_intelligence",
+      "target_course_id": "robotics_and_autonomous_systems",
+      "relationship_type": "recommended",
+      "explanation": "AI planning and heuristic search provide the decision-making logic for autonomous agents.",
+      "confidence": 0.85,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "operating_systems_to_parallel_and_concurrent_programming",
+      "source_course_id": "operating_systems",
+      "target_course_id": "parallel_and_concurrent_programming",
+      "relationship_type": "required",
+      "explanation": "Parallel programming directly manipulates thread scheduling, mutexes, and virtual address spaces.",
+      "confidence": 0.95,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "c_programming_to_parallel_and_concurrent_programming",
+      "source_course_id": "c_programming",
+      "target_course_id": "parallel_and_concurrent_programming",
+      "relationship_type": "recommended",
+      "explanation": "C provides direct access to POSIX threads and hardware memory barriers.",
+      "confidence": 0.85,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "software_engineering_to_system_design",
+      "source_course_id": "software_engineering",
+      "target_course_id": "system_design",
+      "relationship_type": "required",
+      "explanation": "System design scales the modularity, requirements, and testing principles taught in software engineering.",
+      "confidence": 0.9,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "distributed_systems_to_system_design",
+      "source_course_id": "distributed_systems",
+      "target_course_id": "system_design",
+      "relationship_type": "recommended",
+      "explanation": "Distributed consensus and partition handling are crucial for architecting resilient large-scale systems.",
+      "confidence": 0.9,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "software_engineering_to_devops_and_ci_cd",
+      "source_course_id": "software_engineering",
+      "target_course_id": "devops_and_ci_cd",
+      "relationship_type": "recommended",
+      "explanation": "DevOps automates the build, test, and release cycles studied in software engineering.",
+      "confidence": 0.85,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "cloud_computing_to_devops_and_ci_cd",
+      "source_course_id": "cloud_computing",
+      "target_course_id": "devops_and_ci_cd",
+      "relationship_type": "recommended",
+      "explanation": "Cloud infrastructure provides the hosting environment for automated CI/CD deployment pipelines.",
+      "confidence": 0.85,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "linear_algebra_to_quantum_computing",
+      "source_course_id": "linear_algebra",
+      "target_course_id": "quantum_computing",
+      "relationship_type": "required",
+      "explanation": "Quantum states and quantum gates are mathematically defined as unitary operators on Hilbert spaces.",
+      "confidence": 0.95,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "probability_and_statistics_to_data_visualization",
+      "source_course_id": "probability_and_statistics",
+      "target_course_id": "data_visualization",
+      "relationship_type": "recommended",
+      "explanation": "Understanding distributions and variance is key to choosing honest visual encodings.",
+      "confidence": 0.8,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "probability_and_statistics_to_time_series_analysis",
+      "source_course_id": "probability_and_statistics",
+      "target_course_id": "time_series_analysis",
+      "relationship_type": "required",
+      "explanation": "Autocorrelation, stationarity, and ARIMA forecasting build directly on stochastic processes.",
+      "confidence": 0.95,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "machine_learning_to_ai_ethics_and_governance",
+      "source_course_id": "machine_learning",
+      "target_course_id": "ai_ethics_and_governance",
+      "relationship_type": "recommended",
+      "explanation": "Understanding model training and loss functions provides technical grounding for assessing algorithmic bias.",
+      "confidence": 0.85,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "data_structures_to_bioinformatics",
+      "source_course_id": "data_structures",
+      "target_course_id": "bioinformatics",
+      "relationship_type": "recommended",
+      "explanation": "Sequence alignment and genomic assembly heavily utilize dynamic programming tables and graph indices.",
+      "confidence": 0.85,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "database_management_systems_to_nosql_databases",
+      "source_course_id": "database_management_systems",
+      "target_course_id": "nosql_databases",
+      "relationship_type": "required",
+      "explanation": "Understanding relational constraints illuminates the architectural trade-offs made by distributed NoSQL stores.",
+      "confidence": 0.9,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "cryptography_to_blockchain_and_web3",
+      "source_course_id": "cryptography",
+      "target_course_id": "blockchain_and_web3",
+      "relationship_type": "recommended",
+      "explanation": "Blockchains combine cryptographic hash pointers, digital signatures, and asymmetric key pairs.",
+      "confidence": 0.9,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "computer_networks_to_blockchain_and_web3",
+      "source_course_id": "computer_networks",
+      "target_course_id": "blockchain_and_web3",
+      "relationship_type": "recommended",
+      "explanation": "Peer-to-peer gossip protocols form the networking foundation of decentralized blockchains.",
+      "confidence": 0.85,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "computer_organization_and_architecture_to_embedded_systems",
+      "source_course_id": "computer_organization_and_architecture",
+      "target_course_id": "embedded_systems",
+      "relationship_type": "required",
+      "explanation": "Microcontroller programming requires understanding CPU registers, buses, and hardware memory maps.",
+      "confidence": 0.95,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "c_programming_to_embedded_systems",
+      "source_course_id": "c_programming",
+      "target_course_id": "embedded_systems",
+      "relationship_type": "required",
+      "explanation": "Embedded firmware is almost universally authored in C due to precise hardware memory control.",
+      "confidence": 0.95,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "discrete_mathematics_to_knowledge_graphs",
+      "source_course_id": "discrete_mathematics",
+      "target_course_id": "knowledge_graphs",
+      "relationship_type": "recommended",
+      "explanation": "Knowledge graph triples and OWL ontologies are grounded in discrete relations and first-order logic.",
+      "confidence": 0.85,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "database_management_systems_to_knowledge_graphs",
+      "source_course_id": "database_management_systems",
+      "target_course_id": "knowledge_graphs",
+      "relationship_type": "recommended",
+      "explanation": "Graph query languages (SPARQL/Cypher) extend declarative query optimization principles.",
+      "confidence": 0.85,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "deep_learning_to_speech_and_audio_processing",
+      "source_course_id": "deep_learning",
+      "target_course_id": "speech_and_audio_processing",
+      "relationship_type": "required",
+      "explanation": "Modern ASR systems rely on deep recurrent, transformer, and convolutional neural architectures.",
+      "confidence": 0.9,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "deep_learning_to_multimodal_deep_learning",
+      "source_course_id": "deep_learning",
+      "target_course_id": "multimodal_deep_learning",
+      "relationship_type": "required",
+      "explanation": "Multimodal models extend deep representation learning across vision and text transformers.",
+      "confidence": 0.95,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "computer_vision_to_multimodal_deep_learning",
+      "source_course_id": "computer_vision",
+      "target_course_id": "multimodal_deep_learning",
+      "relationship_type": "recommended",
+      "explanation": "Vision feature extraction provides foundational representations for vision-language models.",
+      "confidence": 0.9,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "natural_language_processing_to_multimodal_deep_learning",
+      "source_course_id": "natural_language_processing",
+      "target_course_id": "multimodal_deep_learning",
+      "relationship_type": "recommended",
+      "explanation": "Tokenization and text transformer architectures are core components of multimodal foundation models.",
+      "confidence": 0.9,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "optimization_to_discrete_optimization",
+      "source_course_id": "optimization",
+      "target_course_id": "discrete_optimization",
+      "relationship_type": "required",
+      "explanation": "Discrete optimization builds on linear programming duality, convex relaxations, and simplex algorithms.",
+      "confidence": 0.95,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "probability_and_statistics_to_bayesian_data_analysis",
+      "source_course_id": "probability_and_statistics",
+      "target_course_id": "bayesian_data_analysis",
+      "relationship_type": "required",
+      "explanation": "Bayesian inference directly applies conditional probability, likelihood functions, and prior distributions.",
+      "confidence": 0.95,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "reinforcement_learning_to_deep_reinforcement_learning",
+      "source_course_id": "reinforcement_learning",
+      "target_course_id": "deep_reinforcement_learning",
+      "relationship_type": "required",
+      "explanation": "Deep RL requires foundational understanding of Bellman equations and value iterations.",
+      "confidence": 0.95,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "deep_learning_to_deep_reinforcement_learning",
+      "source_course_id": "deep_learning",
+      "target_course_id": "deep_reinforcement_learning",
+      "relationship_type": "required",
+      "explanation": "Deep neural networks serve as the function approximators for high-dimensional policies and Q-functions.",
+      "confidence": 0.95,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "deep_learning_to_edge_ai",
+      "source_course_id": "deep_learning",
+      "target_course_id": "edge_ai",
+      "relationship_type": "required",
+      "explanation": "Edge AI focuses on compressing and accelerating deep neural networks for microcontroller deployment.",
+      "confidence": 0.9,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "embedded_systems_to_edge_ai",
+      "source_course_id": "embedded_systems",
+      "target_course_id": "edge_ai",
+      "relationship_type": "recommended",
+      "explanation": "Embedded systems hardware understanding enables tuning ML models to real-time microcontroller constraints.",
+      "confidence": 0.9,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "probability_and_statistics_to_information_theory",
+      "source_course_id": "probability_and_statistics",
+      "target_course_id": "information_theory",
+      "relationship_type": "required",
+      "explanation": "Entropy and mutual information are fundamental expectations over discrete probability distributions.",
+      "confidence": 0.95,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "discrete_mathematics_to_game_theory",
+      "source_course_id": "discrete_mathematics",
+      "target_course_id": "game_theory",
+      "relationship_type": "recommended",
+      "explanation": "Formal game formulations use discrete strategy sets, bipartite matchings, and combinatorial trees.",
+      "confidence": 0.85,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "data_structures_to_vector_databases_and_embeddings",
+      "source_course_id": "data_structures",
+      "target_course_id": "vector_databases_and_embeddings",
+      "relationship_type": "required",
+      "explanation": "Vector index algorithms like HNSW and IVF-PQ rely heavily on graph and partition data structures.",
+      "confidence": 0.9,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "linear_algebra_to_vector_databases_and_embeddings",
+      "source_course_id": "linear_algebra",
+      "target_course_id": "vector_databases_and_embeddings",
+      "relationship_type": "recommended",
+      "explanation": "Vector search depends on inner products, cosine similarity, and high-dimensional vector spaces.",
+      "confidence": 0.9,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "technical_communication_and_academic_writing_to_software_engineering",
+      "source_course_id": "technical_communication_and_academic_writing",
+      "target_course_id": "software_engineering",
+      "relationship_type": "recommended",
+      "explanation": "Technical communication and documentation principles enhance software requirement specifications and team reviews.",
+      "confidence": 0.85,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "linux_system_administration_to_devops_and_ci_cd",
+      "source_course_id": "linux_system_administration",
+      "target_course_id": "devops_and_ci_cd",
+      "relationship_type": "recommended",
+      "explanation": "Shell scripting, server management, and Linux process controls are essential practical skills for CI/CD engineering.",
+      "confidence": 0.9,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "human_computer_interaction_to_web_development",
+      "source_course_id": "human_computer_interaction",
+      "target_course_id": "web_development",
+      "relationship_type": "optional",
+      "explanation": "Human-computer interaction and usability heuristics guide user-friendly frontend interface design.",
+      "confidence": 0.8,
+      "evidence_type": "expert_curated"
+    }
+  ]
+}
