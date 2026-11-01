@@ -32,7 +32,7 @@
 - [Authors & Acknowledgments](#-authors--acknowledgments)
 
 ---
-
+Live URL : pathwise-daa-project.vercel.app
 ## 🎯 Overview
 
 Designing a multi-semester academic course schedule is a complex dependency problem. When students select specialized subjects, prerequisite relationships can create intricate directed graphs with risks of circular dependencies, prerequisite violations, and unbalanced semester workloads.
