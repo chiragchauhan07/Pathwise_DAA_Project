@@ -3,15 +3,17 @@
 <div align="center">
   <img src="final_frontend/public/favicon.svg" alt="Pathwise Logo" width="320"/>
   <p><strong>A deterministic Graph Algorithm engine paired with Google Gemini 2.5 Flash Lite for intelligent, prerequisite-aware academic course planning.</strong></p>
+  ## Live Demo
 
-  [![Python](https://img.shields.io/badge/Python-3.10%20%7C%203.11%20%7C%203.12-3776AB?logo=python&logoColor=white)](https://www.python.org/)
-  [![FastAPI](https://img.shields.io/badge/FastAPI-0.115+-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
-  [![React](https://img.shields.io/badge/React-19.0-61DAFB?logo=react&logoColor=black)](https://react.dev/)
-  [![TypeScript](https://img.shields.io/badge/TypeScript-5.5+-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-  [![Vite](https://img.shields.io/badge/Vite-8.3-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
-  [![Tests](https://img.shields.io/badge/Tests-204%20Passed-brightgreen?logo=pytest&logoColor=white)](tests/)
-  [![Vercel](https://img.shields.io/badge/Deployment-Vercel%20Ready-000000?logo=vercel&logoColor=white)](docs/DEPLOYMENT.md)
-  [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+<p align="center">
+  <a href="https://pathwise-daa-project.vercel.app/">
+    <img src="https://img.shields.io/badge/Live%20Demo-Visit%20Pathwise-00C853?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Demo">
+  </a>
+</p>
+
+**Try Pathwise:** [https://pathwise-daa-project.vercel.app/](https://pathwise-daa-project.vercel.app/)
+
+Explore the application and generate prerequisite-aware learning paths.
 </div>
 
 ---
