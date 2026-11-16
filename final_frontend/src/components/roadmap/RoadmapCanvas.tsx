@@ -1,7 +1,7 @@
 import { useId, useMemo } from 'react';
 import type { RoadmapModel } from '../../types/roadmap';
 import { capitalize } from '../../utils/formatters';
-import { asStrength, byStrength, isAi, RelationBadge, SourceBadge, STRENGTH_LABEL } from '../common/relations';
+import { asStrength, byStrength, RelationBadge, STRENGTH_LABEL } from '../common/relations';
 
 interface RoadPoint {
   x: number;
@@ -209,7 +209,7 @@ export function RoadmapCanvas({
                   stroke={isSelected ? 'var(--color-accent)' : '#18181b'}
                   strokeWidth={isSelected ? 3 : 2}
                   filter={isSelected ? `url(#${filterId}-glow)` : `url(#${filterId}-shadow)`}
-                  className="transition-all duration-150 group-hover:scale-110"
+                  className="transition-colors duration-150"
                 />
 
                 {/* Milestone Step Number */}
@@ -236,7 +236,7 @@ export function RoadmapCanvas({
                     stroke={isSelected ? 'var(--color-accent)' : '#e4e4e7'}
                     strokeWidth={isSelected ? 2 : 1}
                     filter={`url(#${filterId}-shadow)`}
-                    className="transition-all duration-150 group-hover:stroke-accent/60"
+                    className="transition-colors duration-150"
                   />
 
                   {/* Semester Tag or Provenance Badge inside Card */}
@@ -320,12 +320,6 @@ export function RoadmapCanvas({
                 {selectedCourse.semester && (
                   <span className="badge badge-neutral">Semester {selectedCourse.semester}</span>
                 )}
-                {selectedCourse.is_ai_inferred && (
-                  <span className="badge badge-ai">AI Inferred</span>
-                )}
-                {selectedCourse.provenance === 'ai_disambiguated' && (
-                  <span className="badge badge-ai">Disambiguated</span>
-                )}
               </div>
               <p className="text-support mt-1">
                 {[
@@ -367,7 +361,6 @@ export function RoadmapCanvas({
                       <div className="flex flex-wrap items-center gap-1.5 font-medium">
                         <RelationBadge type={p.type} />
                         <span>{names.get(p.courseId) ?? p.courseId}</span>
-                        {isAi(p) && <SourceBadge ai />}
                       </div>
                       {p.explanation && (
                         <p className="mt-1 text-xs text-ink-2">{p.explanation}</p>

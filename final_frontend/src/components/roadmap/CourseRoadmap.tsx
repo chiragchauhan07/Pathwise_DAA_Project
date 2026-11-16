@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import type { RoadmapCourse, RoadmapModel } from '../../types/roadmap';
 import { capitalize } from '../../utils/formatters';
-import { byStrength, isAi, RelationBadge, SourceBadge, type Strength } from '../common/relations';
+import { byStrength, RelationBadge, type Strength } from '../common/relations';
 import { RoadmapCanvas } from './RoadmapCanvas';
 
 const ORDER: Strength[] = ['required', 'recommended', 'optional'];
@@ -49,10 +49,6 @@ function CourseCard({
               <span className="sr-only">Step {c.order}: </span>
               {c.name}
             </h3>
-            {c.is_ai_inferred && <span className="badge badge-ai">AI Inferred</span>}
-            {c.provenance === 'ai_disambiguated' && (
-              <span className="badge badge-ai">Disambiguated</span>
-            )}
           </div>
           {c.semester ? <span className="badge badge-neutral">Semester {c.semester}</span> : null}
         </div>
@@ -73,7 +69,6 @@ function CourseCard({
                     {rel.map((r, i) => (
                       <span key={r.courseId} className="inline-flex items-center gap-1.5">
                         <span className="font-medium">{names.get(r.courseId) ?? r.courseId}</span>
-                        {isAi(r) && <SourceBadge ai />}
                         {i < rel.length - 1 && <span className="text-muted">,</span>}
                       </span>
                     ))}
@@ -89,7 +84,7 @@ function CourseCard({
                 {withWhy.map((r) => (
                   <li key={r.courseId} className="rounded-lg bg-surface-2 p-3">
                     <p className="flex flex-wrap items-center gap-2 font-medium">
-                      {names.get(r.courseId) ?? r.courseId} → {c.name} <SourceBadge ai={isAi(r)} />
+                      {names.get(r.courseId) ?? r.courseId} → {c.name}
                     </p>
                     <p className="mt-1 text-ink-2">{r.explanation}</p>
                     {(typeof r.confidence === 'number' || r.evidenceType) && (

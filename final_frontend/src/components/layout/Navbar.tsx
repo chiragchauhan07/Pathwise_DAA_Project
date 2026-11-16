@@ -3,8 +3,8 @@ import { PageContainer } from './PageContainer';
 
 const LINKS = [
   { to: '/', label: 'Planner' },
-  { to: '/daa', label: 'DAA Algorithms' },
-  { to: '/curriculum', label: 'Curriculum & Graph Theory' },
+  { to: '/daa', label: 'Algorithms' },
+  { to: '/curriculum', label: 'Course Catalog' },
 ];
 const cls = ({ isActive }: { isActive: boolean }) =>
   `inline-flex min-h-10 items-center rounded-lg px-3 text-sm font-medium transition-colors ${isActive ? 'text-accent' : 'text-ink-2 hover:text-ink'}`;
