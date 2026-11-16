@@ -221,8 +221,8 @@ def test_graph_from_actual_knowledge_base():
     kb = load_knowledge_base()
     graph = build_graph_from_kb(kb)
 
-    assert graph.num_vertices == 70
-    assert graph.num_edges == 115
+    assert graph.num_vertices == 100
+    assert graph.num_edges == 136
 
     # Verify edge direction on real data
     # programming_fundamentals is prerequisite for c_programming
@@ -236,12 +236,12 @@ def test_graph_from_actual_knowledge_base():
 
     # Run Kahn's algorithm
     kahn_order = topological_sort_kahn(graph)
-    assert len(kahn_order) == 70
+    assert len(kahn_order) == 100
     assert verify_topological_order(graph, kahn_order)
 
     # Run DFS topological sort
     dfs_order = topological_sort_dfs(graph)
-    assert len(dfs_order) == 70
+    assert len(dfs_order) == 100
     assert verify_topological_order(graph, dfs_order)
 
     # Verify that in BOTH orderings, EVERY single prerequisite precedes its dependent course

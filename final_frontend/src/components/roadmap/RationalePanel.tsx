@@ -28,9 +28,6 @@ export function RationalePanel({ roadmap }: { roadmap: RoadmapModel }) {
                 <span className="badge badge-curated">Knowledge Base</span>
               </p>
               <p className="mt-2 text-sm leading-relaxed text-ink-2">{e.explanation}</p>
-              {e.evidence_type && (
-                <p className="text-support mt-2 text-xs">Evidence: {e.evidence_type.replace(/_/g, ' ')}</p>
-              )}
             </li>
           ))}
         </ul>

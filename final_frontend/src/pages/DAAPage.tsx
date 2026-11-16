@@ -38,7 +38,7 @@ export default function DAAPage() {
           <div className="card p-4 space-y-2">
             <h3 className="font-semibold text-ink text-sm">Graph Representation</h3>
             <p className="text-xs text-ink-2 leading-relaxed">
-              Courses are vertices \(V\). A prerequisite requirement is a directed edge \(u \to v\), meaning <strong>course \(u\) must precede course \(v\)</strong>.
+              Courses are vertices <strong>V</strong>. A prerequisite requirement is a directed edge <strong>u → v</strong>, meaning <strong>course u must precede course v</strong>.
             </p>
           </div>
           <div className="card p-4 space-y-2">
@@ -71,14 +71,14 @@ export default function DAAPage() {
             <span className="font-mono text-xs font-bold text-accent">STEP 2</span>
             <h4 className="font-semibold text-ink text-sm">Enqueue Zero In-Degree</h4>
             <p className="text-xs text-ink-2">
-              Find all courses with in-degree = 0 (no prerequisites). Add them to the ready queue \(Q\).
+              Find all courses with in-degree = 0 (no prerequisites). Add them to the ready queue Q.
             </p>
           </li>
           <li className="card p-4 space-y-1">
             <span className="font-mono text-xs font-bold text-accent">STEP 3</span>
-            <h4 className="font-semibold text-ink text-sm">Process & Decrement</h4>
+            <h4 className="font-semibold text-ink text-sm">Process &amp; Decrement</h4>
             <p className="text-xs text-ink-2">
-              Dequeue vertex \(u\), append to output. For each neighbor \(v\), decrement in-degree. If in-degree becomes 0, enqueue \(v\).
+              Dequeue vertex u, append to output. For each neighbor v, decrement in-degree. If in-degree becomes 0, enqueue v.
             </p>
           </li>
           <li className="card p-4 space-y-1">
@@ -107,12 +107,102 @@ export default function DAAPage() {
       {/* 4. Classroom Trace Example Table */}
       <section className="mt-12 space-y-4">
         <h2 className="text-xl font-bold tracking-tight text-ink border-b border-divider pb-2">
-          4. Step-by-Step Execution Table
+          4. Prerequisite DAG &amp; Step-by-Step Execution Trace
         </h2>
         <p className="text-sm text-ink-2">
-          Example trace for DAG: <code>A → C</code>, <code>B → C</code>, <code>B → D</code>, <code>C → E</code>, <code>D → F</code>, <code>E → F</code>.
-          Initial in-degrees: A=0, B=0, C=2, D=1, E=1, F=2.
+          The directed graph below illustrates the textbook prerequisite structure <em>G = (V, E)</em> with 6 courses and 6 directed edges. Initial in-degrees are shown below each vertex.
         </p>
+
+        {/* Visual DAG Diagram */}
+        <div className="card p-5 bg-surface border border-divider">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 border-b border-divider pb-3 mb-4">
+            <h3 className="font-semibold text-sm text-ink">Sample Curriculum Directed Acyclic Graph (DAG)</h3>
+            <div className="flex items-center gap-4 text-xs text-ink-2 font-mono">
+              <span className="flex items-center gap-1.5">
+                <span className="inline-block w-3 h-3 rounded-full border-2 border-accent bg-accent/10"></span>
+                In-degree = 0 (Start)
+              </span>
+              <span className="flex items-center gap-1.5">
+                <span className="inline-block w-3 h-3 rounded-full border-2 border-divider bg-surface-2"></span>
+                In-degree &gt; 0 (Dependent)
+              </span>
+            </div>
+          </div>
+
+          <div className="overflow-x-auto py-2">
+            <svg viewBox="0 0 700 240" className="w-full max-w-[700px] mx-auto text-ink" aria-label="DAG Course Dependency Graph">
+              <defs>
+                <marker
+                  id="dag-arrow"
+                  viewBox="0 0 10 10"
+                  refX="8"
+                  refY="5"
+                  markerWidth="6"
+                  markerHeight="6"
+                  orient="auto-start-reverse"
+                >
+                  <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="currentColor" opacity="0.75" />
+                </marker>
+              </defs>
+
+              {/* Edges */}
+              {/* A -> C */}
+              <line x1="112" y1="65" x2="258" y2="65" stroke="currentColor" strokeWidth="2" opacity="0.45" markerEnd="url(#dag-arrow)" />
+              {/* B -> C */}
+              <line x1="110" y1="155" x2="260" y2="75" stroke="currentColor" strokeWidth="2" opacity="0.45" markerEnd="url(#dag-arrow)" />
+              {/* B -> D */}
+              <line x1="112" y1="165" x2="258" y2="165" stroke="currentColor" strokeWidth="2" opacity="0.45" markerEnd="url(#dag-arrow)" />
+              {/* C -> E */}
+              <line x1="302" y1="65" x2="448" y2="65" stroke="currentColor" strokeWidth="2" opacity="0.45" markerEnd="url(#dag-arrow)" />
+              {/* D -> F */}
+              <line x1="302" y1="162" x2="588" y2="118" stroke="currentColor" strokeWidth="2" opacity="0.45" markerEnd="url(#dag-arrow)" />
+              {/* E -> F */}
+              <line x1="491" y1="72" x2="589" y2="108" stroke="currentColor" strokeWidth="2" opacity="0.45" markerEnd="url(#dag-arrow)" />
+
+              {/* Node A (in-degree: 0) */}
+              <g transform="translate(90, 65)">
+                <circle r="22" className="fill-accent/15 stroke-accent" strokeWidth="2.5" />
+                <text y="5" textAnchor="middle" className="font-mono font-bold text-base fill-accent">A</text>
+                <text y="36" textAnchor="middle" className="font-mono text-[11px] fill-ink-2 font-medium">in-deg: 0</text>
+              </g>
+
+              {/* Node B (in-degree: 0) */}
+              <g transform="translate(90, 165)">
+                <circle r="22" className="fill-accent/15 stroke-accent" strokeWidth="2.5" />
+                <text y="5" textAnchor="middle" className="font-mono font-bold text-base fill-accent">B</text>
+                <text y="36" textAnchor="middle" className="font-mono text-[11px] fill-ink-2 font-medium">in-deg: 0</text>
+              </g>
+
+              {/* Node C (in-degree: 2) */}
+              <g transform="translate(280, 65)">
+                <circle r="22" className="fill-surface stroke-divider" strokeWidth="2" />
+                <text y="5" textAnchor="middle" className="font-mono font-bold text-base fill-ink">C</text>
+                <text y="36" textAnchor="middle" className="font-mono text-[11px] fill-ink-2 font-medium">in-deg: 2</text>
+              </g>
+
+              {/* Node D (in-degree: 1) */}
+              <g transform="translate(280, 165)">
+                <circle r="22" className="fill-surface stroke-divider" strokeWidth="2" />
+                <text y="5" textAnchor="middle" className="font-mono font-bold text-base fill-ink">D</text>
+                <text y="36" textAnchor="middle" className="font-mono text-[11px] fill-ink-2 font-medium">in-deg: 1</text>
+              </g>
+
+              {/* Node E (in-degree: 1) */}
+              <g transform="translate(470, 65)">
+                <circle r="22" className="fill-surface stroke-divider" strokeWidth="2" />
+                <text y="5" textAnchor="middle" className="font-mono font-bold text-base fill-ink">E</text>
+                <text y="36" textAnchor="middle" className="font-mono text-[11px] fill-ink-2 font-medium">in-deg: 1</text>
+              </g>
+
+              {/* Node F (in-degree: 2) */}
+              <g transform="translate(610, 115)">
+                <circle r="22" className="fill-surface stroke-divider" strokeWidth="2" />
+                <text y="5" textAnchor="middle" className="font-mono font-bold text-base fill-ink">F</text>
+                <text y="36" textAnchor="middle" className="font-mono text-[11px] fill-ink-2 font-medium">in-deg: 2</text>
+              </g>
+            </svg>
+          </div>
+        </div>
 
         <div className="overflow-x-auto rounded-xl border border-divider bg-surface mt-3">
           <table className="w-full text-left text-xs font-mono">
@@ -191,7 +281,7 @@ export default function DAAPage() {
             <span className="text-xs font-semibold text-muted uppercase tracking-wider">Time Complexity</span>
             <div className="text-2xl font-bold text-accent font-mono">O(V + E)</div>
             <p className="text-xs text-ink-2 leading-relaxed">
-              <strong>Why?</strong> With an adjacency-list graph representation, each vertex enters and leaves the queue exactly once (\(V\)), and every directed prerequisite edge is examined exactly once (\(E\)) when decrementing in-degrees.
+              <strong>Why?</strong> With an adjacency-list graph representation, each vertex enters and leaves the queue exactly once (|V|), and every directed prerequisite edge is examined exactly once (|E|) when decrementing in-degrees.
             </p>
           </div>
 
@@ -199,7 +289,7 @@ export default function DAAPage() {
             <span className="text-xs font-semibold text-muted uppercase tracking-wider">Auxiliary Space</span>
             <div className="text-2xl font-bold text-accent font-mono">O(V)</div>
             <p className="text-xs text-ink-2 leading-relaxed">
-              <strong>Why?</strong> Stores the in-degree array of size \(V\), the ready queue of at most \(V\) elements, and the output topological ordering list of size \(V\).
+              <strong>Why?</strong> Stores the in-degree array of size |V|, the ready queue of at most |V| elements, and the output topological ordering list of size |V|.
             </p>
           </div>
         </div>

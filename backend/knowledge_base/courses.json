@@ -30,7 +30,8 @@
       ],
       "assumed_knowledge": "Basic secondary-school mathematics and logical reasoning.",
       "difficulty_rationale": "Introductory level; designed for beginners with no prior coding experience.",
-      "typical_audience": "First-year computer science, engineering, or general students beginning software development."
+      "typical_audience": "First-year computer science, engineering, or general students beginning software development.",
+      "semester": 1
     },
     {
       "course_id": "c_programming",
@@ -60,7 +61,8 @@
       ],
       "assumed_knowledge": "Basic programming fundamentals (loops, conditionals, functions).",
       "difficulty_rationale": "Manual memory management and pointer semantics require careful attention to system behavior.",
-      "typical_audience": "Computer science undergraduates and systems programmers."
+      "typical_audience": "Computer science undergraduates and systems programmers.",
+      "semester": 1
     },
     {
       "course_id": "python_programming",
@@ -90,7 +92,8 @@
       ],
       "assumed_knowledge": "Basic programming fundamentals.",
       "difficulty_rationale": "Readable high-level syntax makes Python accessible for beginners while supporting rich idioms.",
-      "typical_audience": "Students and practitioners entering software development, data science, or automation."
+      "typical_audience": "Students and practitioners entering software development, data science, or automation.",
+      "semester": 2
     },
     {
       "course_id": "object_oriented_programming",
@@ -120,7 +123,8 @@
       ],
       "assumed_knowledge": "Comfort with at least one programming language and modular decomposition.",
       "difficulty_rationale": "Requires shift from procedural to conceptual abstraction and class hierarchies.",
-      "typical_audience": "Undergraduate students preparing for large-scale software engineering."
+      "typical_audience": "Undergraduate students preparing for large-scale software engineering.",
+      "semester": 2
     },
     {
       "course_id": "java_programming",
@@ -150,7 +154,8 @@
       ],
       "assumed_knowledge": "Programming fundamentals and basic object-oriented principles.",
       "difficulty_rationale": "Strict statically typed object orientation and extensive standard API require moderate practice.",
-      "typical_audience": "Computer science students and prospective enterprise software developers."
+      "typical_audience": "Computer science students and prospective enterprise software developers.",
+      "semester": 4
     },
     {
       "course_id": "data_structures",
@@ -181,7 +186,8 @@
       ],
       "assumed_knowledge": "Procedural programming and object-oriented fundamentals.",
       "difficulty_rationale": "Abstract pointer-based data manipulation and asymptotic analysis require disciplined problem-solving.",
-      "typical_audience": "Second-year computer science and software engineering students."
+      "typical_audience": "Second-year computer science and software engineering students.",
+      "semester": 3
     },
     {
       "course_id": "design_and_analysis_of_algorithms",
@@ -214,7 +220,8 @@
       ],
       "assumed_knowledge": "Data structures and discrete mathematics.",
       "difficulty_rationale": "Requires strong mathematical maturity, formal proofs, and rigorous asymptotic complexity analysis.",
-      "typical_audience": "Intermediate to advanced computer science students."
+      "typical_audience": "Intermediate to advanced computer science students.",
+      "semester": 4
     },
     {
       "course_id": "discrete_mathematics",
@@ -245,7 +252,8 @@
       ],
       "assumed_knowledge": "High school algebra and geometry.",
       "difficulty_rationale": "Transition from computational math to abstract deductive proof-based mathematics.",
-      "typical_audience": "Foundational computer science, mathematics, and data science students."
+      "typical_audience": "Foundational computer science, mathematics, and data science students.",
+      "semester": 2
     },
     {
       "course_id": "computer_organization_and_architecture",
@@ -276,7 +284,8 @@
       ],
       "assumed_knowledge": "Standard computer science and mathematical background.",
       "difficulty_rationale": "Classified as intermediate based on prerequisite depth and conceptual abstraction.",
-      "typical_audience": "Undergraduate students in computer science and related fields."
+      "typical_audience": "Undergraduate students in computer science and related fields.",
+      "semester": 4
     },
     {
       "course_id": "operating_systems",
@@ -306,7 +315,8 @@
       ],
       "assumed_knowledge": "Computer organization, C programming, and data structures.",
       "difficulty_rationale": "Concurrency race conditions and low-level kernel abstractions require systems-level intuition.",
-      "typical_audience": "Junior-level computer science and computer engineering undergraduates."
+      "typical_audience": "Junior-level computer science and computer engineering undergraduates.",
+      "semester": 5
     },
     {
       "course_id": "database_management_systems",
@@ -338,7 +348,8 @@
       ],
       "assumed_knowledge": "Data structures and basic set theory.",
       "difficulty_rationale": "Combines declarative querying with storage internals and concurrency guarantees.",
-      "typical_audience": "Undergraduate students in software development and data management."
+      "typical_audience": "Undergraduate students in software development and data management.",
+      "semester": 4
     },
     {
       "course_id": "computer_networks",
@@ -369,7 +380,8 @@
       ],
       "assumed_knowledge": "Data structures and basic operating systems concepts.",
       "difficulty_rationale": "Requires grasping distributed protocol coordination, latency, and packet loss dynamics.",
-      "typical_audience": "Computer science and information technology undergraduates."
+      "typical_audience": "Computer science and information technology undergraduates.",
+      "semester": 5
     },
     {
       "course_id": "theory_of_computation",
@@ -400,7 +412,8 @@
       ],
       "assumed_knowledge": "Standard computer science and mathematical background.",
       "difficulty_rationale": "Classified as advanced based on prerequisite depth and conceptual abstraction.",
-      "typical_audience": "Undergraduate students in computer science and related fields."
+      "typical_audience": "Undergraduate students in computer science and related fields.",
+      "semester": 5
     },
     {
       "course_id": "compiler_design",
@@ -430,7 +443,8 @@
       ],
       "assumed_knowledge": "Standard computer science and mathematical background.",
       "difficulty_rationale": "Classified as advanced based on prerequisite depth and conceptual abstraction.",
-      "typical_audience": "Undergraduate students in computer science and related fields."
+      "typical_audience": "Undergraduate students in computer science and related fields.",
+      "semester": 6
     },
     {
       "course_id": "software_engineering",
@@ -460,7 +474,8 @@
       ],
       "assumed_knowledge": "Standard computer science and mathematical background.",
       "difficulty_rationale": "Classified as intermediate based on prerequisite depth and conceptual abstraction.",
-      "typical_audience": "Undergraduate students in computer science and related fields."
+      "typical_audience": "Undergraduate students in computer science and related fields.",
+      "semester": 5
     },
     {
       "course_id": "linear_algebra",
@@ -489,7 +504,8 @@
       ],
       "assumed_knowledge": "Standard computer science and mathematical background.",
       "difficulty_rationale": "Classified as intermediate based on prerequisite depth and conceptual abstraction.",
-      "typical_audience": "Undergraduate students in computer science and related fields."
+      "typical_audience": "Undergraduate students in computer science and related fields.",
+      "semester": 1
     },
     {
       "course_id": "calculus",
@@ -519,7 +535,8 @@
       ],
       "assumed_knowledge": "Standard computer science and mathematical background.",
       "difficulty_rationale": "Classified as intermediate based on prerequisite depth and conceptual abstraction.",
-      "typical_audience": "Undergraduate students in computer science and related fields."
+      "typical_audience": "Undergraduate students in computer science and related fields.",
+      "semester": 1
     },
     {
       "course_id": "probability_and_statistics",
@@ -549,7 +566,8 @@
       ],
       "assumed_knowledge": "Standard computer science and mathematical background.",
       "difficulty_rationale": "Classified as intermediate based on prerequisite depth and conceptual abstraction.",
-      "typical_audience": "Undergraduate students in computer science and related fields."
+      "typical_audience": "Undergraduate students in computer science and related fields.",
+      "semester": 3
     },
     {
       "course_id": "numerical_methods",
@@ -579,7 +597,8 @@
       ],
       "assumed_knowledge": "Standard computer science and mathematical background.",
       "difficulty_rationale": "Classified as intermediate based on prerequisite depth and conceptual abstraction.",
-      "typical_audience": "Undergraduate students in computer science and related fields."
+      "typical_audience": "Undergraduate students in computer science and related fields.",
+      "semester": 4
     },
     {
       "course_id": "optimization",
@@ -609,7 +628,8 @@
       ],
       "assumed_knowledge": "Standard computer science and mathematical background.",
       "difficulty_rationale": "Classified as advanced based on prerequisite depth and conceptual abstraction.",
-      "typical_audience": "Undergraduate students in computer science and related fields."
+      "typical_audience": "Undergraduate students in computer science and related fields.",
+      "semester": 5
     },
     {
       "course_id": "artificial_intelligence",
@@ -639,7 +659,8 @@
       ],
       "assumed_knowledge": "Standard computer science and mathematical background.",
       "difficulty_rationale": "Classified as intermediate based on prerequisite depth and conceptual abstraction.",
-      "typical_audience": "Undergraduate students in computer science and related fields."
+      "typical_audience": "Undergraduate students in computer science and related fields.",
+      "semester": 5
     },
     {
       "course_id": "machine_learning",
@@ -669,7 +690,8 @@
       ],
       "assumed_knowledge": "Python programming, linear algebra, and multivariable calculus.",
       "difficulty_rationale": "Blends probabilistic modeling, matrix algebra, and algorithmic optimization.",
-      "typical_audience": "Upper-division students and practitioners focusing on AI and data science."
+      "typical_audience": "Upper-division students and practitioners focusing on AI and data science.",
+      "semester": 5
     },
     {
       "course_id": "deep_learning",
@@ -700,7 +722,8 @@
       ],
       "assumed_knowledge": "Machine learning, linear algebra, calculus, and Python.",
       "difficulty_rationale": "High-dimensional non-convex optimization and tensor programming require solid foundation.",
-      "typical_audience": "Advanced undergraduates, graduate students, and AI engineers."
+      "typical_audience": "Advanced undergraduates, graduate students, and AI engineers.",
+      "semester": 6
     },
     {
       "course_id": "natural_language_processing",
@@ -730,7 +753,8 @@
       ],
       "assumed_knowledge": "Standard computer science and mathematical background.",
       "difficulty_rationale": "Classified as advanced based on prerequisite depth and conceptual abstraction.",
-      "typical_audience": "Undergraduate students in computer science and related fields."
+      "typical_audience": "Undergraduate students in computer science and related fields.",
+      "semester": 6
     },
     {
       "course_id": "computer_vision",
@@ -759,7 +783,8 @@
       ],
       "assumed_knowledge": "Standard computer science and mathematical background.",
       "difficulty_rationale": "Classified as advanced based on prerequisite depth and conceptual abstraction.",
-      "typical_audience": "Undergraduate students in computer science and related fields."
+      "typical_audience": "Undergraduate students in computer science and related fields.",
+      "semester": 6
     },
     {
       "course_id": "data_science",
@@ -789,7 +814,8 @@
       ],
       "assumed_knowledge": "Standard computer science and mathematical background.",
       "difficulty_rationale": "Classified as intermediate based on prerequisite depth and conceptual abstraction.",
-      "typical_audience": "Undergraduate students in computer science and related fields."
+      "typical_audience": "Undergraduate students in computer science and related fields.",
+      "semester": 5
     },
     {
       "course_id": "data_mining",
@@ -819,7 +845,8 @@
       ],
       "assumed_knowledge": "Standard computer science and mathematical background.",
       "difficulty_rationale": "Classified as intermediate based on prerequisite depth and conceptual abstraction.",
-      "typical_audience": "Undergraduate students in computer science and related fields."
+      "typical_audience": "Undergraduate students in computer science and related fields.",
+      "semester": 6
     },
     {
       "course_id": "reinforcement_learning",
@@ -848,7 +875,8 @@
       ],
       "assumed_knowledge": "Standard computer science and mathematical background.",
       "difficulty_rationale": "Classified as advanced based on prerequisite depth and conceptual abstraction.",
-      "typical_audience": "Undergraduate students in computer science and related fields."
+      "typical_audience": "Undergraduate students in computer science and related fields.",
+      "semester": 7
     },
     {
       "course_id": "big_data_analytics",
@@ -877,7 +905,8 @@
       ],
       "assumed_knowledge": "Standard computer science and mathematical background.",
       "difficulty_rationale": "Classified as advanced based on prerequisite depth and conceptual abstraction.",
-      "typical_audience": "Undergraduate students in computer science and related fields."
+      "typical_audience": "Undergraduate students in computer science and related fields.",
+      "semester": 7
     },
     {
       "course_id": "cloud_computing",
@@ -906,7 +935,8 @@
       ],
       "assumed_knowledge": "Standard computer science and mathematical background.",
       "difficulty_rationale": "Classified as intermediate based on prerequisite depth and conceptual abstraction.",
-      "typical_audience": "Undergraduate students in computer science and related fields."
+      "typical_audience": "Undergraduate students in computer science and related fields.",
+      "semester": 6
     },
     {
       "course_id": "cybersecurity",
@@ -936,7 +966,8 @@
       ],
       "assumed_knowledge": "Standard computer science and mathematical background.",
       "difficulty_rationale": "Classified as intermediate based on prerequisite depth and conceptual abstraction.",
-      "typical_audience": "Undergraduate students in computer science and related fields."
+      "typical_audience": "Undergraduate students in computer science and related fields.",
+      "semester": 7
     },
     {
       "course_id": "generative_ai",
@@ -966,7 +997,8 @@
       ],
       "assumed_knowledge": "Standard computer science and mathematical background.",
       "difficulty_rationale": "Classified as advanced based on prerequisite depth and conceptual abstraction.",
-      "typical_audience": "Undergraduate students in computer science and related fields."
+      "typical_audience": "Undergraduate students in computer science and related fields.",
+      "semester": 8
     },
     {
       "course_id": "large_language_models",
@@ -996,7 +1028,8 @@
       ],
       "assumed_knowledge": "Standard computer science and mathematical background.",
       "difficulty_rationale": "Classified as advanced based on prerequisite depth and conceptual abstraction.",
-      "typical_audience": "Undergraduate students in computer science and related fields."
+      "typical_audience": "Undergraduate students in computer science and related fields.",
+      "semester": 8
     },
     {
       "course_id": "retrieval_augmented_generation",
@@ -1025,7 +1058,8 @@
       ],
       "assumed_knowledge": "Standard computer science and mathematical background.",
       "difficulty_rationale": "Classified as advanced based on prerequisite depth and conceptual abstraction.",
-      "typical_audience": "Undergraduate students in computer science and related fields."
+      "typical_audience": "Undergraduate students in computer science and related fields.",
+      "semester": 8
     },
     {
       "course_id": "mlops",
@@ -1055,7 +1089,8 @@
       ],
       "assumed_knowledge": "Standard computer science and mathematical background.",
       "difficulty_rationale": "Classified as advanced based on prerequisite depth and conceptual abstraction.",
-      "typical_audience": "Undergraduate students in computer science and related fields."
+      "typical_audience": "Undergraduate students in computer science and related fields.",
+      "semester": 7
     },
     {
       "course_id": "c_plus_plus_programming",
@@ -1088,7 +1123,8 @@
       ],
       "assumed_knowledge": "Programming fundamentals and procedural C concepts.",
       "difficulty_rationale": "Requires understanding explicit memory semantics, strict value categories, and template metaprogramming.",
-      "typical_audience": "Systems developers, game programmers, and competitive programmers."
+      "typical_audience": "Systems developers, game programmers, and competitive programmers.",
+      "semester": 3
     },
     {
       "course_id": "programming_using_r",
@@ -1121,7 +1157,8 @@
       ],
       "assumed_knowledge": "Basic secondary-school algebra; no prior programming experience required.",
       "difficulty_rationale": "High-level interactive language with an expressive syntax for statistical datasets.",
-      "typical_audience": "Data analysts, bioinformaticians, social scientists, and statistics students."
+      "typical_audience": "Data analysts, bioinformaticians, social scientists, and statistics students.",
+      "semester": 3
     },
     {
       "course_id": "functional_programming",
@@ -1154,7 +1191,8 @@
       ],
       "assumed_knowledge": "Programming fundamentals and discrete mathematics.",
       "difficulty_rationale": "Shifts intuition away from mutable state and imperative control flow toward pure functional transforms.",
-      "typical_audience": "Software engineers and students seeking stronger formal modeling and concurrent safety."
+      "typical_audience": "Software engineers and students seeking stronger formal modeling and concurrent safety.",
+      "semester": 4
     },
     {
       "course_id": "technical_communication_and_academic_writing",
@@ -1188,7 +1226,8 @@
       ],
       "assumed_knowledge": "Undergraduate standing; no programming prerequisites required.",
       "difficulty_rationale": "Focuses on clarity, organization, and scholarly conventions rather than formal mathematical rigor.",
-      "typical_audience": "Undergraduate and graduate students preparing for research or professional engineering careers."
+      "typical_audience": "Undergraduate and graduate students preparing for research or professional engineering careers.",
+      "semester": 1
     },
     {
       "course_id": "graph_theory",
@@ -1220,7 +1259,8 @@
       ],
       "assumed_knowledge": "Discrete mathematics and mathematical proof techniques.",
       "difficulty_rationale": "Abstract deductive mathematical proofs combined with combinatorial arguments.",
-      "typical_audience": "Computer science, mathematics, and operations research students."
+      "typical_audience": "Computer science, mathematics, and operations research students.",
+      "semester": 4
     },
     {
       "course_id": "web_development",
@@ -1253,7 +1293,8 @@
       ],
       "assumed_knowledge": "Basic programming fundamentals.",
       "difficulty_rationale": "Accessible initial syntax; integration across multiple languages and network layers requires organizational discipline.",
-      "typical_audience": "Students interested in software engineering, frontend, and web services."
+      "typical_audience": "Students interested in software engineering, frontend, and web services.",
+      "semester": 4
     },
     {
       "course_id": "mobile_app_development",
@@ -1286,7 +1327,8 @@
       ],
       "assumed_knowledge": "Object-oriented programming and basic user interface concepts.",
       "difficulty_rationale": "Event-driven asynchronous lifecycles and mobile hardware constraints demand rigorous state management.",
-      "typical_audience": "Software engineering students targeting mobile platforms."
+      "typical_audience": "Software engineering students targeting mobile platforms.",
+      "semester": 6
     },
     {
       "course_id": "distributed_systems",
@@ -1317,7 +1359,8 @@
       ],
       "assumed_knowledge": "Operating systems, computer networks, and concurrent programming.",
       "difficulty_rationale": "Asynchronous network partitions, partial failures, and non-deterministic concurrency make formal analysis challenging.",
-      "typical_audience": "Advanced undergraduates, graduate students, and cloud infrastructure engineers."
+      "typical_audience": "Advanced undergraduates, graduate students, and cloud infrastructure engineers.",
+      "semester": 7
     },
     {
       "course_id": "cryptography",
@@ -1349,7 +1392,8 @@
       ],
       "assumed_knowledge": "Discrete mathematics, probability, and basic computer networking.",
       "difficulty_rationale": "Relies on rigorous number theory, computational hardness assumptions, and subtle attack vectors.",
-      "typical_audience": "Students specializing in cybersecurity, privacy, and mathematical computer science."
+      "typical_audience": "Students specializing in cybersecurity, privacy, and mathematical computer science.",
+      "semester": 6
     },
     {
       "course_id": "information_retrieval",
@@ -1381,7 +1425,8 @@
       ],
       "assumed_knowledge": "Data structures, algorithms, and basic linear algebra.",
       "difficulty_rationale": "Combines scalable inverted index data structures with probabilistic ranking formulations.",
-      "typical_audience": "Students interested in search engines, NLP, and large-scale information systems."
+      "typical_audience": "Students interested in search engines, NLP, and large-scale information systems.",
+      "semester": 8
     },
     {
       "course_id": "computer_graphics",
@@ -1413,7 +1458,8 @@
       ],
       "assumed_knowledge": "Linear algebra, multivariable calculus, and C/C++ or Python programming.",
       "difficulty_rationale": "Heavy application of matrix geometry, projection coordinates, and real-time graphics pipelines.",
-      "typical_audience": "Students interested in visualization, game development, and simulation engineering."
+      "typical_audience": "Students interested in visualization, game development, and simulation engineering.",
+      "semester": 8
     },
     {
       "course_id": "human_computer_interaction",
@@ -1445,7 +1491,8 @@
       ],
       "assumed_knowledge": "Introductory computer science or software engineering principles.",
       "difficulty_rationale": "Emphasizes qualitative human factors, cognitive psychology, and empirical user testing rather than algorithmic analysis.",
-      "typical_audience": "Product designers, frontend developers, and software engineering students."
+      "typical_audience": "Product designers, frontend developers, and software engineering students.",
+      "semester": 3
     },
     {
       "course_id": "robotics_and_autonomous_systems",
@@ -1477,7 +1524,8 @@
       ],
       "assumed_knowledge": "Linear algebra, calculus, differential equations, and introductory AI.",
       "difficulty_rationale": "Integrates mechanical kinematics, probabilistic sensor state estimation, and continuous control mathematics.",
-      "typical_audience": "Robotics, aerospace, computer vision, and autonomous vehicle engineers."
+      "typical_audience": "Robotics, aerospace, computer vision, and autonomous vehicle engineers.",
+      "semester": 7
     },
     {
       "course_id": "parallel_and_concurrent_programming",
@@ -1510,7 +1558,8 @@
       ],
       "assumed_knowledge": "Operating systems, computer architecture, and C/C++ programming.",
       "difficulty_rationale": "Subtle non-deterministic timing, cache-coherence issues, and deadlocks demand deep systems discipline.",
-      "typical_audience": "Systems engineers, high-performance computing specialists, and backend infrastructure developers."
+      "typical_audience": "Systems engineers, high-performance computing specialists, and backend infrastructure developers.",
+      "semester": 7
     },
     {
       "course_id": "system_design",
@@ -1542,7 +1591,8 @@
       ],
       "assumed_knowledge": "Database systems, computer networks, and operating systems.",
       "difficulty_rationale": "Requires balancing open-ended architectural trade-offs across distributed components under high load.",
-      "typical_audience": "Senior students, aspiring software architects, and production backend engineers."
+      "typical_audience": "Senior students, aspiring software architects, and production backend engineers.",
+      "semester": 7
     },
     {
       "course_id": "devops_and_ci_cd",
@@ -1575,7 +1625,8 @@
       ],
       "assumed_knowledge": "Software engineering, Linux command line, and basic networking.",
       "difficulty_rationale": "Cross-disciplinary practice combining software development, systems administration, and automated cloud tooling.",
-      "typical_audience": "DevOps engineers, cloud developers, and modern software engineering practitioners."
+      "typical_audience": "DevOps engineers, cloud developers, and modern software engineering practitioners.",
+      "semester": 7
     },
     {
       "course_id": "quantum_computing",
@@ -1607,7 +1658,8 @@
       ],
       "assumed_knowledge": "Linear algebra (complex vector spaces, eigenvalues) and discrete mathematics.",
       "difficulty_rationale": "Counter-intuitive quantum mechanics principles combined with complex Hilbert space matrix transformations.",
-      "typical_audience": "Advanced students in theoretical computer science, physics, and cryptography."
+      "typical_audience": "Advanced students in theoretical computer science, physics, and cryptography.",
+      "semester": 8
     },
     {
       "course_id": "data_visualization",
@@ -1639,7 +1691,8 @@
       ],
       "assumed_knowledge": "Basic statistics and introductory programming (Python or R).",
       "difficulty_rationale": "Focuses on design judgment, visual cognition, and exploratory data communication.",
-      "typical_audience": "Data analysts, software engineers, scientists, and journalists."
+      "typical_audience": "Data analysts, software engineers, scientists, and journalists.",
+      "semester": 6
     },
     {
       "course_id": "time_series_analysis",
@@ -1671,7 +1724,8 @@
       ],
       "assumed_knowledge": "Probability and statistics, calculus, and Python or R programming.",
       "difficulty_rationale": "Requires understanding stochastic processes, lag operators, and non-trivial stationarity tests.",
-      "typical_audience": "Quantitative analysts, data scientists, economists, and operations researchers."
+      "typical_audience": "Quantitative analysts, data scientists, economists, and operations researchers.",
+      "semester": 7
     },
     {
       "course_id": "ai_ethics_and_governance",
@@ -1704,7 +1758,8 @@
       ],
       "assumed_knowledge": "Introductory knowledge of machine learning or software applications.",
       "difficulty_rationale": "Focuses on socio-technical impact, policy frameworks, and ethical dilemma analysis.",
-      "typical_audience": "AI researchers, software engineers, policy makers, and product managers."
+      "typical_audience": "AI researchers, software engineers, policy makers, and product managers.",
+      "semester": 8
     },
     {
       "course_id": "bioinformatics",
@@ -1735,7 +1790,8 @@
       ],
       "assumed_knowledge": "Data structures, algorithms, and basic programming.",
       "difficulty_rationale": "Bridges sophisticated dynamic programming and graph algorithms with biological domain complexity.",
-      "typical_audience": "Computer scientists and biologists interested in computational life sciences."
+      "typical_audience": "Computer scientists and biologists interested in computational life sciences.",
+      "semester": 7
     },
     {
       "course_id": "nosql_databases",
@@ -1767,7 +1823,8 @@
       ],
       "assumed_knowledge": "Relational databases and basic computer networks.",
       "difficulty_rationale": "Contrasts normalized relational constraints with eventual consistency and schema-on-read trade-offs.",
-      "typical_audience": "Backend engineers, data architects, and cloud application developers."
+      "typical_audience": "Backend engineers, data architects, and cloud application developers.",
+      "semester": 6
     },
     {
       "course_id": "blockchain_and_web3",
@@ -1799,7 +1856,8 @@
       ],
       "assumed_knowledge": "Computer networks, cryptography basics, and object-oriented programming.",
       "difficulty_rationale": "Combines peer-to-peer networking, game-theoretic economic incentives, and irreversible smart contract execution.",
-      "typical_audience": "Software developers and students interested in decentralized applications."
+      "typical_audience": "Software developers and students interested in decentralized applications.",
+      "semester": 8
     },
     {
       "course_id": "embedded_systems",
@@ -1832,7 +1890,8 @@
       ],
       "assumed_knowledge": "C programming and computer organization.",
       "difficulty_rationale": "Demands close attention to hardware registers, memory maps, electrical timings, and real-time responsiveness.",
-      "typical_audience": "Computer engineering, robotics, and hardware-software systems students."
+      "typical_audience": "Computer engineering, robotics, and hardware-software systems students.",
+      "semester": 6
     },
     {
       "course_id": "knowledge_graphs",
@@ -1864,7 +1923,8 @@
       ],
       "assumed_knowledge": "Discrete mathematics, data structures, and database systems.",
       "difficulty_rationale": "Blends formal first-order logic semantics with practical graph databases and modern neural graph embeddings.",
-      "typical_audience": "AI researchers, data architects, search engine developers, and semantic data engineers."
+      "typical_audience": "AI researchers, data architects, search engine developers, and semantic data engineers.",
+      "semester": 7
     },
     {
       "course_id": "speech_and_audio_processing",
@@ -1897,7 +1957,8 @@
       ],
       "assumed_knowledge": "Calculus, linear algebra, signals basics, and deep learning.",
       "difficulty_rationale": "High-dimensional continuous temporal signals require combined signal processing math and deep learning architectures.",
-      "typical_audience": "Machine learning engineers, computational linguists, and audio technology researchers."
+      "typical_audience": "Machine learning engineers, computational linguists, and audio technology researchers.",
+      "semester": 7
     },
     {
       "course_id": "multimodal_deep_learning",
@@ -1929,7 +1990,8 @@
       ],
       "assumed_knowledge": "Deep learning, computer vision, and natural language processing.",
       "difficulty_rationale": "Requires reconciling disparate tensor modalities (pixels, tokens, audio) in high-dimensional joint spaces.",
-      "typical_audience": "Advanced AI researchers and engineers building frontier multimodal systems."
+      "typical_audience": "Advanced AI researchers and engineers building frontier multimodal systems.",
+      "semester": 8
     },
     {
       "course_id": "linux_system_administration",
@@ -1962,7 +2024,8 @@
       ],
       "assumed_knowledge": "Basic computer literacy and introductory programming.",
       "difficulty_rationale": "Command-line driven operating environment requiring memorization and practice with Unix utilities.",
-      "typical_audience": "All computer science, software engineering, and cybersecurity students."
+      "typical_audience": "All computer science, software engineering, and cybersecurity students.",
+      "semester": 3
     },
     {
       "course_id": "discrete_optimization",
@@ -1994,7 +2057,8 @@
       ],
       "assumed_knowledge": "Algorithms, linear algebra, and mathematical optimization.",
       "difficulty_rationale": "NP-hard computational complexity requires subtle mathematical bounding and combinatorial trade-offs.",
-      "typical_audience": "Operations researchers, algorithms engineers, and logistics specialists."
+      "typical_audience": "Operations researchers, algorithms engineers, and logistics specialists.",
+      "semester": 8
     },
     {
       "course_id": "bayesian_data_analysis",
@@ -2026,7 +2090,8 @@
       ],
       "assumed_knowledge": "Probability and statistics, multivariable calculus, and Python.",
       "difficulty_rationale": "Requires shifting from frequentist p-values to high-dimensional probabilistic integrals and MCMC diagnostics.",
-      "typical_audience": "Data scientists, statisticians, and probabilistic machine learning researchers."
+      "typical_audience": "Data scientists, statisticians, and probabilistic machine learning researchers.",
+      "semester": 8
     },
     {
       "course_id": "deep_reinforcement_learning",
@@ -2058,7 +2123,8 @@
       ],
       "assumed_knowledge": "Reinforcement learning, deep learning, and multivariable calculus.",
       "difficulty_rationale": "High training instability, hyperparameter sensitivity, and non-stationary target distributions.",
-      "typical_audience": "Robotics researchers, game AI developers, and advanced AI scientists."
+      "typical_audience": "Robotics researchers, game AI developers, and advanced AI scientists.",
+      "semester": 8
     },
     {
       "course_id": "edge_ai",
@@ -2090,7 +2156,8 @@
       ],
       "assumed_knowledge": "Deep learning, embedded systems, and C/C++ or Python.",
       "difficulty_rationale": "Requires aggressive optimization across hardware cache, memory limits, and numerical accuracy.",
-      "typical_audience": "Embedded engineers, IoT architects, and mobile ML engineers."
+      "typical_audience": "Embedded engineers, IoT architects, and mobile ML engineers.",
+      "semester": 8
     },
     {
       "course_id": "information_theory",
@@ -2122,7 +2189,8 @@
       ],
       "assumed_knowledge": "Probability and statistics, discrete mathematics, and linear algebra.",
       "difficulty_rationale": "Rigorous probability theory, limits, and abstract asymptotic communication bounds.",
-      "typical_audience": "Communication engineers, theorists, cryptographers, and machine learning theorists."
+      "typical_audience": "Communication engineers, theorists, cryptographers, and machine learning theorists.",
+      "semester": 8
     },
     {
       "course_id": "game_theory",
@@ -2154,7 +2222,8 @@
       ],
       "assumed_knowledge": "Discrete mathematics, probability, and algorithms.",
       "difficulty_rationale": "Combines non-cooperative game theory, microeconomic incentives, and algorithmic complexity.",
-      "typical_audience": "Computer scientists, quantitative economists, and blockchain protocol architects."
+      "typical_audience": "Computer scientists, quantitative economists, and blockchain protocol architects.",
+      "semester": 8
     },
     {
       "course_id": "vector_databases_and_embeddings",
@@ -2187,7 +2256,967 @@
       ],
       "assumed_knowledge": "Data structures, linear algebra, and basic machine learning.",
       "difficulty_rationale": "Balances high-dimensional geometry trade-offs with scalable graph indexing data structures.",
-      "typical_audience": "AI engineers, search developers, and RAG application builders."
+      "typical_audience": "AI engineers, search developers, and RAG application builders.",
+      "semester": 8
+    },
+    {
+      "course_id": "physics_for_engineers",
+      "name": "Physics for Engineers",
+      "aliases": [
+        "Engineering Physics",
+        "Applied Physics",
+        "Physics"
+      ],
+      "category": "Engineering Sciences",
+      "description": "Foundational classical and modern physics covering electromagnetic theory, optics, quantum concepts, and semiconductor fundamentals for computing hardware.",
+      "difficulty": "beginner",
+      "learning_outcomes": [
+        "Understand wave optics and interference",
+        "Apply electromagnetic laws to physical systems",
+        "Comprehend quantum fundamentals in solid state electronics"
+      ],
+      "main_topics": [
+        "Wave Optics",
+        "Electromagnetism",
+        "Quantum Mechanics Basics",
+        "Semiconductor Physics"
+      ],
+      "skills_gained": [
+        "Physical reasoning",
+        "Waveform analysis",
+        "Device physics concepts"
+      ],
+      "assumed_knowledge": "High school physics and differential calculus.",
+      "difficulty_rationale": "First-year foundational natural science module.",
+      "typical_audience": "First-year engineering undergraduates.",
+      "semester": 1
+    },
+    {
+      "course_id": "chemistry_for_engineers",
+      "name": "Chemistry for Engineers",
+      "aliases": [
+        "Engineering Chemistry",
+        "Applied Chemistry",
+        "Chemistry"
+      ],
+      "category": "Engineering Sciences",
+      "description": "Chemical thermodynamics, electrochemistry, battery chemistry, polymers, and material science essentials underpinning hardware systems and sustainable computing.",
+      "difficulty": "beginner",
+      "learning_outcomes": [
+        "Analyze electrochemical cells and batteries",
+        "Understand polymer materials in hardware engineering",
+        "Evaluate water quality and corrosion mechanisms"
+      ],
+      "main_topics": [
+        "Electrochemistry and Batteries",
+        "Corrosion Science",
+        "Polymers and Nanomaterials",
+        "Thermodynamics"
+      ],
+      "skills_gained": [
+        "Material analysis",
+        "Thermodynamic calculations",
+        "Electrochemical evaluation"
+      ],
+      "assumed_knowledge": "High school chemistry.",
+      "difficulty_rationale": "Standard introductory science requirement for engineering degrees.",
+      "typical_audience": "First-year engineering students.",
+      "semester": 1
+    },
+    {
+      "course_id": "mathematics_1",
+      "name": "Mathematics-I: Calculus & Linear Algebra",
+      "aliases": [
+        "Engineering Mathematics I",
+        "Maths 1",
+        "Math 1"
+      ],
+      "category": "Mathematics",
+      "description": "Core university engineering mathematics including single and multivariable differential calculus, matrix eigenvalues, eigenvectors, and infinite series.",
+      "difficulty": "beginner",
+      "learning_outcomes": [
+        "Evaluate limits, continuity, and partial derivatives",
+        "Compute matrix rank, eigenvalues, and eigenvectors",
+        "Apply Taylor series to function approximations"
+      ],
+      "main_topics": [
+        "Differential Calculus",
+        "Partial Differentiation",
+        "Matrices and Linear Systems",
+        "Eigenvalues and Eigenvectors"
+      ],
+      "skills_gained": [
+        "Matrix computation",
+        "Derivative analysis",
+        "Function approximation"
+      ],
+      "assumed_knowledge": "Secondary school algebra and basic trigonometry.",
+      "difficulty_rationale": "Entry-level rigorous mathematics requirement for engineers.",
+      "typical_audience": "First-semester computer science and engineering undergraduates.",
+      "semester": 1
+    },
+    {
+      "course_id": "basic_electrical_and_electronics",
+      "name": "Basics of Electrical and Electronics Engineering",
+      "aliases": [
+        "BEEE",
+        "Basic Electrical Engineering",
+        "Basic Electronics"
+      ],
+      "category": "Engineering Sciences",
+      "description": "DC and AC network analysis, magnetic circuits, diodes, bipolar junction transistors, operational amplifiers, and digital logic gate primitives.",
+      "difficulty": "beginner",
+      "learning_outcomes": [
+        "Solve electrical circuits using Kirchhoff laws and Thevenin theorem",
+        "Analyze PN junctions and transistor switching circuits",
+        "Understand operational amplifier basic configurations"
+      ],
+      "main_topics": [
+        "DC/AC Network Theorems",
+        "Transformers and Machines",
+        "Diodes and Transistors",
+        "Op-Amps and Logic Gates"
+      ],
+      "skills_gained": [
+        "Circuit troubleshooting",
+        "Network theorem solving",
+        "Electronic component selection"
+      ],
+      "assumed_knowledge": "Basic high school electricity and calculus.",
+      "difficulty_rationale": "Introductory engineering laboratory and theory course.",
+      "typical_audience": "First-year engineering undergraduates.",
+      "semester": 1
+    },
+    {
+      "course_id": "engineering_graphics_and_cad",
+      "name": "Engineering Graphics and Computer Aided Design",
+      "aliases": [
+        "Engineering Graphics",
+        "CAD",
+        "Engineering Drawing"
+      ],
+      "category": "Engineering Sciences",
+      "description": "Spatial visualization, orthographic and isometric projections, sectioning, dimensioning, and 2D/3D parametric modeling using CAD software.",
+      "difficulty": "beginner",
+      "learning_outcomes": [
+        "Interpret and draw multi-view engineering drawings",
+        "Model geometric entities in modern CAD software",
+        "Apply standard engineering dimensioning rules"
+      ],
+      "main_topics": [
+        "Orthographic Projections",
+        "Isometric Projections",
+        "Section of Solids",
+        "CAD Modeling Software"
+      ],
+      "skills_gained": [
+        "Spatial visualization",
+        "Technical drafting",
+        "Parametric CAD modeling"
+      ],
+      "assumed_knowledge": "Basic high school geometry.",
+      "difficulty_rationale": "Hands-on practical modeling course for freshers.",
+      "typical_audience": "First-year engineering students across disciplines.",
+      "semester": 1
+    },
+    {
+      "course_id": "workshop_and_manufacturing_practices",
+      "name": "Manufacturing Practices and Workshop",
+      "aliases": [
+        "Workshop Practice",
+        "Manufacturing Practices",
+        "Mechanical Workshop"
+      ],
+      "category": "Engineering Sciences",
+      "description": "Practical experiential learning in fitting, carpentry, sheet metal fabrication, welding, additive manufacturing (3D printing), and industrial safety standards.",
+      "difficulty": "beginner",
+      "learning_outcomes": [
+        "Safely operate shop-floor machinery and hand tools",
+        "Fabricate mechanical assemblies from engineering schematics",
+        "Understand modern additive manufacturing and CNC tooling"
+      ],
+      "main_topics": [
+        "Fitting and Carpentry",
+        "Welding and Machining",
+        "Sheet Metal and 3D Printing",
+        "Industrial Workshop Safety"
+      ],
+      "skills_gained": [
+        "Tool handling",
+        "Fabrication methods",
+        "Laboratory safety compliance"
+      ],
+      "assumed_knowledge": "None.",
+      "difficulty_rationale": "Practical hands-on foundational lab module.",
+      "typical_audience": "Undergraduate engineers.",
+      "semester": 1
+    },
+    {
+      "course_id": "mathematics_2",
+      "name": "Mathematics-II: Advanced Calculus and Complex Analysis",
+      "aliases": [
+        "Engineering Mathematics II",
+        "Maths 2",
+        "Math 2"
+      ],
+      "category": "Mathematics",
+      "description": "Multiple integrals, vector calculus (Green, Stokes, and Gauss divergence theorems), first- and second-order ordinary differential equations, and complex variables.",
+      "difficulty": "beginner",
+      "learning_outcomes": [
+        "Compute double and triple integrals",
+        "Apply vector integral theorems to fields",
+        "Solve linear differential equations of higher orders"
+      ],
+      "main_topics": [
+        "Multiple Integrals",
+        "Vector Calculus",
+        "Ordinary Differential Equations",
+        "Complex Variables Intro"
+      ],
+      "skills_gained": [
+        "Vector field calculations",
+        "Differential equation modeling",
+        "Complex algebra"
+      ],
+      "assumed_knowledge": "Differential and integral calculus (Mathematics-I).",
+      "difficulty_rationale": "Follow-on calculus course demanding thorough analytical practice.",
+      "typical_audience": "Second-semester computer science and engineering undergraduates.",
+      "semester": 2
+    },
+    {
+      "course_id": "professional_communication",
+      "name": "Professional Communication and Soft Skills",
+      "aliases": [
+        "Communication Skills",
+        "Professional English",
+        "Soft Skills"
+      ],
+      "category": "Humanities & Social Sciences",
+      "description": "Interpersonal corporate communication, technical presentations, resume writing, group discussions, listening comprehension, and professional etiquette.",
+      "difficulty": "beginner",
+      "learning_outcomes": [
+        "Deliver persuasive technical presentations",
+        "Compose professional resumes and executive emails",
+        "Participate constructively in structured group discussions"
+      ],
+      "main_topics": [
+        "Technical Writing",
+        "Verbal Communication",
+        "Resume and Email Etiquette",
+        "Group Discussions and Interviews"
+      ],
+      "skills_gained": [
+        "Public speaking",
+        "Formal documentation",
+        "Interview skills"
+      ],
+      "assumed_knowledge": "Basic proficiency in English.",
+      "difficulty_rationale": "Non-technical development course focusing on communication fluency.",
+      "typical_audience": "Undergraduate engineering students.",
+      "semester": 2
+    },
+    {
+      "course_id": "environmental_science",
+      "name": "Environmental Science and Sustainability",
+      "aliases": [
+        "Environmental Studies",
+        "EVS",
+        "Environmental Science Course"
+      ],
+      "category": "Humanities & Social Sciences",
+      "description": "Ecosystems, biodiversity conservation, pollution control technologies, environmental protection legislation, electronic waste management, and sustainability.",
+      "difficulty": "beginner",
+      "learning_outcomes": [
+        "Identify pollution sources and mitigation techniques",
+        "Analyze electronic waste handling and recycling standards",
+        "Understand sustainability principles in IT infrastructure"
+      ],
+      "main_topics": [
+        "Ecosystems and Biodiversity",
+        "Pollution and Waste Management",
+        "Green Computing and E-waste",
+        "Environmental Laws and Ethics"
+      ],
+      "skills_gained": [
+        "Environmental impact analysis",
+        "Green computing awareness",
+        "Regulatory compliance review"
+      ],
+      "assumed_knowledge": "General awareness of natural sciences.",
+      "difficulty_rationale": "Mandatory civic and sustainable engineering awareness course.",
+      "typical_audience": "Undergraduate engineers.",
+      "semester": 2
+    },
+    {
+      "course_id": "digital_electronics_and_logic_design",
+      "name": "Digital Electronics and Logic Design",
+      "aliases": [
+        "Digital Electronics",
+        "Digital Logic",
+        "DELD"
+      ],
+      "category": "Core Computer Science",
+      "description": "Boolean algebra, Karnaugh maps, combinational logic design (adders, multiplexers, decoders), flip-flops, synchronous/asynchronous sequential circuits, and state machines.",
+      "difficulty": "intermediate",
+      "learning_outcomes": [
+        "Minimize Boolean functions using Karnaugh maps and Quine-McCluskey",
+        "Design combinational circuits including ALU components",
+        "Construct sequential circuits using flip-flops and state diagrams"
+      ],
+      "main_topics": [
+        "Boolean Algebra and Gates",
+        "Combinational Logic Circuits",
+        "Flip-Flops and Latches",
+        "Synchronous Sequential State Machines"
+      ],
+      "skills_gained": [
+        "Logic minimization",
+        "Circuit synthesis",
+        "State machine design"
+      ],
+      "assumed_knowledge": "Basics of electrical engineering and binary numbers.",
+      "difficulty_rationale": "Bridges physical electrical signals to computing architecture.",
+      "typical_audience": "Second-year computer science and electrical students.",
+      "semester": 3
+    },
+    {
+      "course_id": "cyber_law_and_ethics",
+      "name": "Cyber Law, Ethics and IT Regulations",
+      "aliases": [
+        "Cyber Law",
+        "IT Ethics",
+        "Cyber Ethics"
+      ],
+      "category": "Humanities & Social Sciences",
+      "description": "Information Technology Act, digital signatures, cybercrime taxonomy, intellectual property rights, data privacy regulations (GDPR/DPDP), and AI engineering ethics.",
+      "difficulty": "beginner",
+      "learning_outcomes": [
+        "Understand legal liabilities under Information Technology laws",
+        "Evaluate intellectual property rights and software licensing",
+        "Apply ethical guidelines in data privacy and software deployment"
+      ],
+      "main_topics": [
+        "IT Act and Cyber Jurisprudence",
+        "Cyber Crimes and Evidence",
+        "IPR and Software Patents",
+        "Data Privacy and AI Ethics"
+      ],
+      "skills_gained": [
+        "Legal risk assessment",
+        "Compliance auditing",
+        "Ethical software decision making"
+      ],
+      "assumed_knowledge": "Basic computer familiarity.",
+      "difficulty_rationale": "Legal and ethical literacy course for digital professionals.",
+      "typical_audience": "Second-year computing students.",
+      "semester": 3
+    },
+    {
+      "course_id": "mathematics_3",
+      "name": "Mathematics-III: Probability and Transforms",
+      "aliases": [
+        "Engineering Mathematics III",
+        "Maths 3",
+        "Math 3"
+      ],
+      "category": "Mathematics",
+      "description": "Fourier series, Laplace transforms, Fourier transforms, random variables, probability density functions, and stochastic processes for engineering systems.",
+      "difficulty": "intermediate",
+      "learning_outcomes": [
+        "Solve differential equations using Laplace transforms",
+        "Decompose periodic waveforms with Fourier series",
+        "Calculate joint probabilities and expectations for continuous random variables"
+      ],
+      "main_topics": [
+        "Laplace Transforms",
+        "Fourier Series and Transforms",
+        "Probability Distributions",
+        "Stochastic Systems Intro"
+      ],
+      "skills_gained": [
+        "Frequency domain analysis",
+        "Transform calculus",
+        "Probability modeling"
+      ],
+      "assumed_knowledge": "Mathematics-II (Calculus and Ordinary Differential Equations).",
+      "difficulty_rationale": "Advanced analytical math course supporting signal analysis and probabilistic computing.",
+      "typical_audience": "Third-semester computer science and engineering students.",
+      "semester": 3
+    },
+    {
+      "course_id": "design_thinking_and_innovation",
+      "name": "Design Thinking and Innovation",
+      "aliases": [
+        "Design Thinking",
+        "Innovation and Design",
+        "DTI"
+      ],
+      "category": "Engineering Sciences",
+      "description": "Human-centered design methodology: empathy mapping, problem framing, ideation, low-to-high fidelity prototyping, and usability validation for tech products.",
+      "difficulty": "beginner",
+      "learning_outcomes": [
+        "Conduct empathetic user research and formulate problem statements",
+        "Brainstorm and prioritize divergent solution concepts",
+        "Build rapid prototypes and conduct iterative user testing"
+      ],
+      "main_topics": [
+        "Empathy and User Research",
+        "Problem Definition and Point-of-View",
+        "Ideation and Brainstorming",
+        "Prototyping and Validation"
+      ],
+      "skills_gained": [
+        "User empathy",
+        "Rapid prototyping",
+        "Design iteration"
+      ],
+      "assumed_knowledge": "None.",
+      "difficulty_rationale": "Project-centric creative problem-solving workshop.",
+      "typical_audience": "Undergraduate engineers and product designers.",
+      "semester": 3
+    },
+    {
+      "course_id": "formal_languages_and_automata_theory",
+      "name": "Formal Languages and Automata Theory",
+      "aliases": [
+        "FLAT",
+        "Formal Languages",
+        "Automata and Formal Languages"
+      ],
+      "category": "Core Computer Science",
+      "description": "Regular languages, finite automata (DFA/NFA), context-free grammars, pushdown automata, Turing machines, decidability, and Chomsky hierarchy.",
+      "difficulty": "intermediate",
+      "learning_outcomes": [
+        "Construct DFA and NFA for formal regular languages",
+        "Formulate context-free grammars and pushdown automata",
+        "Analyze the computational power and limits of Turing machines"
+      ],
+      "main_topics": [
+        "Finite Automata and Regular Expressions",
+        "Context-Free Grammars and PDA",
+        "Turing Machines",
+        "Undecidability and Chomsky Hierarchy"
+      ],
+      "skills_gained": [
+        "Formal language proof",
+        "Grammar construction",
+        "Theoretical model design"
+      ],
+      "assumed_knowledge": "Discrete mathematics, set theory, and mathematical induction.",
+      "difficulty_rationale": "Mathematically rigorous core computer science theory course.",
+      "typical_audience": "Computer science students preparing for compiler design.",
+      "semester": 5
+    },
+    {
+      "course_id": "data_warehousing",
+      "name": "Data Warehousing and OLAP Systems",
+      "aliases": [
+        "Data Warehouse",
+        "OLAP Systems",
+        "Data Warehousing"
+      ],
+      "category": "Core Computer Science",
+      "description": "Dimensional modeling (star and snowflake schemas), ETL pipeline architecture, OLAP multidimensional cubes, data lakes, and enterprise analytical storage.",
+      "difficulty": "intermediate",
+      "learning_outcomes": [
+        "Design star and snowflake schemas for enterprise analytics",
+        "Construct robust ETL/ELT pipelines for business data",
+        "Execute OLAP roll-up, drill-down, and slice-and-dice operations"
+      ],
+      "main_topics": [
+        "Dimensional Modeling",
+        "ETL Architecture",
+        "OLAP Cubes and Operations",
+        "Data Lakehouse Architecture"
+      ],
+      "skills_gained": [
+        "Warehouse schema design",
+        "ETL orchestration",
+        "Analytical query optimization"
+      ],
+      "assumed_knowledge": "Relational databases and SQL.",
+      "difficulty_rationale": "Specialized enterprise data engineering curriculum.",
+      "typical_audience": "Students specializing in data science and enterprise data systems.",
+      "semester": 5
+    },
+    {
+      "course_id": "kubernetes_application_development",
+      "name": "Kubernetes Application Development",
+      "aliases": [
+        "Kubernetes",
+        "K8s Development",
+        "Container Orchestration"
+      ],
+      "category": "Modern Computing",
+      "description": "Cloud-native container orchestration with Kubernetes: Pods, Deployments, Services, Ingress, ConfigMaps, Secrets, persistent volumes, and Helm charts.",
+      "difficulty": "intermediate",
+      "learning_outcomes": [
+        "Deploy multi-container microservices on Kubernetes clusters",
+        "Configure persistent volumes, services, and ingress controllers",
+        "Package and release applications using Helm charts"
+      ],
+      "main_topics": [
+        "Pods and Deployments",
+        "Services and Ingress Routing",
+        "Storage and Configurations",
+        "Helm and GitOps Delivery"
+      ],
+      "skills_gained": [
+        "Cluster deployment",
+        "Service routing configuration",
+        "Helm chart authoring"
+      ],
+      "assumed_knowledge": "Containerization fundamentals and basic Linux shell.",
+      "difficulty_rationale": "Practical modern infrastructure engineering subject.",
+      "typical_audience": "Cloud engineers, DevOps practitioners, and backend developers.",
+      "semester": 5
+    },
+    {
+      "course_id": "docker_and_containers",
+      "name": "Docker and Containerization Technologies",
+      "aliases": [
+        "Docker",
+        "Containerization",
+        "Docker Application Development"
+      ],
+      "category": "Modern Computing",
+      "description": "Container concepts, Docker architecture, multi-stage Dockerfile design, image optimization, bridge networking, Docker Compose multi-service stacks, and security.",
+      "difficulty": "intermediate",
+      "learning_outcomes": [
+        "Author optimized multi-stage Dockerfiles",
+        "Manage local container networks and persistent volumes",
+        "Orchestrate multi-container applications using Docker Compose"
+      ],
+      "main_topics": [
+        "Docker Engine Architecture",
+        "Dockerfile Optimization",
+        "Storage Volumes and Networks",
+        "Docker Compose Orchestration"
+      ],
+      "skills_gained": [
+        "Image optimization",
+        "Container isolation",
+        "Local stack composition"
+      ],
+      "assumed_knowledge": "Operating systems fundamentals and command-line usage.",
+      "difficulty_rationale": "Hands-on practical development workflow standard.",
+      "typical_audience": "Software developers and system administrators.",
+      "semester": 5
+    },
+    {
+      "course_id": "real_time_systems",
+      "name": "Real Time Systems",
+      "aliases": [
+        "RTS",
+        "Real-Time Computing",
+        "Real Time Operating Systems"
+      ],
+      "category": "Core Computer Science",
+      "description": "Hard vs soft real-time constraints, clock synchronization, priority inversion, priority inheritance protocol, Rate Monotonic and Earliest Deadline First scheduling.",
+      "difficulty": "advanced",
+      "learning_outcomes": [
+        "Analyze schedulability under Rate Monotonic and EDF algorithms",
+        "Prevent priority inversion using priority inheritance and ceiling protocols",
+        "Design predictable task architectures for mission-critical systems"
+      ],
+      "main_topics": [
+        "Real-Time Task Models",
+        "RMS and EDF Schedulability",
+        "Resource Sharing and Priority Inversion",
+        "Real-Time Operating System Kernels"
+      ],
+      "skills_gained": [
+        "Schedulability analysis",
+        "Timing constraint verification",
+        "Kernel synchronization"
+      ],
+      "assumed_knowledge": "Operating systems, concurrency, and C programming.",
+      "difficulty_rationale": "Challenging mathematical scheduling bounds and low-level kernel concurrency.",
+      "typical_audience": "Advanced undergraduates in embedded and systems engineering.",
+      "semester": 5
+    },
+    {
+      "course_id": "software_testing_and_qa",
+      "name": "Software Testing and Quality Assurance",
+      "aliases": [
+        "Software Testing",
+        "QA Engineering",
+        "Software Quality Assurance"
+      ],
+      "category": "Core Computer Science",
+      "description": "Test engineering across lifecycle: black-box boundary value analysis, white-box path testing, cyclomatic complexity, unit test frameworks, automated CI regression, and quality metrics.",
+      "difficulty": "intermediate",
+      "learning_outcomes": [
+        "Formulate test cases using equivalence partitioning and boundary value analysis",
+        "Calculate McCabe cyclomatic complexity and achieve branch coverage",
+        "Implement automated regression pipelines with test runners"
+      ],
+      "main_topics": [
+        "Black-Box Testing Techniques",
+        "White-Box and Path Testing",
+        "Test Automation Frameworks",
+        "Quality Assurance and Defect Tracking"
+      ],
+      "skills_gained": [
+        "Test suite design",
+        "Coverage analysis",
+        "Automated QA scripting"
+      ],
+      "assumed_knowledge": "Software engineering and programming proficiency.",
+      "difficulty_rationale": "Methodical engineering discipline essential for production reliability.",
+      "typical_audience": "Undergraduate software engineers and QA specialists.",
+      "semester": 5
+    },
+    {
+      "course_id": "advanced_database_management_systems",
+      "name": "Advanced Database Management Systems",
+      "aliases": [
+        "Advanced DBMS",
+        "ADBMS",
+        "Advanced Databases"
+      ],
+      "category": "Core Computer Science",
+      "description": "Query optimization internals, cost-based optimizer plans, B-tree and hash indexing deep-dive, distributed transactions (2PC), MVCC concurrency control, and WAL logging.",
+      "difficulty": "advanced",
+      "learning_outcomes": [
+        "Analyze cost-based query execution plans",
+        "Evaluate MVCC and write-ahead logging concurrency algorithms",
+        "Design distributed transaction recovery using Two-Phase Commit"
+      ],
+      "main_topics": [
+        "Query Processing and Optimization",
+        "Indexing Internals and Storage Engines",
+        "Transaction Recovery and WAL",
+        "Distributed Transactions and 2PC"
+      ],
+      "skills_gained": [
+        "Query plan tuning",
+        "Storage engine analysis",
+        "Distributed transaction management"
+      ],
+      "assumed_knowledge": "Relational database systems, SQL, and data structures.",
+      "difficulty_rationale": "Advanced low-level database systems internals course.",
+      "typical_audience": "Upper-level computer science students and database engineers.",
+      "semester": 6
+    },
+    {
+      "course_id": "sensor_technologies",
+      "name": "Sensor Technologies and Internet of Things",
+      "aliases": [
+        "Sensors and Transducers",
+        "Sensor Networks",
+        "IoT Sensors"
+      ],
+      "category": "Modern Computing",
+      "description": "Physical sensor transducers (thermal, optical, piezoelectric, MEMS), analog signal conditioning, ADC conversion, sensor bus protocols (I2C, SPI), and wireless IoT interfacing.",
+      "difficulty": "intermediate",
+      "learning_outcomes": [
+        "Interface analog and digital transducers to microcontrollers",
+        "Configure I2C, SPI, and UART communication buses for sensor telemetry",
+        "Implement signal conditioning and digital filtering on sensor inputs"
+      ],
+      "main_topics": [
+        "Transducer Principles",
+        "Signal Conditioning and ADC",
+        "Bus Protocols (I2C/SPI)",
+        "IoT Sensor Telemetry"
+      ],
+      "skills_gained": [
+        "Sensor calibration",
+        "Hardware bus communication",
+        "Telemetry pipeline development"
+      ],
+      "assumed_knowledge": "Basic electronics and embedded systems.",
+      "difficulty_rationale": "Hardware-software co-design laboratory subject.",
+      "typical_audience": "IoT, robotics, and hardware engineering students.",
+      "semester": 6
+    },
+    {
+      "course_id": "simulation_and_modelling",
+      "name": "Simulation and System Modelling",
+      "aliases": [
+        "System Simulation",
+        "Modelling and Simulation",
+        "Simulation & Modelling"
+      ],
+      "category": "Core Computer Science",
+      "description": "Discrete-event simulation, continuous system modeling, pseudo-random number generation algorithms, Monte Carlo methods, queuing models, and simulation verification.",
+      "difficulty": "advanced",
+      "learning_outcomes": [
+        "Construct discrete-event simulation models for queuing networks",
+        "Generate and test pseudo-random variates statistically",
+        "Validate and verify stochastic simulations against analytical benchmarks"
+      ],
+      "main_topics": [
+        "Discrete-Event Simulation",
+        "Random Variate Generation",
+        "Queuing Models (M/M/1)",
+        "Monte Carlo Simulation & Verification"
+      ],
+      "skills_gained": [
+        "Discrete event modeling",
+        "Monte Carlo analysis",
+        "Queuing network simulation"
+      ],
+      "assumed_knowledge": "Probability and statistics, algorithms, and calculus.",
+      "difficulty_rationale": "Combines mathematical queuing theory with complex software modeling.",
+      "typical_audience": "Senior computer science and operations research students.",
+      "semester": 7
+    },
+    {
+      "course_id": "parallel_and_distributed_algorithms",
+      "name": "Parallel and Distributed Algorithms",
+      "aliases": [
+        "PDA",
+        "Distributed Algorithms",
+        "Parallel Algorithms"
+      ],
+      "category": "Core Computer Science",
+      "description": "PRAM models, parallel prefix sums, matrix multiplication algorithms, consensus protocols (Paxos, Raft), leader election, logical clocks (Lamport/Vector), and distributed snapshotting.",
+      "difficulty": "advanced",
+      "learning_outcomes": [
+        "Design algorithms on parallel PRAM and work-depth frameworks",
+        "Analyze distributed consensus protocols under network partitions",
+        "Implement leader election and distributed snapshotting algorithms"
+      ],
+      "main_topics": [
+        "PRAM Models and Work-Span Analysis",
+        "Parallel Sorting and Matrix Algorithms",
+        "Consensus (Paxos, Raft)",
+        "Distributed Snapshots and Logical Time"
+      ],
+      "skills_gained": [
+        "Work-depth algorithmic analysis",
+        "Consensus implementation",
+        "Distributed algorithm verification"
+      ],
+      "assumed_knowledge": "Design and analysis of algorithms and distributed systems.",
+      "difficulty_rationale": "Rigorous theoretical and systems-level algorithmic challenge.",
+      "typical_audience": "Senior students specializing in high-performance and distributed computing.",
+      "semester": 7
+    },
+    {
+      "course_id": "advanced_computer_networks",
+      "name": "Advanced Computer Networks and Protocols",
+      "aliases": [
+        "Advanced Networks",
+        "ACN",
+        "High-Speed Networks"
+      ],
+      "category": "Core Computer Science",
+      "description": "Software-Defined Networking (SDN/OpenFlow), BGP traffic engineering, TCP congestion control variants (BBR, CUBIC), network function virtualization (NFV), and high-throughput data center architectures.",
+      "difficulty": "advanced",
+      "learning_outcomes": [
+        "Configure SDN controllers and OpenFlow match-action rules",
+        "Evaluate modern TCP congestion control dynamics under delay and loss",
+        "Analyze BGP policy routing and multi-homed autonomous system routing"
+      ],
+      "main_topics": [
+        "Software Defined Networking (SDN)",
+        "Advanced Congestion Control (BBR)",
+        "BGP and Inter-Domain Routing",
+        "Data Center Clos Topologies"
+      ],
+      "skills_gained": [
+        "SDN programming",
+        "Traffic engineering",
+        "High-speed protocol analysis"
+      ],
+      "assumed_knowledge": "Computer networks fundamentals.",
+      "difficulty_rationale": "In-depth protocol analysis and modern cloud networking architectures.",
+      "typical_audience": "Senior computer science undergraduates and network engineers.",
+      "semester": 7
+    },
+    {
+      "course_id": "network_security_and_management",
+      "name": "Network Security and Management",
+      "aliases": [
+        "NSM",
+        "Network Security",
+        "Security Management"
+      ],
+      "category": "Core Computer Science",
+      "description": "Firewalls, stateful packet inspection, intrusion detection/prevention systems (Snort/Suricata), TLS/IPSec VPN architectures, SNMP management, and zero-trust perimeter defense.",
+      "difficulty": "advanced",
+      "learning_outcomes": [
+        "Deploy stateful firewalls and Snort intrusion detection rules",
+        "Configure secure IPSec and WireGuard VPN tunnels",
+        "Implement SNMP telemetry and network security auditing policies"
+      ],
+      "main_topics": [
+        "Firewalls and Packet Filtering",
+        "IDS/IPS Configuration",
+        "IPSec, TLS, and VPN Tunnels",
+        "SNMP and Security Auditing"
+      ],
+      "skills_gained": [
+        "Firewall rule formulation",
+        "Intrusion signature authoring",
+        "Network security auditing"
+      ],
+      "assumed_knowledge": "Computer networks and cryptography.",
+      "difficulty_rationale": "Mission-critical operational cybersecurity and infrastructure defense.",
+      "typical_audience": "Senior cybersecurity and systems undergraduates.",
+      "semester": 7
+    },
+    {
+      "course_id": "distributed_operating_systems",
+      "name": "Distributed Operating Systems",
+      "aliases": [
+        "Distributed OS",
+        "DOS Architecture"
+      ],
+      "category": "Core Computer Science",
+      "description": "Distributed mutual exclusion, distributed deadlock detection, distributed file systems (NFS, GFS, Ceph), process migration, and microkernel architectures.",
+      "difficulty": "advanced",
+      "learning_outcomes": [
+        "Implement Ricart-Agrawala distributed mutual exclusion",
+        "Detect distributed deadlocks using edge-chasing algorithms",
+        "Evaluate distributed file systems caching and consistency semantics"
+      ],
+      "main_topics": [
+        "Distributed Mutual Exclusion",
+        "Distributed Deadlock Handling",
+        "Distributed Shared Memory & Filesystems",
+        "Fault Tolerance and Process Migration"
+      ],
+      "skills_gained": [
+        "Distributed synchronization",
+        "Deadlock detection design",
+        "Distributed file system tuning"
+      ],
+      "assumed_knowledge": "Operating systems and distributed systems.",
+      "difficulty_rationale": "Demanding low-level distributed systems engineering.",
+      "typical_audience": "Final-year computer science students.",
+      "semester": 7
+    },
+    {
+      "course_id": "pattern_recognition",
+      "name": "Pattern Recognition and Image Analysis",
+      "aliases": [
+        "Pattern Matching",
+        "Pattern Classification",
+        "PRIA"
+      ],
+      "category": "Artificial Intelligence and Data Science",
+      "description": "Bayesian decision theory, linear discriminant analysis (LDA), non-parametric density estimation (Parzen windows, k-NN), feature extraction, and structural pattern recognition.",
+      "difficulty": "advanced",
+      "learning_outcomes": [
+        "Derive Bayesian decision surfaces for multivariate Gaussian patterns",
+        "Implement Fisher linear discriminant for dimensionality reduction",
+        "Construct structural and syntactic pattern classifiers"
+      ],
+      "main_topics": [
+        "Bayesian Decision Theory",
+        "Parametric and Non-Parametric Classification",
+        "Linear Discriminant Analysis",
+        "Feature Selection and Extraction"
+      ],
+      "skills_gained": [
+        "Decision surface derivation",
+        "Dimensionality reduction",
+        "Pattern classifier implementation"
+      ],
+      "assumed_knowledge": "Machine learning, linear algebra, and probability theory.",
+      "difficulty_rationale": "Rigorous mathematical treatment of statistical pattern matching.",
+      "typical_audience": "Final-year AI and computer vision undergraduates.",
+      "semester": 7
+    },
+    {
+      "course_id": "fuzzy_theory",
+      "name": "Fuzzy Theory and Logic Systems",
+      "aliases": [
+        "Fuzzy Logic",
+        "Fuzzy Systems",
+        "Fuzzy Sets"
+      ],
+      "category": "Artificial Intelligence and Data Science",
+      "description": "Fuzzy set theory, membership functions, fuzzy relations, fuzzy inference systems (Mamdani and Sugeno), defuzzification methods, and neuro-fuzzy hybrid systems.",
+      "difficulty": "advanced",
+      "learning_outcomes": [
+        "Formulate fuzzy sets and evaluate alpha-cuts and t-norms",
+        "Design Mamdani fuzzy inference systems for non-linear control",
+        "Implement defuzzification strategies (centroid, bisector)"
+      ],
+      "main_topics": [
+        "Classical vs Fuzzy Sets",
+        "Fuzzy Relations and Operations",
+        "Mamdani and Sugeno Inference",
+        "Defuzzification and Neuro-Fuzzy Systems"
+      ],
+      "skills_gained": [
+        "Fuzzy controller design",
+        "Inference rule engineering",
+        "Defuzzification implementation"
+      ],
+      "assumed_knowledge": "Discrete mathematics, logic, and basic set theory.",
+      "difficulty_rationale": "Specialized mathematical paradigm handling non-probabilistic uncertainty.",
+      "typical_audience": "Final-year AI and control systems engineering students.",
+      "semester": 8
+    },
+    {
+      "course_id": "wireless_and_adhoc_networks",
+      "name": "Wireless and Ad-Hoc Sensor Networks",
+      "aliases": [
+        "Ad-Hoc Networks",
+        "Wireless Sensor Networks",
+        "WSN"
+      ],
+      "category": "Core Computer Science",
+      "description": "Mobile ad-hoc networks (MANET), routing protocols (AODV, DSR, OLSR), MAC protocols (802.11, MACA), energy-efficient clustering (LEACH), and sensor mesh topologies.",
+      "difficulty": "advanced",
+      "learning_outcomes": [
+        "Analyze reactive and proactive ad-hoc routing protocols (AODV, DSR)",
+        "Evaluate energy-saving clustering algorithms for wireless sensors",
+        "Design wireless MAC solutions mitigating hidden and exposed terminal problems"
+      ],
+      "main_topics": [
+        "Ad-Hoc Network Architecture",
+        "MANET Routing (AODV/DSR)",
+        "Wireless MAC and Hidden Node Mitigation",
+        "Sensor Energy Clustering (LEACH)"
+      ],
+      "skills_gained": [
+        "Ad-hoc routing analysis",
+        "Wireless MAC protocol design",
+        "Energy budget estimation"
+      ],
+      "assumed_knowledge": "Computer networks and wireless communication basics.",
+      "difficulty_rationale": "Deals with dynamic, infrastructure-less and energy-constrained networks.",
+      "typical_audience": "Senior computer science and telecommunication students.",
+      "semester": 8
+    },
+    {
+      "course_id": "advanced_computer_architecture",
+      "name": "Advanced Computer Architecture",
+      "aliases": [
+        "Advanced Architecture",
+        "ACA",
+        "High Performance Architecture"
+      ],
+      "category": "Core Computer Science",
+      "description": "Instruction-level parallelism (superscalar execution, dynamic scheduling via Tomasulo algorithm, branch predictors), cache coherence protocols (MESI/MOESI), and memory consistency models.",
+      "difficulty": "advanced",
+      "learning_outcomes": [
+        "Trace dynamic instruction scheduling via Tomasulo algorithm with reservation stations",
+        "Simulate cache coherence state transitions using MESI and MOESI protocols",
+        "Analyze memory consistency models (strict, sequential, relaxed) in multi-core chips"
+      ],
+      "main_topics": [
+        "Instruction-Level Parallelism",
+        "Tomasulo Algorithm and Dynamic Scheduling",
+        "Cache Coherence (MESI/MOESI)",
+        "Multi-Core Interconnects and Consistency"
+      ],
+      "skills_gained": [
+        "Tomasulo algorithm tracing",
+        "Coherence protocol simulation",
+        "Microarchitectural performance modeling"
+      ],
+      "assumed_knowledge": "Computer organization and architecture.",
+      "difficulty_rationale": "High-level hardware engineering addressing modern superscalar microprocessors.",
+      "typical_audience": "Final-year computer science and computer engineering undergraduates.",
+      "semester": 8
     }
   ],
   "prerequisites": [
@@ -3224,6 +4253,195 @@
       "relationship_type": "optional",
       "explanation": "Human-computer interaction and usability heuristics guide user-friendly frontend interface design.",
       "confidence": 0.8,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "mathematics_1_to_mathematics_2",
+      "source_course_id": "mathematics_1",
+      "target_course_id": "mathematics_2",
+      "relationship_type": "required",
+      "explanation": "Mathematics-I differential and integral calculus is required for advanced vector calculus and differential equations in Mathematics-II.",
+      "confidence": 1.0,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "technical_communication_to_professional_communication",
+      "source_course_id": "technical_communication_and_academic_writing",
+      "target_course_id": "professional_communication",
+      "relationship_type": "recommended",
+      "explanation": "Academic writing fundamentals build the groundwork for professional verbal presentations and workplace soft skills.",
+      "confidence": 0.9,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "basic_electrical_to_digital_electronics",
+      "source_course_id": "basic_electrical_and_electronics",
+      "target_course_id": "digital_electronics_and_logic_design",
+      "relationship_type": "required",
+      "explanation": "Basic electrical network theorems and diode/transistor operation form the physical foundation for digital logic gates.",
+      "confidence": 0.95,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "mathematics_2_to_mathematics_3",
+      "source_course_id": "mathematics_2",
+      "target_course_id": "mathematics_3",
+      "relationship_type": "required",
+      "explanation": "Ordinary differential equations and complex variables from Mathematics-II are needed for Laplace and Fourier transforms in Mathematics-III.",
+      "confidence": 1.0,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "discrete_mathematics_to_formal_languages",
+      "source_course_id": "discrete_mathematics",
+      "target_course_id": "formal_languages_and_automata_theory",
+      "relationship_type": "required",
+      "explanation": "Set theory, mathematical induction, and relations are formal mathematical prerequisites for automata theory.",
+      "confidence": 0.95,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "database_management_to_data_warehousing",
+      "source_course_id": "database_management_systems",
+      "target_course_id": "data_warehousing",
+      "relationship_type": "required",
+      "explanation": "Relational schema design and SQL query skills are prerequisites for multidimensional OLAP and warehouse modeling.",
+      "confidence": 0.95,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "operating_systems_to_docker_and_containers",
+      "source_course_id": "operating_systems",
+      "target_course_id": "docker_and_containers",
+      "relationship_type": "required",
+      "explanation": "OS process isolation, namespaces, cgroups, and filesystem layering are essential to understand containerization.",
+      "confidence": 0.95,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "docker_to_kubernetes",
+      "source_course_id": "docker_and_containers",
+      "target_course_id": "kubernetes_application_development",
+      "relationship_type": "required",
+      "explanation": "Container image creation and container runtimes are mandatory prerequisites before deploying on Kubernetes orchestration clusters.",
+      "confidence": 0.95,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "operating_systems_to_real_time_systems",
+      "source_course_id": "operating_systems",
+      "target_course_id": "real_time_systems",
+      "relationship_type": "required",
+      "explanation": "Standard CPU scheduling, interrupts, and concurrency mechanisms are needed before mastering deterministic real-time scheduling bounds.",
+      "confidence": 0.9,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "software_engineering_to_software_testing",
+      "source_course_id": "software_engineering",
+      "target_course_id": "software_testing_and_qa",
+      "relationship_type": "required",
+      "explanation": "SDLC processes, requirements engineering, and architecture form the context for comprehensive verification and quality assurance.",
+      "confidence": 0.9,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "database_management_to_advanced_dbms",
+      "source_course_id": "database_management_systems",
+      "target_course_id": "advanced_database_management_systems",
+      "relationship_type": "required",
+      "explanation": "Relational algebra and core indexing principles are prerequisite to query optimizer cost models and distributed 2PC.",
+      "confidence": 0.95,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "embedded_systems_to_sensor_technologies",
+      "source_course_id": "embedded_systems",
+      "target_course_id": "sensor_technologies",
+      "relationship_type": "required",
+      "explanation": "Microcontroller programming and peripheral interfacing provide the necessary background for transducer signal conditioning.",
+      "confidence": 0.9,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "probability_and_statistics_to_simulation",
+      "source_course_id": "probability_and_statistics",
+      "target_course_id": "simulation_and_modelling",
+      "relationship_type": "required",
+      "explanation": "Probability density functions and hypothesis testing are required to generate pseudo-random variates and validate Monte Carlo simulations.",
+      "confidence": 0.9,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "algorithms_to_parallel_distributed_algorithms",
+      "source_course_id": "design_and_analysis_of_algorithms",
+      "target_course_id": "parallel_and_distributed_algorithms",
+      "relationship_type": "required",
+      "explanation": "Asymptotic analysis, divide-and-conquer, and graph algorithms are foundational for parallel PRAM and distributed consensus bounds.",
+      "confidence": 0.95,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "computer_networks_to_advanced_networks",
+      "source_course_id": "computer_networks",
+      "target_course_id": "advanced_computer_networks",
+      "relationship_type": "required",
+      "explanation": "OSI model, TCP/IP stack, and routing protocols are required to analyze Software-Defined Networks and high-speed BGP engineering.",
+      "confidence": 0.95,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "cryptography_to_network_security_management",
+      "source_course_id": "cryptography",
+      "target_course_id": "network_security_and_management",
+      "relationship_type": "required",
+      "explanation": "Ciphers, PKI, and hash algorithms underpin TLS handshake configuration, IPSec VPN tunnels, and security management.",
+      "confidence": 0.9,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "distributed_systems_to_distributed_os",
+      "source_course_id": "distributed_systems",
+      "target_course_id": "distributed_operating_systems",
+      "relationship_type": "required",
+      "explanation": "RPCs, clock synchronization, and distributed consensus are required to implement distributed mutual exclusion and deadlock handling.",
+      "confidence": 0.9,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "machine_learning_to_pattern_recognition",
+      "source_course_id": "machine_learning",
+      "target_course_id": "pattern_recognition",
+      "relationship_type": "required",
+      "explanation": "Statistical learning, supervised models, and feature spaces are required for Bayesian decision surfaces and LDA classification.",
+      "confidence": 0.9,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "discrete_mathematics_to_fuzzy_theory",
+      "source_course_id": "discrete_mathematics",
+      "target_course_id": "fuzzy_theory",
+      "relationship_type": "required",
+      "explanation": "Classical set theory, relations, and propositional logic are necessary baselines for fuzzy set membership and inference.",
+      "confidence": 0.85,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "computer_networks_to_wireless_adhoc_networks",
+      "source_course_id": "computer_networks",
+      "target_course_id": "wireless_and_adhoc_networks",
+      "relationship_type": "required",
+      "explanation": "Network layering, MAC protocols, and IP routing provide the foundation for dynamic MANET protocols (AODV/DSR).",
+      "confidence": 0.9,
+      "evidence_type": "expert_curated"
+    },
+    {
+      "relationship_id": "computer_org_to_advanced_architecture",
+      "source_course_id": "computer_organization_and_architecture",
+      "target_course_id": "advanced_computer_architecture",
+      "relationship_type": "required",
+      "explanation": "Pipeline hazards, memory hierarchy, and instruction sets are required before exploring Tomasulo dynamic scheduling and MESI cache coherence.",
+      "confidence": 0.95,
       "evidence_type": "expert_curated"
     }
   ]

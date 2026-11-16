@@ -186,7 +186,7 @@ export function CourseForm({ busy, onSubmit, handleRef }: { busy: boolean; onSub
               value={text}
               disabled={busy}
               autoComplete="off"
-              placeholder="Search or select from 70 catalog courses"
+              placeholder="Search or select from 100 catalog courses"
               onChange={(e) => { setText(e.target.value); setOpen(true); setActive(0); }}
               onFocus={() => setOpen(true)}
               onBlur={() => setTimeout(() => setOpen(false), 200)}
@@ -236,7 +236,7 @@ export function CourseForm({ busy, onSubmit, handleRef }: { busy: boolean; onSub
                 ))}
               </div>
             ) : (
-              <p className="text-ink-2">Please select from the 70 catalog courses or click a preset track below.</p>
+              <p className="text-ink-2">Please select from the 100 catalog courses or click a preset track below.</p>
             )}
           </div>
         )}

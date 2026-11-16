@@ -5,6 +5,7 @@ export interface CatalogCourse {
   category: string;
   difficulty: 'beginner' | 'intermediate' | 'advanced';
   description: string;
+  semester: number;
 }
 
 export interface TrackPreset {
@@ -72,6 +73,7 @@ export const CURATED_COURSES: CatalogCourse[] = [
     category: "Programming Fundamentals",
     difficulty: "beginner",
     description: "Language-independent basics of programming: variables, control flow, functions, simple data types, and basic problem decomposition.",
+    semester: 1,
   },
   {
     id: "c_programming",
@@ -80,6 +82,7 @@ export const CURATED_COURSES: CatalogCourse[] = [
     category: "Programming Fundamentals",
     difficulty: "beginner",
     description: "Procedural programming in C, including pointers, manual memory management, arrays, structs, and file I/O.",
+    semester: 1,
   },
   {
     id: "python_programming",
@@ -88,6 +91,7 @@ export const CURATED_COURSES: CatalogCourse[] = [
     category: "Programming Fundamentals",
     difficulty: "beginner",
     description: "Programming in Python: syntax, built-in data structures, functions, modules, and file handling, with an introduction to common libraries.",
+    semester: 2,
   },
   {
     id: "object_oriented_programming",
@@ -96,6 +100,7 @@ export const CURATED_COURSES: CatalogCourse[] = [
     category: "Programming Fundamentals",
     difficulty: "intermediate",
     description: "Object-oriented concepts: classes, objects, encapsulation, inheritance, polymorphism, and abstraction, independent of any one language.",
+    semester: 2,
   },
   {
     id: "java_programming",
@@ -104,6 +109,7 @@ export const CURATED_COURSES: CatalogCourse[] = [
     category: "Programming Fundamentals",
     difficulty: "intermediate",
     description: "Programming in Java: class-based design, interfaces, exceptions, collections, and basic concurrency.",
+    semester: 4,
   },
   {
     id: "data_structures",
@@ -112,6 +118,7 @@ export const CURATED_COURSES: CatalogCourse[] = [
     category: "Core Computer Science",
     difficulty: "intermediate",
     description: "Design, implementation, and use of arrays, linked lists, stacks, queues, trees, heaps, hash tables, and graphs, with basic operation costs.",
+    semester: 3,
   },
   {
     id: "design_and_analysis_of_algorithms",
@@ -120,6 +127,7 @@ export const CURATED_COURSES: CatalogCourse[] = [
     category: "Core Computer Science",
     difficulty: "advanced",
     description: "Algorithm design paradigms (divide and conquer, greedy, dynamic programming, graph algorithms) and analysis of correctness and time/space complexity.",
+    semester: 4,
   },
   {
     id: "discrete_mathematics",
@@ -128,6 +136,7 @@ export const CURATED_COURSES: CatalogCourse[] = [
     category: "Core Computer Science",
     difficulty: "intermediate",
     description: "Logic, sets, relations, functions, proof techniques, counting, recurrences, and basic graph theory.",
+    semester: 2,
   },
   {
     id: "computer_organization_and_architecture",
@@ -136,6 +145,7 @@ export const CURATED_COURSES: CatalogCourse[] = [
     category: "Core Computer Science",
     difficulty: "intermediate",
     description: "Digital logic basics, instruction sets, processor datapath, memory hierarchy, I/O, and introductory pipelining.",
+    semester: 4,
   },
   {
     id: "operating_systems",
@@ -144,6 +154,7 @@ export const CURATED_COURSES: CatalogCourse[] = [
     category: "Core Computer Science",
     difficulty: "intermediate",
     description: "Processes, threads, scheduling, synchronization, memory management, file systems, and I/O management.",
+    semester: 5,
   },
   {
     id: "database_management_systems",
@@ -152,6 +163,7 @@ export const CURATED_COURSES: CatalogCourse[] = [
     category: "Core Computer Science",
     difficulty: "intermediate",
     description: "Relational model, SQL, schema design and normalization, transactions, indexing, and basic query processing.",
+    semester: 4,
   },
   {
     id: "computer_networks",
@@ -160,6 +172,7 @@ export const CURATED_COURSES: CatalogCourse[] = [
     category: "Core Computer Science",
     difficulty: "intermediate",
     description: "Layered network architecture, TCP/IP, routing, transport protocols, application protocols, and basic network performance.",
+    semester: 5,
   },
   {
     id: "theory_of_computation",
@@ -168,6 +181,7 @@ export const CURATED_COURSES: CatalogCourse[] = [
     category: "Core Computer Science",
     difficulty: "advanced",
     description: "Finite automata, regular and context-free languages, Turing machines, decidability, and an introduction to complexity.",
+    semester: 5,
   },
   {
     id: "compiler_design",
@@ -176,6 +190,7 @@ export const CURATED_COURSES: CatalogCourse[] = [
     category: "Core Computer Science",
     difficulty: "advanced",
     description: "Phases of a compiler: lexical analysis, parsing, semantic analysis, intermediate code, optimization, and code generation.",
+    semester: 6,
   },
   {
     id: "software_engineering",
@@ -184,6 +199,7 @@ export const CURATED_COURSES: CatalogCourse[] = [
     category: "Core Computer Science",
     difficulty: "intermediate",
     description: "Requirements, design, process models, testing, version control, maintenance, and teamwork in building software systems.",
+    semester: 5,
   },
   {
     id: "linear_algebra",
@@ -192,6 +208,7 @@ export const CURATED_COURSES: CatalogCourse[] = [
     category: "Mathematics and Statistics",
     difficulty: "intermediate",
     description: "Vectors, matrices, linear systems, vector spaces, linear transformations, eigenvalues, and decompositions.",
+    semester: 1,
   },
   {
     id: "calculus",
@@ -200,6 +217,7 @@ export const CURATED_COURSES: CatalogCourse[] = [
     category: "Mathematics and Statistics",
     difficulty: "intermediate",
     description: "Limits, differentiation, integration, series, and an introduction to multivariable calculus.",
+    semester: 1,
   },
   {
     id: "probability_and_statistics",
@@ -208,6 +226,7 @@ export const CURATED_COURSES: CatalogCourse[] = [
     category: "Mathematics and Statistics",
     difficulty: "intermediate",
     description: "Probability, random variables, common distributions, expectation, estimation, hypothesis testing, and basic regression.",
+    semester: 3,
   },
   {
     id: "numerical_methods",
@@ -216,6 +235,7 @@ export const CURATED_COURSES: CatalogCourse[] = [
     category: "Mathematics and Statistics",
     difficulty: "intermediate",
     description: "Numerical solution of equations, interpolation, numerical integration and differentiation, linear systems, and error analysis.",
+    semester: 4,
   },
   {
     id: "optimization",
@@ -224,6 +244,7 @@ export const CURATED_COURSES: CatalogCourse[] = [
     category: "Mathematics and Statistics",
     difficulty: "advanced",
     description: "Formulation and solution of optimization problems: linear programming, convex optimization, and gradient-based methods.",
+    semester: 5,
   },
   {
     id: "artificial_intelligence",
@@ -232,6 +253,7 @@ export const CURATED_COURSES: CatalogCourse[] = [
     category: "Artificial Intelligence and Data Science",
     difficulty: "intermediate",
     description: "Foundations of AI: intelligent agents, search, knowledge representation, logical and probabilistic reasoning, and planning.",
+    semester: 5,
   },
   {
     id: "machine_learning",
@@ -240,6 +262,7 @@ export const CURATED_COURSES: CatalogCourse[] = [
     category: "Artificial Intelligence and Data Science",
     difficulty: "intermediate",
     description: "Supervised and unsupervised learning, model training and evaluation, generalization, and core algorithms such as regression, trees, SVMs, and clustering.",
+    semester: 5,
   },
   {
     id: "deep_learning",
@@ -248,6 +271,7 @@ export const CURATED_COURSES: CatalogCourse[] = [
     category: "Artificial Intelligence and Data Science",
     difficulty: "advanced",
     description: "Neural networks, backpropagation, CNNs, RNNs, attention, regularization, and training of deep models.",
+    semester: 6,
   },
   {
     id: "natural_language_processing",
@@ -256,6 +280,7 @@ export const CURATED_COURSES: CatalogCourse[] = [
     category: "Artificial Intelligence and Data Science",
     difficulty: "advanced",
     description: "Computational methods for text and language: tokenization, language models, tagging, parsing, embeddings, and text classification.",
+    semester: 6,
   },
   {
     id: "computer_vision",
@@ -264,6 +289,7 @@ export const CURATED_COURSES: CatalogCourse[] = [
     category: "Artificial Intelligence and Data Science",
     difficulty: "advanced",
     description: "Image formation, feature extraction, recognition, detection, and segmentation using classical and learning-based methods.",
+    semester: 6,
   },
   {
     id: "data_science",
@@ -272,6 +298,7 @@ export const CURATED_COURSES: CatalogCourse[] = [
     category: "Artificial Intelligence and Data Science",
     difficulty: "intermediate",
     description: "End-to-end data workflow: collection, cleaning, exploration, visualization, statistical analysis, and communicating results.",
+    semester: 5,
   },
   {
     id: "data_mining",
@@ -280,6 +307,7 @@ export const CURATED_COURSES: CatalogCourse[] = [
     category: "Artificial Intelligence and Data Science",
     difficulty: "intermediate",
     description: "Pattern discovery in large datasets: association rules, clustering, classification, anomaly detection, and preprocessing.",
+    semester: 6,
   },
   {
     id: "reinforcement_learning",
@@ -288,6 +316,7 @@ export const CURATED_COURSES: CatalogCourse[] = [
     category: "Artificial Intelligence and Data Science",
     difficulty: "advanced",
     description: "Learning through interaction: Markov decision processes, dynamic programming, temporal-difference and policy-gradient methods.",
+    semester: 7,
   },
   {
     id: "big_data_analytics",
@@ -296,6 +325,7 @@ export const CURATED_COURSES: CatalogCourse[] = [
     category: "Modern Computing",
     difficulty: "advanced",
     description: "Storing and processing very large datasets with distributed frameworks (e.g. MapReduce and Spark-style processing) and scalable analytics.",
+    semester: 7,
   },
   {
     id: "cloud_computing",
@@ -304,6 +334,7 @@ export const CURATED_COURSES: CatalogCourse[] = [
     category: "Modern Computing",
     difficulty: "intermediate",
     description: "Cloud service and deployment models, virtualization, containers, elasticity, storage, and cloud-based application deployment.",
+    semester: 6,
   },
   {
     id: "cybersecurity",
@@ -312,6 +343,7 @@ export const CURATED_COURSES: CatalogCourse[] = [
     category: "Modern Computing",
     difficulty: "intermediate",
     description: "Security principles, threats and attacks, cryptography basics, authentication, network and system security, and risk management.",
+    semester: 7,
   },
   {
     id: "generative_ai",
@@ -320,6 +352,7 @@ export const CURATED_COURSES: CatalogCourse[] = [
     category: "Modern Computing",
     difficulty: "advanced",
     description: "Models that generate text, images, and other content: autoencoders, GANs, diffusion models, and transformer-based generation, with responsible use.",
+    semester: 8,
   },
   {
     id: "large_language_models",
@@ -328,6 +361,7 @@ export const CURATED_COURSES: CatalogCourse[] = [
     category: "Modern Computing",
     difficulty: "advanced",
     description: "Transformer-based language models: pretraining, fine-tuning, prompting, evaluation, and limitations such as hallucination.",
+    semester: 8,
   },
   {
     id: "retrieval_augmented_generation",
@@ -336,6 +370,7 @@ export const CURATED_COURSES: CatalogCourse[] = [
     category: "Modern Computing",
     difficulty: "advanced",
     description: "Grounding LLM outputs in external knowledge using document chunking, embeddings, vector search, and retrieval pipelines.",
+    semester: 8,
   },
   {
     id: "mlops",
@@ -344,6 +379,7 @@ export const CURATED_COURSES: CatalogCourse[] = [
     category: "Modern Computing",
     difficulty: "advanced",
     description: "Deploying, monitoring, versioning, and maintaining machine learning systems in production, including pipelines and reproducibility.",
+    semester: 7,
   },
   {
     id: "c_plus_plus_programming",
@@ -352,6 +388,7 @@ export const CURATED_COURSES: CatalogCourse[] = [
     category: "Programming Fundamentals",
     difficulty: "intermediate",
     description: "Modern C++ development covering object-oriented design, templates, RAII, smart pointers, the Standard Template Library (STL), and move semantics.",
+    semester: 3,
   },
   {
     id: "programming_using_r",
@@ -360,6 +397,7 @@ export const CURATED_COURSES: CatalogCourse[] = [
     category: "Programming Fundamentals",
     difficulty: "beginner",
     description: "Statistical computing and data manipulation with R: data frames, tidyverse, data visualization with ggplot2, and reproducible research.",
+    semester: 3,
   },
   {
     id: "functional_programming",
@@ -368,6 +406,7 @@ export const CURATED_COURSES: CatalogCourse[] = [
     category: "Programming Fundamentals",
     difficulty: "intermediate",
     description: "Declarative programming paradigm centered on pure functions, immutability, higher-order functions, algebraic data types, pattern matching, and recursion.",
+    semester: 4,
   },
   {
     id: "technical_communication_and_academic_writing",
@@ -376,6 +415,7 @@ export const CURATED_COURSES: CatalogCourse[] = [
     category: "Core Computer Science",
     difficulty: "beginner",
     description: "Principles of clear technical writing, research paper structuring, software documentation, peer review, and technical presentation.",
+    semester: 1,
   },
   {
     id: "graph_theory",
@@ -384,6 +424,7 @@ export const CURATED_COURSES: CatalogCourse[] = [
     category: "Mathematics",
     difficulty: "intermediate",
     description: "Mathematical study of graphs: connectivity, trees, Eulerian and Hamiltonian paths, planar graphs, graph coloring, and network flows.",
+    semester: 4,
   },
   {
     id: "web_development",
@@ -392,6 +433,7 @@ export const CURATED_COURSES: CatalogCourse[] = [
     category: "Core Computer Science",
     difficulty: "beginner",
     description: "Full-stack web application engineering: HTML5/CSS3 semantics, client-side JavaScript, responsive layout, RESTful HTTP APIs, and server-side backend integration.",
+    semester: 4,
   },
   {
     id: "mobile_app_development",
@@ -400,6 +442,7 @@ export const CURATED_COURSES: CatalogCourse[] = [
     category: "Core Computer Science",
     difficulty: "intermediate",
     description: "Engineering native and cross-platform mobile apps: mobile UI lifecycle, asynchronous event handling, sensor integration, local storage, and background services.",
+    semester: 6,
   },
   {
     id: "distributed_systems",
@@ -408,6 +451,7 @@ export const CURATED_COURSES: CatalogCourse[] = [
     category: "Core Computer Science",
     difficulty: "advanced",
     description: "Principles of distributed computing: clock synchronization, consensus algorithms (Raft/Paxos), fault tolerance, replication, and distributed transactions.",
+    semester: 7,
   },
   {
     id: "cryptography",
@@ -416,6 +460,7 @@ export const CURATED_COURSES: CatalogCourse[] = [
     category: "Core Computer Science",
     difficulty: "advanced",
     description: "Mathematical and practical foundations of cryptography: symmetric ciphers, public-key cryptosystems (RSA, ECC), hash functions, digital signatures, and TLS.",
+    semester: 6,
   },
   {
     id: "information_retrieval",
@@ -424,6 +469,7 @@ export const CURATED_COURSES: CatalogCourse[] = [
     category: "AI and Data Science",
     difficulty: "intermediate",
     description: "Architecture of modern search engines: inverted index construction, vector space ranking (TF-IDF, BM25), crawling, link analysis (PageRank), and evaluation.",
+    semester: 8,
   },
   {
     id: "computer_graphics",
@@ -432,6 +478,7 @@ export const CURATED_COURSES: CatalogCourse[] = [
     category: "Core Computer Science",
     difficulty: "intermediate",
     description: "Foundations of 2D and 3D computer graphics: transformation matrices, rendering pipelines, rasterization, lighting models, ray tracing, and shaders.",
+    semester: 8,
   },
   {
     id: "human_computer_interaction",
@@ -440,6 +487,7 @@ export const CURATED_COURSES: CatalogCourse[] = [
     category: "Core Computer Science",
     difficulty: "beginner",
     description: "User-centered design principles, heuristic evaluation, cognitive walkthroughs, wireframing, prototyping, usability testing, and accessibility guidelines.",
+    semester: 3,
   },
   {
     id: "robotics_and_autonomous_systems",
@@ -448,6 +496,7 @@ export const CURATED_COURSES: CatalogCourse[] = [
     category: "AI and Data Science",
     difficulty: "advanced",
     description: "Principles of robotic systems: forward and inverse kinematics, robot dynamics, sensor perception, state estimation (Kalman filters), path planning, and feedback control.",
+    semester: 7,
   },
   {
     id: "parallel_and_concurrent_programming",
@@ -456,6 +505,7 @@ export const CURATED_COURSES: CatalogCourse[] = [
     category: "Core Computer Science",
     difficulty: "advanced",
     description: "High-performance parallel computing: multi-core shared memory (threads, OpenMP), lock-free data structures, message passing (MPI), and SIMD vectorization.",
+    semester: 7,
   },
   {
     id: "system_design",
@@ -464,6 +514,7 @@ export const CURATED_COURSES: CatalogCourse[] = [
     category: "Core Computer Science",
     difficulty: "advanced",
     description: "Architecting large-scale, highly available internet services: horizontal scaling, load balancing, caching tiers, database sharding, asynchronous message queues, and reliability.",
+    semester: 7,
   },
   {
     id: "devops_and_ci_cd",
@@ -472,6 +523,7 @@ export const CURATED_COURSES: CatalogCourse[] = [
     category: "Core Computer Science",
     difficulty: "intermediate",
     description: "Modern software delivery lifecycle: containerization with Docker, orchestration, automated testing pipelines, infrastructure as code, and observability monitoring.",
+    semester: 7,
   },
   {
     id: "quantum_computing",
@@ -480,6 +532,7 @@ export const CURATED_COURSES: CatalogCourse[] = [
     category: "Core Computer Science",
     difficulty: "advanced",
     description: "Principles of quantum information processing: qubits, superposition, quantum entanglement, quantum circuit design, and algorithms (Deutsch-Jozsa, Grover, Shor).",
+    semester: 8,
   },
   {
     id: "data_visualization",
@@ -488,6 +541,7 @@ export const CURATED_COURSES: CatalogCourse[] = [
     category: "AI and Data Science",
     difficulty: "beginner",
     description: "Visual encoding of quantitative and qualitative data: perception principles, color theory, exploratory plotting, and interactive dashboard engineering.",
+    semester: 6,
   },
   {
     id: "time_series_analysis",
@@ -496,6 +550,7 @@ export const CURATED_COURSES: CatalogCourse[] = [
     category: "Mathematics",
     difficulty: "intermediate",
     description: "Statistical modeling of temporal data: stationarity, autocorrelation, ARIMA models, seasonal decomposition, exponential smoothing, and deep learning for forecasting.",
+    semester: 7,
   },
   {
     id: "ai_ethics_and_governance",
@@ -504,6 +559,7 @@ export const CURATED_COURSES: CatalogCourse[] = [
     category: "AI and Data Science",
     difficulty: "beginner",
     description: "Ethical, legal, and safety issues in artificial intelligence: algorithmic bias, fairness metrics, explainability, privacy rights, intellectual property, and AI alignment.",
+    semester: 8,
   },
   {
     id: "bioinformatics",
@@ -512,6 +568,7 @@ export const CURATED_COURSES: CatalogCourse[] = [
     category: "AI and Data Science",
     difficulty: "intermediate",
     description: "Algorithmic methods in molecular biology: sequence alignment (Needleman-Wunsch, Smith-Waterman), genome assembly, phylogenetic trees, and structural prediction.",
+    semester: 7,
   },
   {
     id: "nosql_databases",
@@ -520,6 +577,7 @@ export const CURATED_COURSES: CatalogCourse[] = [
     category: "Core Computer Science",
     difficulty: "intermediate",
     description: "Non-relational data modeling and distributed databases: document stores (MongoDB), key-value stores (Redis), wide-column stores (Cassandra), and graph databases (Neo4j).",
+    semester: 6,
   },
   {
     id: "blockchain_and_web3",
@@ -528,6 +586,7 @@ export const CURATED_COURSES: CatalogCourse[] = [
     category: "Core Computer Science",
     difficulty: "intermediate",
     description: "Architectures of decentralized ledgers: cryptographic hashing, Merkle trees, consensus mechanisms (Proof of Work, Proof of Stake), smart contracts, and decentralized apps.",
+    semester: 8,
   },
   {
     id: "embedded_systems",
@@ -536,6 +595,7 @@ export const CURATED_COURSES: CatalogCourse[] = [
     category: "Core Computer Science",
     difficulty: "intermediate",
     description: "Microcontroller hardware-software interface: GPIO, interrupts, hardware timers, communication buses (UART, SPI, I2C), ADC, and low-power IoT network stacks.",
+    semester: 6,
   },
   {
     id: "knowledge_graphs",
@@ -544,6 +604,7 @@ export const CURATED_COURSES: CatalogCourse[] = [
     category: "AI and Data Science",
     difficulty: "intermediate",
     description: "Structured knowledge representation: RDF triples, OWL ontologies, SPARQL graph queries, knowledge graph embeddings, entity resolution, and link prediction.",
+    semester: 7,
   },
   {
     id: "speech_and_audio_processing",
@@ -552,6 +613,7 @@ export const CURATED_COURSES: CatalogCourse[] = [
     category: "AI and Data Science",
     difficulty: "advanced",
     description: "Digital processing and recognition of acoustic signals: Fourier transforms, Mel-Frequency Cepstral Coefficients (MFCCs), acoustic modeling, and end-to-end ASR.",
+    semester: 7,
   },
   {
     id: "multimodal_deep_learning",
@@ -560,6 +622,7 @@ export const CURATED_COURSES: CatalogCourse[] = [
     category: "AI and Data Science",
     difficulty: "advanced",
     description: "Architectures integrating multiple sensory modalities: contrastive learning (CLIP), cross-attention fusion, vision-language models, and multimodal generation.",
+    semester: 8,
   },
   {
     id: "linux_system_administration",
@@ -568,6 +631,7 @@ export const CURATED_COURSES: CatalogCourse[] = [
     category: "Core Computer Science",
     difficulty: "beginner",
     description: "Practical Unix/Linux administration: file permissions, shell scripting (Bash), process management, systemd services, SSH, package management, and system logs.",
+    semester: 3,
   },
   {
     id: "discrete_optimization",
@@ -576,6 +640,7 @@ export const CURATED_COURSES: CatalogCourse[] = [
     category: "Mathematics",
     difficulty: "advanced",
     description: "Exact and heuristic techniques for NP-hard discrete problems: branch and bound, integer linear programming (ILP), dynamic programming, cutting planes, and local search.",
+    semester: 8,
   },
   {
     id: "bayesian_data_analysis",
@@ -584,6 +649,7 @@ export const CURATED_COURSES: CatalogCourse[] = [
     category: "Mathematics",
     difficulty: "advanced",
     description: "Probabilistic programming and Bayesian modeling: prior/posterior distributions, conjugate priors, Markov Chain Monte Carlo (MCMC, Gibbs, HMC), and Stan/PyMC.",
+    semester: 8,
   },
   {
     id: "deep_reinforcement_learning",
@@ -592,6 +658,7 @@ export const CURATED_COURSES: CatalogCourse[] = [
     category: "AI and Data Science",
     difficulty: "advanced",
     description: "Combining deep neural networks with reinforcement learning: Deep Q-Networks (DQN), policy gradients (REINFORCE), actor-critic methods (PPO, SAC), and model-based RL.",
+    semester: 8,
   },
   {
     id: "edge_ai",
@@ -600,6 +667,7 @@ export const CURATED_COURSES: CatalogCourse[] = [
     category: "AI and Data Science",
     difficulty: "advanced",
     description: "Deploying machine learning models to resource-constrained devices: model quantization (INT8), pruning, knowledge distillation, hardware acceleration, and edge runtimes.",
+    semester: 8,
   },
   {
     id: "information_theory",
@@ -608,6 +676,7 @@ export const CURATED_COURSES: CatalogCourse[] = [
     category: "Mathematics",
     difficulty: "advanced",
     description: "Mathematical foundations of communication: Shannon entropy, mutual information, source coding theorem, channel capacity theorem, and error-correcting codes.",
+    semester: 8,
   },
   {
     id: "game_theory",
@@ -616,6 +685,7 @@ export const CURATED_COURSES: CatalogCourse[] = [
     category: "Mathematics",
     difficulty: "advanced",
     description: "Strategic decision making in computational systems: Nash equilibrium, zero-sum games, mechanism design, auctions, Price of Anarchy, and multi-agent coordination.",
+    semester: 8,
   },
   {
     id: "vector_databases_and_embeddings",
@@ -624,5 +694,276 @@ export const CURATED_COURSES: CatalogCourse[] = [
     category: "AI and Data Science",
     difficulty: "intermediate",
     description: "High-dimensional similarity search: dense embeddings, distance metrics (Cosine, Euclidean), approximate nearest neighbors (HNSW, IVF-PQ), and vector store engines.",
+    semester: 8,
+  },
+  {
+    id: "physics_for_engineers",
+    name: "Physics for Engineers",
+    aliases: ["Engineering Physics", "Applied Physics", "Physics"],
+    category: "Engineering Sciences",
+    difficulty: "beginner",
+    description: "Foundational classical and modern physics covering electromagnetic theory, optics, quantum concepts, and semiconductor fundamentals for computing hardware.",
+    semester: 1,
+  },
+  {
+    id: "chemistry_for_engineers",
+    name: "Chemistry for Engineers",
+    aliases: ["Engineering Chemistry", "Applied Chemistry", "Chemistry"],
+    category: "Engineering Sciences",
+    difficulty: "beginner",
+    description: "Chemical thermodynamics, electrochemistry, battery chemistry, polymers, and material science essentials underpinning hardware systems and sustainable computing.",
+    semester: 1,
+  },
+  {
+    id: "mathematics_1",
+    name: "Mathematics-I: Calculus & Linear Algebra",
+    aliases: ["Engineering Mathematics I", "Maths 1", "Math 1"],
+    category: "Mathematics",
+    difficulty: "beginner",
+    description: "Core university engineering mathematics including single and multivariable differential calculus, matrix eigenvalues, eigenvectors, and infinite series.",
+    semester: 1,
+  },
+  {
+    id: "basic_electrical_and_electronics",
+    name: "Basics of Electrical and Electronics Engineering",
+    aliases: ["BEEE", "Basic Electrical Engineering", "Basic Electronics"],
+    category: "Engineering Sciences",
+    difficulty: "beginner",
+    description: "DC and AC network analysis, magnetic circuits, diodes, bipolar junction transistors, operational amplifiers, and digital logic gate primitives.",
+    semester: 1,
+  },
+  {
+    id: "engineering_graphics_and_cad",
+    name: "Engineering Graphics and Computer Aided Design",
+    aliases: ["Engineering Graphics", "CAD", "Engineering Drawing"],
+    category: "Engineering Sciences",
+    difficulty: "beginner",
+    description: "Spatial visualization, orthographic and isometric projections, sectioning, dimensioning, and 2D/3D parametric modeling using CAD software.",
+    semester: 1,
+  },
+  {
+    id: "workshop_and_manufacturing_practices",
+    name: "Manufacturing Practices and Workshop",
+    aliases: ["Workshop Practice", "Manufacturing Practices", "Mechanical Workshop"],
+    category: "Engineering Sciences",
+    difficulty: "beginner",
+    description: "Practical experiential learning in fitting, carpentry, sheet metal fabrication, welding, additive manufacturing (3D printing), and industrial safety standards.",
+    semester: 1,
+  },
+  {
+    id: "mathematics_2",
+    name: "Mathematics-II: Advanced Calculus and Complex Analysis",
+    aliases: ["Engineering Mathematics II", "Maths 2", "Math 2"],
+    category: "Mathematics",
+    difficulty: "beginner",
+    description: "Multiple integrals, vector calculus (Green, Stokes, and Gauss divergence theorems), first- and second-order ordinary differential equations, and complex variables.",
+    semester: 2,
+  },
+  {
+    id: "professional_communication",
+    name: "Professional Communication and Soft Skills",
+    aliases: ["Communication Skills", "Professional English", "Soft Skills"],
+    category: "Humanities & Social Sciences",
+    difficulty: "beginner",
+    description: "Interpersonal corporate communication, technical presentations, resume writing, group discussions, listening comprehension, and professional etiquette.",
+    semester: 2,
+  },
+  {
+    id: "environmental_science",
+    name: "Environmental Science and Sustainability",
+    aliases: ["Environmental Studies", "EVS", "Environmental Science Course"],
+    category: "Humanities & Social Sciences",
+    difficulty: "beginner",
+    description: "Ecosystems, biodiversity conservation, pollution control technologies, environmental protection legislation, electronic waste management, and sustainability.",
+    semester: 2,
+  },
+  {
+    id: "digital_electronics_and_logic_design",
+    name: "Digital Electronics and Logic Design",
+    aliases: ["Digital Electronics", "Digital Logic", "DELD"],
+    category: "Core Computer Science",
+    difficulty: "intermediate",
+    description: "Boolean algebra, Karnaugh maps, combinational logic design (adders, multiplexers, decoders), flip-flops, synchronous/asynchronous sequential circuits, and state machines.",
+    semester: 3,
+  },
+  {
+    id: "cyber_law_and_ethics",
+    name: "Cyber Law, Ethics and IT Regulations",
+    aliases: ["Cyber Law", "IT Ethics", "Cyber Ethics"],
+    category: "Humanities & Social Sciences",
+    difficulty: "beginner",
+    description: "Information Technology Act, digital signatures, cybercrime taxonomy, intellectual property rights, data privacy regulations (GDPR/DPDP), and AI engineering ethics.",
+    semester: 3,
+  },
+  {
+    id: "mathematics_3",
+    name: "Mathematics-III: Probability and Transforms",
+    aliases: ["Engineering Mathematics III", "Maths 3", "Math 3"],
+    category: "Mathematics",
+    difficulty: "intermediate",
+    description: "Fourier series, Laplace transforms, Fourier transforms, random variables, probability density functions, and stochastic processes for engineering systems.",
+    semester: 3,
+  },
+  {
+    id: "design_thinking_and_innovation",
+    name: "Design Thinking and Innovation",
+    aliases: ["Design Thinking", "Innovation and Design", "DTI"],
+    category: "Engineering Sciences",
+    difficulty: "beginner",
+    description: "Human-centered design methodology: empathy mapping, problem framing, ideation, low-to-high fidelity prototyping, and usability validation for tech products.",
+    semester: 3,
+  },
+  {
+    id: "formal_languages_and_automata_theory",
+    name: "Formal Languages and Automata Theory",
+    aliases: ["FLAT", "Formal Languages", "Automata and Formal Languages"],
+    category: "Core Computer Science",
+    difficulty: "intermediate",
+    description: "Regular languages, finite automata (DFA/NFA), context-free grammars, pushdown automata, Turing machines, decidability, and Chomsky hierarchy.",
+    semester: 5,
+  },
+  {
+    id: "data_warehousing",
+    name: "Data Warehousing and OLAP Systems",
+    aliases: ["Data Warehouse", "OLAP Systems", "Data Warehousing"],
+    category: "Core Computer Science",
+    difficulty: "intermediate",
+    description: "Dimensional modeling (star and snowflake schemas), ETL pipeline architecture, OLAP multidimensional cubes, data lakes, and enterprise analytical storage.",
+    semester: 5,
+  },
+  {
+    id: "kubernetes_application_development",
+    name: "Kubernetes Application Development",
+    aliases: ["Kubernetes", "K8s Development", "Container Orchestration"],
+    category: "Modern Computing",
+    difficulty: "intermediate",
+    description: "Cloud-native container orchestration with Kubernetes: Pods, Deployments, Services, Ingress, ConfigMaps, Secrets, persistent volumes, and Helm charts.",
+    semester: 5,
+  },
+  {
+    id: "docker_and_containers",
+    name: "Docker and Containerization Technologies",
+    aliases: ["Docker", "Containerization", "Docker Application Development"],
+    category: "Modern Computing",
+    difficulty: "intermediate",
+    description: "Container concepts, Docker architecture, multi-stage Dockerfile design, image optimization, bridge networking, Docker Compose multi-service stacks, and security.",
+    semester: 5,
+  },
+  {
+    id: "real_time_systems",
+    name: "Real Time Systems",
+    aliases: ["RTS", "Real-Time Computing", "Real Time Operating Systems"],
+    category: "Core Computer Science",
+    difficulty: "advanced",
+    description: "Hard vs soft real-time constraints, clock synchronization, priority inversion, priority inheritance protocol, Rate Monotonic and Earliest Deadline First scheduling.",
+    semester: 5,
+  },
+  {
+    id: "software_testing_and_qa",
+    name: "Software Testing and Quality Assurance",
+    aliases: ["Software Testing", "QA Engineering", "Software Quality Assurance"],
+    category: "Core Computer Science",
+    difficulty: "intermediate",
+    description: "Test engineering across lifecycle: black-box boundary value analysis, white-box path testing, cyclomatic complexity, unit test frameworks, automated CI regression, and quality metrics.",
+    semester: 5,
+  },
+  {
+    id: "advanced_database_management_systems",
+    name: "Advanced Database Management Systems",
+    aliases: ["Advanced DBMS", "ADBMS", "Advanced Databases"],
+    category: "Core Computer Science",
+    difficulty: "advanced",
+    description: "Query optimization internals, cost-based optimizer plans, B-tree and hash indexing deep-dive, distributed transactions (2PC), MVCC concurrency control, and WAL logging.",
+    semester: 6,
+  },
+  {
+    id: "sensor_technologies",
+    name: "Sensor Technologies and Internet of Things",
+    aliases: ["Sensors and Transducers", "Sensor Networks", "IoT Sensors"],
+    category: "Modern Computing",
+    difficulty: "intermediate",
+    description: "Physical sensor transducers (thermal, optical, piezoelectric, MEMS), analog signal conditioning, ADC conversion, sensor bus protocols (I2C, SPI), and wireless IoT interfacing.",
+    semester: 6,
+  },
+  {
+    id: "simulation_and_modelling",
+    name: "Simulation and System Modelling",
+    aliases: ["System Simulation", "Modelling and Simulation", "Simulation & Modelling"],
+    category: "Core Computer Science",
+    difficulty: "advanced",
+    description: "Discrete-event simulation, continuous system modeling, pseudo-random number generation algorithms, Monte Carlo methods, queuing models, and simulation verification.",
+    semester: 7,
+  },
+  {
+    id: "parallel_and_distributed_algorithms",
+    name: "Parallel and Distributed Algorithms",
+    aliases: ["PDA", "Distributed Algorithms", "Parallel Algorithms"],
+    category: "Core Computer Science",
+    difficulty: "advanced",
+    description: "PRAM models, parallel prefix sums, matrix multiplication algorithms, consensus protocols (Paxos, Raft), leader election, logical clocks (Lamport/Vector), and distributed snapshotting.",
+    semester: 7,
+  },
+  {
+    id: "advanced_computer_networks",
+    name: "Advanced Computer Networks and Protocols",
+    aliases: ["Advanced Networks", "ACN", "High-Speed Networks"],
+    category: "Core Computer Science",
+    difficulty: "advanced",
+    description: "Software-Defined Networking (SDN/OpenFlow), BGP traffic engineering, TCP congestion control variants (BBR, CUBIC), network function virtualization (NFV), and high-throughput data center architectures.",
+    semester: 7,
+  },
+  {
+    id: "network_security_and_management",
+    name: "Network Security and Management",
+    aliases: ["NSM", "Network Security", "Security Management"],
+    category: "Core Computer Science",
+    difficulty: "advanced",
+    description: "Firewalls, stateful packet inspection, intrusion detection/prevention systems (Snort/Suricata), TLS/IPSec VPN architectures, SNMP management, and zero-trust perimeter defense.",
+    semester: 7,
+  },
+  {
+    id: "distributed_operating_systems",
+    name: "Distributed Operating Systems",
+    aliases: ["Distributed OS", "DOS Architecture"],
+    category: "Core Computer Science",
+    difficulty: "advanced",
+    description: "Distributed mutual exclusion, distributed deadlock detection, distributed file systems (NFS, GFS, Ceph), process migration, and microkernel architectures.",
+    semester: 7,
+  },
+  {
+    id: "pattern_recognition",
+    name: "Pattern Recognition and Image Analysis",
+    aliases: ["Pattern Matching", "Pattern Classification", "PRIA"],
+    category: "Artificial Intelligence and Data Science",
+    difficulty: "advanced",
+    description: "Bayesian decision theory, linear discriminant analysis (LDA), non-parametric density estimation (Parzen windows, k-NN), feature extraction, and structural pattern recognition.",
+    semester: 7,
+  },
+  {
+    id: "fuzzy_theory",
+    name: "Fuzzy Theory and Logic Systems",
+    aliases: ["Fuzzy Logic", "Fuzzy Systems", "Fuzzy Sets"],
+    category: "Artificial Intelligence and Data Science",
+    difficulty: "advanced",
+    description: "Fuzzy set theory, membership functions, fuzzy relations, fuzzy inference systems (Mamdani and Sugeno), defuzzification methods, and neuro-fuzzy hybrid systems.",
+    semester: 8,
+  },
+  {
+    id: "wireless_and_adhoc_networks",
+    name: "Wireless and Ad-Hoc Sensor Networks",
+    aliases: ["Ad-Hoc Networks", "Wireless Sensor Networks", "WSN"],
+    category: "Core Computer Science",
+    difficulty: "advanced",
+    description: "Mobile ad-hoc networks (MANET), routing protocols (AODV, DSR, OLSR), MAC protocols (802.11, MACA), energy-efficient clustering (LEACH), and sensor mesh topologies.",
+    semester: 8,
+  },
+  {
+    id: "advanced_computer_architecture",
+    name: "Advanced Computer Architecture",
+    aliases: ["Advanced Architecture", "ACA", "High Performance Architecture"],
+    category: "Core Computer Science",
+    difficulty: "advanced",
+    description: "Instruction-level parallelism (superscalar execution, dynamic scheduling via Tomasulo algorithm, branch predictors), cache coherence protocols (MESI/MOESI), and memory consistency models.",
+    semester: 8,
   },
 ];

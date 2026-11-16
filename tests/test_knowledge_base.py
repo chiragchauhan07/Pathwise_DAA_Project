@@ -18,8 +18,8 @@ def test_kb_loads_default_catalog():
     courses = kb.get_all_courses()
     prereqs = kb.get_prerequisites()
 
-    assert len(courses) == 70
-    assert len(prereqs) == 115
+    assert len(courses) == 100
+    assert len(prereqs) == 136
     assert kb.get_course("python_programming") is not None
     assert kb.get_course("data_structures") is not None
 
@@ -145,11 +145,12 @@ def test_ambiguous_alias_detection():
 # --- Knowledge Base Validator Tests ---
 
 def test_validator_on_existing_catalog():
-    is_valid, errors, stats = validate_kb_file(Path("backend/knowledge_base/courses.json"))
+    catalog_path = Path(__file__).parent.parent / "backend/knowledge_base/courses.json"
+    is_valid, errors, stats = validate_kb_file(catalog_path)
     assert is_valid is True
     assert len(errors) == 0
-    assert stats["courses_count"] == 70
-    assert stats["relationships_count"] == 115
+    assert stats["courses_count"] == 100
+    assert stats["relationships_count"] == 136
 
 
 def test_validator_rejects_missing_keys():

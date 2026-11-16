@@ -296,7 +296,7 @@ def test_scenario_14_frontend_backend_resilience():
     # Catalog check
     res_catalog = client.get("/api/v1/courses")
     assert res_catalog.status_code == 200
-    assert len(res_catalog.json()) == 70
+    assert len(res_catalog.json()) == 100
 
     # Root OpenAPI discovery check
     res_root = client.get("/")

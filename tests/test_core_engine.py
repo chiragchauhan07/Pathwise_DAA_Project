@@ -51,12 +51,12 @@ def test_courses_catalog_endpoints():
     res_v1 = client.get("/api/v1/courses")
     assert res_v1.status_code == 200
     courses_v1 = res_v1.json()
-    assert len(courses_v1) == 70
+    assert len(courses_v1) == 100
 
     res_alias = client.get("/api/courses")
     assert res_alias.status_code == 200
     courses_alias = res_alias.json()
-    assert len(courses_alias) == 70
+    assert len(courses_alias) == 100
 
 
 def test_learning_path_alias_endpoint():
