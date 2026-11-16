@@ -51,7 +51,7 @@ export const TRACK_PRESETS: TrackPreset[] = [
     ],
   },
   {
-    title: '7-Course Benchmark',
+    title: 'Core DAA Track',
     goal: 'General Computer Science',
     courses: [
       'Python Programming',

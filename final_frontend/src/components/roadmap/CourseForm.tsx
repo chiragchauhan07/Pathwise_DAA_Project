@@ -250,7 +250,7 @@ export function CourseForm({ busy, onSubmit, handleRef }: { busy: boolean; onSub
         )}
 
         <div className="mt-4 flex flex-wrap items-center gap-x-1 gap-y-0.5 text-xs">
-          <span className="text-support w-full font-medium">Curricular benchmark presets:</span>
+          <span className="text-support w-full font-medium">Curricular track presets:</span>
           {TRACK_PRESETS.map((t: TrackPreset) => (
             <button
               key={t.title}
