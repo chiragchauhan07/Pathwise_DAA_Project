@@ -1,12 +1,5 @@
-import re
 from typing import Any, Dict, List, Optional, Set
 
-from backend.ai_engine.client import (
-    AIEngineError,
-    evaluate_unknown_courses,
-    request_prerequisite_proposals,
-)
-from backend.core_engine.config import settings
 from backend.daa_engine.graph import (
     DirectedGraph,
     detect_cycle_dfs,
@@ -30,7 +23,7 @@ class LearningPathError(Exception):
 
 
 class CourseResolutionError(LearningPathError):
-    """Raised when selected course names cannot be resolved cleanly."""
+    """Raised when selected course names cannot be resolved cleanly against the Knowledge Base."""
 
     def __init__(
         self,
@@ -48,7 +41,7 @@ class CourseResolutionError(LearningPathError):
 
 
 class CycleConflictError(LearningPathError):
-    """Raised when course dependencies form a circular graph conflict."""
+    """Raised when course dependencies form a circular prerequisite graph conflict."""
 
     def __init__(self, message: str, cycle_path: Optional[List[str]] = None):
         super().__init__(message)
@@ -57,37 +50,54 @@ class CycleConflictError(LearningPathError):
 
 class CurricularConstraintError(SchedulerConstraintError, LearningPathError):
     """Raised when user-defined curricular constraints are invalid or cannot be satisfied."""
-    pass
+
+    def __init__(
+        self,
+        message: str,
+        required_semesters: Optional[int] = None,
+        max_semesters: Optional[int] = None,
+        constraint_type: Optional[str] = None,
+    ):
+        super().__init__(message)
+        self.required_semesters = required_semesters
+        self.max_semesters = max_semesters
+        self.constraint_type = constraint_type
 
 
 def generate_learning_path(
     course_names: List[str],
     learning_goal: Optional[str] = None,
     kb: Optional[KnowledgeBase] = None,
-    ai_client: Optional[Any] = None,
-    use_ai: bool = True,
-    fallback_on_ai_failure: bool = True,
     max_courses_per_semester: Optional[int] = None,
     max_semesters: Optional[int] = None,
+    **kwargs: Any,  # Safely absorb any legacy kwargs without error
 ) -> Dict[str, Any]:
-    """Orchestrates end-to-end learning path generation.
+    """Orchestrates end-to-end learning path generation using pure DAA and Curated Knowledge Base.
 
     Coordinates:
-      1. Course normalization & canonical resolution via Knowledge Base.
-      2. AI-assisted evaluation of unrecognized/unknown courses (when enabled).
-      3. Retrieving existing curated prerequisite relationships.
-      4. Requesting and validating LLM prerequisite proposals via AI Engine.
-      5. Combining relationships in-memory without altering persistent KB data.
-      6. Constructing the directed graph and checking for cycles via DAA Engine.
-      7. Generating a deterministic learning order via Kahn's algorithm.
-      8. Mathematically verifying the topological order against all dependency edges.
-      9. Partitioning courses into pedagogically verified semester waves.
+      1. Course normalization & canonical resolution against Knowledge Base.
+      2. Rejection of uncataloged/unknown course entries.
+      3. Validating user-defined constraints.
+      4. Retrieving verified prerequisite relationships among selected courses.
+      5. Constructing the directed graph and checking for cycles via iterative 3-state DFS.
+      6. Generating a deterministic learning order via min-heap Kahn's algorithm.
+      7. Mathematically verifying the topological order against all dependency edges.
+      8. Partitioning courses into pedagogically verified semester waves subject to capacity limits.
 
-    Returns a structured dictionary representing the learning path result.
+    Returns a structured dictionary representing the verified learning path result.
     """
     target_kb = kb or get_default_knowledge_base()
 
-    # 1. Input validation
+    # 1. Constraint validation
+    if max_courses_per_semester is not None:
+        if not isinstance(max_courses_per_semester, int) or max_courses_per_semester < 1:
+            raise CurricularConstraintError("max_courses_per_semester must be at least 1.")
+
+    if max_semesters is not None:
+        if not isinstance(max_semesters, int) or max_semesters < 1:
+            raise CurricularConstraintError("max_semesters must be at least 1.")
+
+    # 2. Input course validation
     if not course_names or not isinstance(course_names, list):
         raise CourseResolutionError("Course list cannot be empty. Please select at least one course.")
 
@@ -106,7 +116,7 @@ def generate_learning_path(
     if len(cleaned_names) > 50:
         raise CourseResolutionError(f"Course list exceeds maximum limit of 50 courses (received {len(cleaned_names)}).")
 
-    # 2. Canonical course resolution against Knowledge Base
+    # 3. Canonical course resolution against Knowledge Base
     resolved_courses: List[Dict[str, Any]] = []
     seen_ids: Set[str] = set()
     unknown_queries: List[str] = []
@@ -134,184 +144,52 @@ def generate_learning_path(
         elif res.is_unknown:
             unknown_queries.append(raw_name)
 
-    # 3. Handle unknown and ambiguous courses
-    unknown_evaluated_count = 0
-    ambiguous_evaluated_count = 0
-    resolution_status_str = "curated_only"
+    # 4. Handle unknown and ambiguous courses (Strict Knowledge Base validation)
+    if ambiguous_queries:
+        first_amb = ambiguous_queries[0]
+        resolution_errors = [
+            a["error_message"] or f"Ambiguous course name: '{a['query']}'"
+            for a in ambiguous_queries
+        ]
+        raise CourseResolutionError(
+            f"Course resolution failed: {'; '.join(resolution_errors)}",
+            query=first_amb.get("query"),
+            needs_clarification=True,
+            clarification=first_amb.get("clarification"),
+            candidates=first_amb.get("candidates", []),
+        )
 
-    if not use_ai:
-        if ambiguous_queries:
-            resolution_errors = [
-                a["error_message"] or f"Ambiguous course name: '{a['query']}'"
-                for a in ambiguous_queries
-            ]
-            raise CourseResolutionError(f"Course resolution failed: {'; '.join(resolution_errors)}")
-
-        if unknown_queries:
-            error_details = []
-            for u in unknown_queries:
-                kb_res = target_kb.resolve_course(u)
-                if kb_res.candidates:
-                    error_details.append(kb_res.error_message or f"Course '{u}' is not recognized in the knowledge base.")
-                else:
-                    error_details.append(f"Course '{u}' is not recognized in the knowledge base.")
-            raise CourseResolutionError(
-                f"Course resolution failed: {'; '.join(error_details)} "
-                "AI assistance is disabled. Enable AI assistance to infer new courses, or select from the curated courses."
-            )
-    else:
-        # AI is enabled: evaluate unknown and ambiguous queries with context
-        queries_to_evaluate: List[str] = []
-        for u in unknown_queries:
-            if u not in queries_to_evaluate:
-                queries_to_evaluate.append(u)
-        for a in ambiguous_queries:
-            if a["query"] not in queries_to_evaluate:
-                queries_to_evaluate.append(a["query"])
-
-        if queries_to_evaluate:
-            unknown_evaluated_count = len(unknown_queries)
-            ambiguous_evaluated_count = len(ambiguous_queries)
-
-            # Build candidate map from curated Knowledge Base for ambiguous queries
-            candidates_map: Dict[str, List[Dict[str, str]]] = {}
-            for a in ambiguous_queries:
-                q = a["query"]
-                c_list: List[Dict[str, str]] = []
-                for cid in a.get("candidates", []):
-                    c_obj = target_kb.get_course(cid)
-                    if c_obj:
-                        c_list.append({"course_id": cid, "name": c_obj.get("name", cid)})
-                if c_list:
-                    candidates_map[q] = c_list
-
-            other_course_names = [c["name"] for c in resolved_courses]
-
-            try:
-                evaluations = evaluate_unknown_courses(
-                    queries_to_evaluate,
-                    client=ai_client,
-                    model=settings.gemini_model,
-                    timeout=settings.gemini_timeout,
-                    learning_goal=learning_goal,
-                    other_courses=other_course_names if other_course_names else None,
-                    curated_candidates=candidates_map if candidates_map else None,
+    if unknown_queries:
+        import difflib
+        all_courses = target_kb.get_all_courses()
+        name_map = {c["name"].lower(): c["name"] for c in all_courses}
+        resolution_errors = []
+        all_matches = []
+        for q in unknown_queries:
+            matches = difflib.get_close_matches(q.lower(), name_map.keys(), n=3, cutoff=0.4)
+            if matches:
+                cand_names = [f"'{name_map[m]}'" for m in matches]
+                all_matches.extend([name_map[m] for m in matches])
+                resolution_errors.append(
+                    f"Course '{q}' is not recognized in the knowledge base catalog. Did you mean: {', '.join(cand_names)}?"
                 )
-            except Exception as exc:
-                if fallback_on_ai_failure:
-                    first_unresolved = queries_to_evaluate[0]
-                    raise CourseResolutionError(
-                        f"Course '{first_unresolved}' is not recognized in the knowledge base and AI assistance is currently unavailable ({exc}). "
-                        "Please choose from the curated courses or verify your AI configuration."
-                    ) from exc
-                else:
-                    if isinstance(exc, AIEngineError):
-                        raise exc
-                    raise LearningPathError(f"AI course evaluation failed: {exc}") from exc
-
-            # Process evaluated courses
-            for eval_item in evaluations:
-                query = eval_item["query"]
-                is_plausible = eval_item.get("is_plausible", False)
-                is_ambiguous = eval_item.get("is_ambiguous", False)
-                resolved_from_context = eval_item.get("resolved_from_context", False)
-                selected_candidate_id = eval_item.get("selected_candidate_id")
-                clarification = eval_item.get("clarification")
-
-                if not is_plausible:
-                    raise CourseResolutionError(
-                        f"Course '{query}' is not recognized as a valid academic course or subject.",
-                        query=query,
-                    )
-
-                if is_ambiguous and not resolved_from_context:
-                    clarif_msg = clarification or "matches multiple broad disciplines"
-                    cand_options = []
-                    if query in candidates_map:
-                        cand_options = [c["name"] for c in candidates_map[query]]
-                    raise CourseResolutionError(
-                        f"Course query '{query}' is ambiguous: {clarif_msg}. Please provide a more specific academic course name.",
-                        query=query,
-                        needs_clarification=True,
-                        clarification=clarif_msg,
-                        candidates=cand_options,
-                    )
-
-                # Context-aware resolution: check if AI picked a curated candidate
-                if selected_candidate_id and target_kb.get_course(selected_candidate_id):
-                    cand_course = dict(target_kb.get_course(selected_candidate_id))
-                    cid = selected_candidate_id
-                    if cid not in seen_ids:
-                        seen_ids.add(cid)
-                        cand_course["source"] = "curated"
-                        cand_course["is_curated"] = True
-                        cand_course["is_ai_inferred"] = False
-                        cand_course["provenance"] = "ai_disambiguated"
-                        resolved_courses.append(cand_course)
-                        resolution_status_str = "ai_disambiguated"
-                        warnings.append(
-                            f"Course '{query}' was disambiguated as curated course '{cand_course['name']}' via Google Gemini."
-                        )
-                else:
-                    # Check if canonical_name maps cleanly to a known KB course
-                    kb_match = target_kb.resolve_course(eval_item.get("canonical_name", ""))
-                    if kb_match.is_resolved and kb_match.course is not None:
-                        cid = kb_match.course_id
-                        if cid and cid not in seen_ids:
-                            seen_ids.add(cid)
-                            course_data = dict(kb_match.course)
-                            course_data["source"] = "curated"
-                            course_data["is_curated"] = True
-                            course_data["is_ai_inferred"] = False
-                            course_data["provenance"] = "ai_disambiguated"
-                            resolved_courses.append(course_data)
-                            resolution_status_str = "ai_disambiguated"
-                            warnings.append(
-                                f"Course '{query}' was resolved to curated course '{course_data['name']}' via Google Gemini."
-                            )
-                    else:
-                        # Legitimate new course inferred by AI
-                        cid = eval_item["course_id"]
-                        base_cid = cid
-                        counter = 1
-                        while cid in seen_ids or target_kb.get_course(cid) is not None:
-                            cid = f"{base_cid}_{counter}"
-                            counter += 1
-
-                        seen_ids.add(cid)
-                        canonical_name = eval_item["canonical_name"]
-                        inferred_course = {
-                            "course_id": cid,
-                            "name": canonical_name,
-                            "category": eval_item.get("category", "General Computer Science"),
-                            "difficulty": eval_item.get("difficulty", "intermediate"),
-                            "description": eval_item.get("description", f"AI-inferred academic course: {canonical_name}"),
-                            "aliases": [query],
-                            "source": "ai_inferred",
-                            "is_curated": False,
-                            "is_ai_inferred": True,
-                            "provenance": "ai_inferred_candidate",
-                        }
-                        resolved_courses.append(inferred_course)
-                        if resolution_status_str != "ai_disambiguated":
-                            resolution_status_str = "ai_inferred"
-
-                        if resolved_from_context:
-                            warnings.append(
-                                f"Course '{query}' was resolved as '{canonical_name}' via Google Gemini based on your learning goal '{learning_goal or 'General Computer Science'}'."
-                            )
-                        else:
-                            warnings.append(
-                                f"Course '{query}' was inferred as '{canonical_name}' via Google Gemini (candidate subject, not in curated Knowledge Base)."
-                            )
+            else:
+                resolution_errors.append(
+                    f"Course '{q}' is not recognized in the knowledge base catalog. Please select an available course."
+                )
+        raise CourseResolutionError(
+            f"Course resolution failed: {'; '.join(resolution_errors)}",
+            query=unknown_queries[0],
+            candidates=all_matches,
+        )
 
     if not resolved_courses:
-        raise CourseResolutionError("No valid courses could be resolved from input.")
+        raise CourseResolutionError("None of the specified courses could be resolved against the academic catalog.")
 
-    selected_ids = {c["course_id"] for c in resolved_courses}
+    selected_ids = set(c["course_id"] for c in resolved_courses)
 
-    # 4. Retrieve relevant curated relationships from Knowledge Base
-    curated_prereqs: List[Dict[str, Any]] = []
+    # 5. Retrieve curated prerequisite relationships from Knowledge Base
+    all_relationships: List[Dict[str, Any]] = []
     for r in target_kb.get_prerequisites():
         src = r.get("source_course_id")
         tgt = r.get("target_course_id")
@@ -321,108 +199,57 @@ def generate_learning_path(
             item["is_ai_proposed"] = False
             item["evidence_type"] = r.get("evidence_type", "expert_curated")
             item["confidence"] = r.get("confidence")
-            curated_prereqs.append(item)
+            all_relationships.append(item)
 
-    # 5. Request additional prerequisite proposals from AI Engine
-    ai_proposals: List[Dict[str, Any]] = []
-    ai_used = False
-    proposal_request_status = "disabled" if not use_ai else "skipped"
-    proposals_received_count = 0
-    proposals_accepted_count = 0
-    proposals_rejected_count = 0
-    proposal_message = ""
+    # 6. Single-course early exit
+    if len(selected_ids) == 1:
+        single_course = resolved_courses[0]
+        schedule_result = schedule_courses(
+            courses=resolved_courses,
+            relationships=[],
+            max_courses_per_semester=max_courses_per_semester,
+            max_semesters=max_semesters,
+        )
+        return {
+            "learning_goal": (learning_goal or "General Computer Science").strip(),
+            "selected_courses": resolved_courses,
+            "ordered_courses": schedule_result["ordered_courses"],
+            "semesters": schedule_result["semesters"],
+            "prerequisites": [],
+            "ai_proposals_used": False,
+            "warnings": [f"Single course selected: '{single_course['name']}'. No prerequisite sequencing required."],
+            "total_courses": 1,
+            "total_prerequisites": 0,
+            "total_semesters": len(schedule_result["semesters"]),
+            "ai_summary": {
+                "requested": False,
+                "course_resolution_status": "curated_only",
+                "message": "Pure DAA Knowledge Base mode (AI disabled)",
+            },
+        }
 
-    if use_ai:
-        if len(selected_ids) < 2:
-            proposal_request_status = "skipped"
-            proposal_message = "AI prerequisite analysis was skipped because only a single distinct course was resolved."
-            warnings.append(
-                "AI prerequisite analysis was skipped because only a single distinct course was resolved. "
-                "At least two courses are required to establish prerequisite dependencies."
-            )
-        else:
-            try:
-                raw_proposals = request_prerequisite_proposals(
-                    learning_goal=learning_goal or "General Computer Science",
-                    courses=resolved_courses,
-                    existing_prerequisites=curated_prereqs,
-                    client=ai_client,
-                    model=settings.gemini_model,
-                    timeout=settings.gemini_timeout,
-                )
-                proposal_request_status = "succeeded"
-                validation_errors = getattr(raw_proposals, "validation_errors", [])
-                total_received = getattr(raw_proposals, "total_received", len(raw_proposals) + len(validation_errors))
-                proposals_received_count = total_received
-                proposals_rejected_count = len(validation_errors)
-
-                for err in validation_errors:
-                    warnings.append(f"AI proposal rejected during validation: {err}")
-
-                for p in raw_proposals:
-                    item = dict(p)
-                    item["source"] = "ai_proposed"
-                    item["is_ai_proposed"] = True
-                    item["evidence_type"] = "llm_proposed"
-                    item["confidence"] = p.get("confidence")
-                    ai_proposals.append(item)
-
-                proposals_accepted_count = len(ai_proposals)
-
-                if ai_proposals:
-                    ai_used = True
-                    proposal_message = f"AI analysis completed successfully. {len(ai_proposals)} additional relationship(s) accepted."
-                else:
-                    if validation_errors:
-                        proposal_message = "AI analysis completed, but all proposals were rejected during validation."
-                        warnings.append(
-                            "AI analysis completed, but all proposed relationships were rejected during validation against the course catalog."
-                        )
-                    else:
-                        proposal_message = "AI analysis completed successfully. No additional prerequisite relationships were proposed beyond the curated Knowledge Base."
-                        warnings.append(
-                            "AI analysis completed successfully, but no additional prerequisite relationships were proposed beyond the curated Knowledge Base."
-                        )
-            except Exception as exc:
-                proposal_request_status = "failed"
-                proposal_message = f"AI proposals were unavailable ({exc}). Proceeding with curated Knowledge Base relationships only."
-                if fallback_on_ai_failure:
-                    ai_used = False
-                    warnings.append(
-                        f"AI proposals were unavailable ({exc}). Proceeding with curated Knowledge Base relationships only."
-                    )
-                else:
-                    if isinstance(exc, AIEngineError):
-                        raise exc
-                    raise LearningPathError(f"AI proposal generation failed: {exc}") from exc
-    else:
-        proposal_request_status = "disabled"
-        proposal_message = "AI assistance was disabled. Curated knowledge base relationships used."
-        warnings.append("AI assistance was disabled. Proceeding with curated Knowledge Base relationships only.")
-
-    # 6. In-memory combination of relationships (courses.json is untouched)
-    all_relationships: List[Dict[str, Any]] = list(curated_prereqs) + list(ai_proposals)
-
-    # 7. Graph construction and cycle verification
-    graph = DirectedGraph(selected_ids)
+    # 7. Directed graph construction
+    graph = DirectedGraph(list(selected_ids))
     for r in all_relationships:
         graph.add_edge(r["source_course_id"], r["target_course_id"])
 
+    # 8. Cycle verification via iterative 3-state DFS
     has_cycle, cycle_path = detect_cycle_dfs(graph)
     if has_cycle:
         raise CycleConflictError(
             f"Cyclic dependency detected among selected courses: {' -> '.join(cycle_path)}. "
-            "A valid learning order cannot be formed until conflicting relationships are resolved.",
+            "A valid learning order cannot be formed until conflicting prerequisite relationships are resolved.",
             cycle_path=cycle_path,
         )
 
-    # 8. Deterministic topological sorting via Kahn's algorithm
+    # 9. Deterministic topological sorting via Kahn's algorithm with min-heap
     ordered_ids = topological_sort_kahn(graph)
 
+    # 10. Formal mathematical invariant verification
     if not verify_topological_order(graph, ordered_ids):
-        raise CycleConflictError("Topological ordering verification failed.")
+        raise CycleConflictError("Topological ordering verification failed mathematical validation.")
 
-    # 9. Pedagogical wave scheduling and curricular constraint optimization
+    # 11. Pedagogical wave scheduling and workload-constrained optimization
     try:
         schedule_result = schedule_courses(
             courses=resolved_courses,
@@ -433,9 +260,9 @@ def generate_learning_path(
     except SchedulerConstraintError as exc:
         raise CurricularConstraintError(
             str(exc),
-            required_semesters=exc.required_semesters,
-            max_semesters=exc.max_semesters,
-            constraint_type=exc.constraint_type,
+            required_semesters=getattr(exc, "required_semesters", None),
+            max_semesters=getattr(exc, "max_semesters", None),
+            constraint_type=getattr(exc, "constraint_type", None),
         ) from exc
 
     if not verify_semester_schedule(
@@ -446,28 +273,21 @@ def generate_learning_path(
     ):
         raise CurricularConstraintError("Semester schedule verification failed mathematical validation.")
 
-    # 10. Transparent AI Execution Summary
-    ai_summary = {
-        "requested": use_ai,
-        "course_resolution_status": resolution_status_str,
-        "unknown_courses_evaluated": unknown_evaluated_count,
-        "ambiguous_courses_evaluated": ambiguous_evaluated_count,
-        "proposal_request_status": proposal_request_status,
-        "proposals_received": proposals_received_count,
-        "proposals_accepted": proposals_accepted_count,
-        "proposals_rejected": proposals_rejected_count,
-        "relationships_added": len(ai_proposals),
-        "model": settings.gemini_model if use_ai else None,
-        "message": proposal_message,
-    }
-
+    course_map = {c["course_id"]: c for c in resolved_courses}
     return {
         "learning_goal": (learning_goal or "General Computer Science").strip(),
         "selected_courses": resolved_courses,
-        "ordered_courses": schedule_result["ordered_courses"],
+        "ordered_courses": [course_map[cid] for cid in ordered_ids],
         "semesters": schedule_result["semesters"],
         "prerequisites": all_relationships,
-        "ai_proposals_used": ai_used,
+        "ai_proposals_used": False,
         "warnings": warnings,
-        "ai_summary": ai_summary,
+        "total_courses": len(resolved_courses),
+        "total_prerequisites": len(all_relationships),
+        "total_semesters": len(schedule_result["semesters"]),
+        "ai_summary": {
+            "requested": False,
+            "course_resolution_status": "curated_only",
+            "message": "Pure DAA Knowledge Base mode (AI disabled)",
+        },
     }

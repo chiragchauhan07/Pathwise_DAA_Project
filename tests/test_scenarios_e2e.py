@@ -1,20 +1,20 @@
 """End-to-End Practical User Scenario Verification (Scenarios 1 through 14).
 
-Executes and verifies all 14 scenarios from Part 8 of the Pathwise Specification:
+Executes and verifies all 14 scenarios for the pure DAA Course Registration Assistant:
   Scenario 1: Basic programming path
   Scenario 2: Original seven-course case
   Scenario 3: AI and Machine Learning pathway
   Scenario 4: Software engineering pathway
   Scenario 5: Independent courses (no mandatory edges between them)
-  Scenario 6: Ambiguous course (English with/without learning goal)
-  Scenario 7: Unknown but legitimate course (inferred without mutating KB)
+  Scenario 6: Ambiguous course (returns structured clarification and candidate courses)
+  Scenario 7: Unknown course rejection (strict KB catalog boundary)
   Scenario 8: Duplicate courses (deduplication without vertex corruption)
   Scenario 9: Invalid input (empty list, blank, invalid limits, overflow)
-  Scenario 10: AI unavailable (isolated fallback and error modes)
+  Scenario 10: Pure DAA execution without external AI dependencies
   Scenario 11: Cyclic graph (isolated cycle detection and conflict error)
   Scenario 12: Infeasible scheduling constraints (exceeding max semesters)
   Scenario 13: Longer learning path (10+ courses, no loss, no duplication)
-  Scenario 14: Frontend/backend resilience (health, status, 400 structures)
+  Scenario 14: Frontend/backend resilience (health, catalog, schema endpoints)
 """
 
 import pytest
@@ -38,7 +38,6 @@ def test_scenario_1_basic_programming_path():
     res = client.post("/api/v1/learning-path", json={
         "courses": ["Programming Fundamentals", "Python Programming", "Object-Oriented Programming"],
         "learning_goal": "General Computer Science",
-        "use_ai": False,
     })
     assert res.status_code == 200, res.text
     data = res.json()
@@ -57,7 +56,7 @@ def test_scenario_2_seven_course_problem():
     res = client.post("/api/v1/learning-path", json={
         "courses": [
             "Python Programming",
-            "English",
+            "Technical Communication and Academic Writing",
             "Machine Learning",
             "Design and Analysis of Algorithms",
             "Programming Fundamentals",
@@ -65,7 +64,6 @@ def test_scenario_2_seven_course_problem():
             "Programming Using R",
         ],
         "learning_goal": "General Computer Science",
-        "use_ai": True,
     })
     assert res.status_code == 200, res.text
     data = res.json()
@@ -74,8 +72,7 @@ def test_scenario_2_seven_course_problem():
     assert order.index("programming_fundamentals") < order.index("python_programming")
     assert order.index("programming_fundamentals") < order.index("object_oriented_programming")
     assert order.index("python_programming") < order.index("machine_learning")
-    assert "ai_summary" in data
-    assert data["ai_summary"]["model"] == "gemini-3.5-flash-lite"
+    assert data["ai_proposals_used"] is False
     # All 7 courses represented
     assert len(order) == 7
     assert len(set(order)) == 7
@@ -92,7 +89,6 @@ def test_scenario_3_ai_and_ml_pathway():
             "Deep Learning",
         ],
         "learning_goal": "AI and Machine Learning Engineering",
-        "use_ai": False,
     })
     assert res.status_code == 200, res.text
     data = res.json()
@@ -114,7 +110,6 @@ def test_scenario_4_software_engineering_pathway():
             "Database Management Systems",
         ],
         "learning_goal": "Software Engineering",
-        "use_ai": False,
     })
     assert res.status_code == 200, res.text
     data = res.json()
@@ -127,15 +122,12 @@ def test_scenario_4_software_engineering_pathway():
 
 def test_scenario_5_independent_courses():
     """Scenario 5: Independent courses have no mandatory edges between them."""
-    # Linear Algebra, Technical Communication, and Programming Fundamentals
-    # Technical Communication has no prerequisite links to Linear Algebra or Programming Fundamentals
     res = client.post("/api/v1/learning-path", json={
         "courses": [
             "Linear Algebra",
             "Technical Communication and Academic Writing",
             "Programming Fundamentals",
         ],
-        "use_ai": False,
     })
     assert res.status_code == 200
     data = res.json()
@@ -151,51 +143,27 @@ def test_scenario_5_independent_courses():
 
 
 def test_scenario_6_ambiguous_course():
-    """Scenario 6: Ambiguous course returns structured clarification or AI contextual resolution."""
-    # When AI is disabled, 'English' cannot be contextually disambiguated
-    res_no_ai = client.post("/api/v1/learning-path", json={
-        "courses": ["English"],
-        "use_ai": False,
-    })
-    assert res_no_ai.status_code == 400
-    detail = res_no_ai.json()["detail"]
-    assert detail["error"] == "course_resolution_error"
-    assert "English" in detail["message"]
-
-
-def test_scenario_7_unknown_legitimate_course(monkeypatch):
-    """Scenario 7: Unknown academic course evaluated via AI without mutating persistent KB."""
-    from backend.knowledge_base.knowledge_base import get_default_knowledge_base
-    kb_before_count = len(get_default_knowledge_base().get_all_courses())
-
-    def mock_evaluate(queries, client=None, **kwargs):
-        return [{
-            "query": "Neuromorphic Computing",
-            "is_plausible": True,
-            "is_ambiguous": False,
-            "canonical_name": "Neuromorphic Computing",
-            "course_id": "neuromorphic_computing",
-            "category": "Novel Architectures",
-            "difficulty": "advanced",
-            "description": "Brain-inspired computing architectures.",
-            "clarification": None,
-        }]
-
-    monkeypatch.setattr("backend.core_engine.analysis_service.evaluate_unknown_courses", mock_evaluate)
-
+    """Scenario 6: Ambiguous course returns structured clarification with candidate options."""
     res = client.post("/api/v1/learning-path", json={
-        "courses": ["Python Programming", "Neuromorphic Computing"],
-        "learning_goal": "Brain-Inspired Computing",
-        "use_ai": True,
+        "courses": ["Programming"],
     })
-    assert res.status_code == 200
-    data = res.json()
-    assert any(c["course_id"] == "neuromorphic_computing" for c in data["selected_courses"])
-    assert data["ai_summary"]["unknown_courses_evaluated"] == 1
+    assert res.status_code == 400
+    detail = res.json()["detail"]
+    assert detail["error"] == "course_resolution_error"
+    assert detail.get("needs_clarification") is True
+    assert len(detail.get("candidates", [])) > 1
 
-    # Verify persistent KB count remains strictly untouched
-    kb_after_count = len(get_default_knowledge_base().get_all_courses())
-    assert kb_after_count == kb_before_count
+
+def test_scenario_7_unknown_legitimate_course():
+    """Scenario 7: Courses not in the curated Knowledge Base catalog are safely rejected."""
+    res = client.post("/api/v1/learning-path", json={
+        "courses": ["Python Programming", "Neuromorphic Computing 999"],
+    })
+    assert res.status_code == 400
+    detail = res.json()["detail"]
+    assert detail["error"] == "course_resolution_error"
+    assert "Neuromorphic Computing 999" in detail["message"]
+    assert "not recognized in the knowledge base catalog" in detail["message"]
 
 
 def test_scenario_8_duplicate_courses():
@@ -207,7 +175,6 @@ def test_scenario_8_duplicate_courses():
             "python_programming",
             "Data Structures",
         ],
-        "use_ai": False,
     })
     assert res.status_code == 200
     data = res.json()
@@ -237,23 +204,21 @@ def test_scenario_9_invalid_input():
     # 4. Input exceeding maximum allowed limit (50 courses)
     res_overflow = client.post("/api/v1/learning-path", json={
         "courses": [f"Course_{i}" for i in range(55)],
-        "use_ai": False,
     })
     assert res_overflow.status_code == 400
     assert "exceeds maximum limit" in res_overflow.json()["detail"]["message"]
 
 
-def test_scenario_10_ai_unavailable_fallback():
-    """Scenario 10: AI unavailable in isolated process produces transparent warning and curated-only path."""
+def test_scenario_10_pure_daa_execution():
+    """Scenario 10: Pure DAA execution operates deterministically without external AI."""
     res = client.post("/api/v1/learning-path", json={
         "courses": ["Data Structures", "Design and Analysis of Algorithms"],
-        "use_ai": False,
     })
     assert res.status_code == 200
     data = res.json()
     assert data["ai_proposals_used"] is False
-    assert any("AI assistance was disabled" in w for w in data["warnings"])
-    assert data["ai_summary"]["proposal_request_status"] == "disabled"
+    order = [c["course_id"] for c in data["ordered_courses"]]
+    assert order == ["data_structures", "design_and_analysis_of_algorithms"]
 
 
 def test_scenario_11_cyclic_graph():
@@ -270,7 +235,7 @@ def test_scenario_11_cyclic_graph():
     }
     kb = KnowledgeBase(source=cyclic_kb_data)
     with pytest.raises(CycleConflictError) as exc_info:
-        generate_learning_path(["Course A", "Course B"], kb=kb, use_ai=False)
+        generate_learning_path(["Course A", "Course B"], kb=kb)
     assert "Cyclic dependency detected" in str(exc_info.value)
 
 
@@ -279,7 +244,6 @@ def test_scenario_12_infeasible_scheduling_constraints():
     res = client.post("/api/v1/learning-path", json={
         "courses": ["Programming Fundamentals", "Data Structures", "Design and Analysis of Algorithms"],
         "max_semesters": 2,
-        "use_ai": False,
     })
     assert res.status_code == 400
     detail = res.json()["detail"]
@@ -305,7 +269,6 @@ def test_scenario_13_longer_learning_path():
     ]
     res = client.post("/api/v1/learning-path", json={
         "courses": twelve_courses,
-        "use_ai": False,
         "max_courses_per_semester": 3,
     })
     assert res.status_code == 200
@@ -324,19 +287,21 @@ def test_scenario_13_longer_learning_path():
 
 
 def test_scenario_14_frontend_backend_resilience():
-    """Scenario 14: API endpoints health, AI diagnostic status, and resilience."""
+    """Scenario 14: API endpoints health, catalog retrieval, and OpenAPI schema."""
     # Health check
     res_health = client.get("/api/v1/health")
     assert res_health.status_code == 200
     assert res_health.json()["status"] == "healthy"
 
-    # AI diagnostic check (no secret exposure)
-    res_ai = client.get("/api/v1/ai/status")
-    assert res_ai.status_code == 200
-    data = res_ai.json()
-    assert "configured" in data
-    assert "model" in data
-    assert "GEMINI_API_KEY" not in str(data)
+    # Catalog check
+    res_catalog = client.get("/api/v1/courses")
+    assert res_catalog.status_code == 200
+    assert len(res_catalog.json()) == 70
+
+    # Root OpenAPI discovery check
+    res_root = client.get("/")
+    assert res_root.status_code == 200
+    assert "docs_url" in res_root.json()
 
 
 def test_daa_algorithms_actually_invoked():
@@ -347,7 +312,6 @@ def test_daa_algorithms_actually_invoked():
 
         res = client.post("/api/v1/learning-path", json={
             "courses": ["Programming Fundamentals", "Data Structures"],
-            "use_ai": False,
         })
         assert res.status_code == 200
 

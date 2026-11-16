@@ -21,8 +21,8 @@ export interface FormDraft {
 export const EMPTY_DRAFT: FormDraft = {
   courses: [],
   goal: '',
-  useAi: true,
-  fallback: true,
+  useAi: false,
+  fallback: false,
   maxPerSemester: '',
   maxSemesters: '',
   optionsOpen: false,

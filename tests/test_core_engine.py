@@ -7,35 +7,37 @@ client = TestClient(app)
 
 def test_app_imports_and_initializes():
     assert app is not None
-    assert app.title == "DAA Course Learning Path API"
+    assert app.title == "DAA Course Registration Assistant API"
 
 
 def test_health_endpoint():
     response = client.get("/api/v1/health")
     assert response.status_code == 200
     data = response.json()
-    assert data == {
-        "status": "healthy",
-        "service": "daa-learning-path-api",
-        "version": "1.0.0",
-    }
+    assert data["status"] == "healthy"
+    assert data["service"] == "daa-course-registration-api"
+    assert data["version"] == "2.0.0"
 
 
 def test_root_endpoint():
     response = client.get("/")
     assert response.status_code == 200
     data = response.json()
-    assert data["service"] == "daa-learning-path-api"
+    assert data["service"] == "daa-course-registration-api"
     assert "docs_url" in data
     assert "health_url" in data
+    assert "courses_url" in data
+    assert "learning_path_url" in data
 
 
 def test_openapi_schema_accessible():
     response = client.get("/openapi.json")
     assert response.status_code == 200
     schema = response.json()
-    assert schema["info"]["title"] == "DAA Course Learning Path API"
+    assert schema["info"]["title"] == "DAA Course Registration Assistant API"
     assert "/api/v1/health" in schema["paths"]
+    assert "/api/v1/courses" in schema["paths"]
+    assert "/api/v1/learning-path" in schema["paths"]
 
 
 def test_health_alias_endpoint():
@@ -60,36 +62,10 @@ def test_courses_catalog_endpoints():
 def test_learning_path_alias_endpoint():
     payload = {
         "courses": ["Programming Fundamentals", "Data Structures"],
-        "use_ai": False,
     }
     response = client.post("/api/learning-path", json=payload)
     assert response.status_code == 200
     data = response.json()
     assert len(data["selected_courses"]) == 2
     assert len(data["ordered_courses"]) == 2
-
-
-def test_ai_status_endpoint():
-    res = client.get("/api/v1/ai/status")
-    assert res.status_code == 200
-    data = res.json()
-    assert "configured" in data
-    assert "key_present" in data
-    assert "key_empty" in data
-    assert "key_source" in data
-    assert "model" in data
-    assert "timeout_seconds" in data
-    assert "max_retries" in data
-    assert "client_initializable" in data
-    # Ensure raw secret is never present in response keys or values
-    assert "api_key" not in data
-    assert "gemini_api_key" not in data
-    for val in data.values():
-        if isinstance(val, str):
-            assert not val.startswith("AIza")
-
-    # Alias check
-    res_alias = client.get("/api/ai/status")
-    assert res_alias.status_code == 200
-    assert res_alias.json()["model"] == data["model"]
-
+    assert data["ai_proposals_used"] is False

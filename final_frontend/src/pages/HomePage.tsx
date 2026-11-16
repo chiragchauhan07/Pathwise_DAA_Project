@@ -67,7 +67,7 @@ export default function HomePage() {
             </div>
           )}
           {roadmap && !busy && (
-            <p className="mt-8 text-sm text-ink-2">See <Link className="font-medium text-accent hover:underline" to="/daa">how the order is computed</Link> or <Link className="font-medium text-accent hover:underline" to="/ai">what AI contributed</Link>.</p>
+            <p className="mt-8 text-sm text-ink-2">See <Link className="font-medium text-accent hover:underline" to="/daa">how the order is computed</Link> or <Link className="font-medium text-accent hover:underline" to="/curriculum">explore the curriculum knowledge base & benchmark topologies</Link>.</p>
           )}
         </div>
       </div>

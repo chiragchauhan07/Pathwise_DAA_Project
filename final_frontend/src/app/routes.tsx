@@ -3,16 +3,18 @@ import { Link, Navigate, type RouteObject } from 'react-router-dom';
 
 const HomePage = lazy(() => import('../pages/HomePage'));
 const DAAPage = lazy(() => import('../pages/DAAPage'));
-const AIPage = lazy(() => import('../pages/AIPage'));
+const CurriculumPage = lazy(() => import('../pages/CurriculumPage'));
 
 export const routes: RouteObject[] = [
   { path: '/', element: <HomePage /> },
   { path: '/daa', element: <DAAPage /> },
   { path: '/daa-concepts', element: <Navigate to="/daa" replace /> },
-  { path: '/ai', element: <AIPage /> },
-  { path: '/ai-concepts', element: <Navigate to="/ai" replace /> },
+  { path: '/curriculum', element: <CurriculumPage /> },
+  { path: '/courses', element: <Navigate to="/curriculum" replace /> },
+  { path: '/ai', element: <Navigate to="/curriculum" replace /> },
+  { path: '/ai-concepts', element: <Navigate to="/curriculum" replace /> },
   { path: '/roadmaps', element: <Navigate to="/" replace /> },
-  { path: '/about', element: <Navigate to="/ai" replace /> },
+  { path: '/about', element: <Navigate to="/curriculum" replace /> },
   { path: '*', element: <NotFound /> },
 ];
 

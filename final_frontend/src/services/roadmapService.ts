@@ -102,17 +102,3 @@ export interface Health {
 }
 
 export const checkHealth = () => request<Health>('/api/v1/health');
-
-export interface BackendAiStatus {
-  configured: boolean;
-  key_present: boolean;
-  key_empty: boolean;
-  key_source: string;
-  model: string;
-  timeout_seconds: number;
-  max_retries: number;
-  client_initializable: boolean;
-  error?: string | null;
-}
-
-export const checkAiStatus = () => request<BackendAiStatus>('/api/v1/ai/status');
