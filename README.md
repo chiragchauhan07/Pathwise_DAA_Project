@@ -3,7 +3,7 @@
 <div align="center">
   <img src="final_frontend/public/favicon.svg" alt="Pathwise Logo" width="120"/>
   <h2>Project-Based Learning (PBL 2) — Design & Analysis of Algorithms</h2>
-  <p><strong>A deterministic Graph Algorithm engine that models university curricula as Directed Acyclic Graphs (DAGs), detects circular prerequisite deadlocks, and generates optimal semester-wise course registration orders using Kahn’s Topological Sort.</strong></p>
+  <p><strong>A deterministic Graph Algorithm engine that models university curricula as Directed Acyclic Graphs (DAGs), detects circular prerequisite deadlocks, and generates valid course-taking orders using Kahn’s Topological Sort.</strong></p>
 
   <p align="center">
     <a href="https://pathwise-daa-project.vercel.app/">
@@ -30,12 +30,11 @@
 
 > **Project Specification:**
 > *"Build a tool that represents course prerequisites as a directed graph, detects invalid prerequisite cycles, and generates a valid course-taking order. Evaluate it on synthetic curricula and explain how topological ordering supports reliable planning."*
-> **Core Concepts:** Directed graphs ($G=(V, E)$), cycle detection (DFS 3-state coloring), topological sorting (Kahn's in-degree algorithm), and rigorous test-case design.
+> **Core Concepts:** Directed graphs ($G=(V, E)$), cycle detection (3-state DFS coloring), topological sorting (Kahn's in-degree decay algorithm), and rigorous test-case design.
 
 Designing a multi-semester academic course schedule is a fundamental dependency sequencing problem. When students select specialized subjects, prerequisite relationships can create intricate directed dependency networks with risks of:
 1. **Circular Deadlocks ($A \to B \to C \to A$):** Rendering registration mathematically impossible.
 2. **Prerequisite Violations:** Enrolling in advanced topics before completing foundational requirements.
-3. **Unbalanced Semester Workloads:** Overloading single terms while underutilizing others.
 
 This project implements a pure DAA engine in Python with a modern interactive frontend, providing complete mathematical guarantees for academic scheduling.
 
@@ -44,9 +43,9 @@ This project implements a pure DAA engine in Python with a modern interactive fr
 ## 📖 Table of Contents
 - [Key Features](#-key-features)
 - [System Architecture](#-system-architecture)
+- [How Topological Ordering Supports Reliable Planning](#-how-topological-ordering-supports-reliable-planning)
 - [DAA Algorithms & Mathematical Guarantees](#-daa-algorithms--mathematical-guarantees)
 - [Curriculum Knowledge Base (100 Courses)](#-curriculum-knowledge-base-100-courses)
-- [Empirical Performance Benchmarks](#-empirical-performance-benchmarks)
 - [Project Directory Structure](#-project-directory-structure)
 - [Local Setup & Execution](#-local-setup--execution)
 - [Automated Test Suite](#-automated-test-suite)
@@ -58,21 +57,39 @@ This project implements a pure DAA engine in Python with a modern interactive fr
 - **100 Curated B.Tech CSE Courses & 136 Prerequisite Dependencies:** Full curriculum coverage across Semesters 1 through 8 directly mapped from the official MRIIRS syllabus booklet.
 - **Cycle Detection & Path Isolation:** Identifies directed circular dependencies via 3-state iterative DFS ($\mathcal{O}(V + E)$) with zero risk of call-stack overflow, extracting the exact conflict path ($A \to B \to A$).
 - **Deterministic Kahn's Topological Sorting:** Computes a valid study order with min-heap tie-breaking ($\mathcal{O}(V \log V + E)$) ensuring reproducible registrations.
-- **Pedagogical Semester Scheduling:** Partitions topological waves across academic semesters while balancing difficulty ratings and credit caps.
-- **Interactive Road-Style Visual Journey:** Responsive visual roadmap rendered with React 19, TypeScript, and Tailwind CSS.
+- **Topological Wave Partitioning:** Naturally groups courses into prerequisite waves, allowing students and colleges to see which courses can be taken concurrently.
+- **Interactive Visual Roadmap:** Responsive road-inspired visual journey rendered with React 19, TypeScript, and Tailwind CSS.
 - **DAA Algorithm & Step-by-Step Visualizer:** Interactive educational trace detailing in-degree decay, queue states, and execution step logs.
 - **Catalog Explorer with Filter & Sort:** Filter courses by semester (1–8), subject domain, difficulty, or search query with customizable sort orders.
 
 ---
 
-## 🏗️ System Architecture
+## 🎓 How Topological Ordering Supports Reliable Planning
 
-The project enforces a strict, modular separation of concerns between client visualization, API routing, and the core algorithmic engine:
+In university curricula, prerequisite relations define a directed graph $G = (V, E)$. Topological sorting provides the core mathematical guarantees that make degree planning reliable and conflict-free:
+
+1. **Guaranteed Prerequisite Precedence (No Forward References):**
+   A topological ordering guarantees:
+   $$\forall (u, v) \in E \implies \text{index}(u) < \text{index}(v)$$
+   This proves mathematically that a student will never encounter advanced material without having completed all underlying foundations.
+
+2. **Deadlock & Cycle Immunity (The DAG Property):**
+   A topological ordering exists **if and only if** the graph is a Directed Acyclic Graph (DAG). If an invalid circular dependency is introduced ($A \to B \to C \to A$), registration becomes mathematically impossible. Kahn's algorithm catches this immediately (as vertices processed $< |V|$), and 3-state DFS isolates the exact cycle path, preventing registration deadlocks.
+
+3. **Natural Concurrent Semester Waves (In-Degree Decay):**
+   At each step of Kahn's algorithm, all courses with $\text{in-degree} = 0$ are mutually independent. This directly maps to **semester scheduling**: all 0-in-degree courses can be safely scheduled in the **same semester** concurrently without prerequisite conflict.
+
+4. **Deterministic & Objective Degree Pathways:**
+   Deterministic tie-breaking (min-heap priority) guarantees an objective, reproducible schedule for thousands of students simultaneously, eliminating manual advisor bottlenecks and registration errors.
+
+---
+
+## 🏗️ System Architecture
 
 ```mermaid
 flowchart TD
     subgraph Client["Frontend Layer (React 19 + TypeScript + Vite)"]
-        UI["Course Selector & Semester Planner"]
+        UI["Course Selector"]
         RoadmapView["Interactive Roadmap Visualizer"]
         DAAView["DAA Step-by-Step Algorithm Trace"]
         CatalogView["Course Catalog (Filter & Sort)"]
@@ -89,7 +106,7 @@ flowchart TD
         Cycle["3-State Iterative DFS Cycle Detector"]
         Kahn["Kahn's Topological Sort (Min-Heap)"]
         Verifier["Order Verification Barrier"]
-        Scheduler["Multi-Priority Semester Scheduler"]
+        Scheduler["Topological Wave Scheduler"]
     end
 
     UI -->|"POST /api/v1/learning-path"| Router
@@ -102,7 +119,7 @@ flowchart TD
     Cycle -->|"Cycle Detected"| Router
     Kahn -->|"Linear Topological Sequence"| Verifier
     Verifier -->|"Verified Sequence"| Scheduler
-    Scheduler -->|"Balanced Semesters"| Router
+    Scheduler -->|"Topological Waves"| Router
     Router -->|"Structured Response"| RoadmapView
 ```
 
@@ -139,13 +156,6 @@ All graph data structures and scheduling algorithms are implemented from scratch
   $$\forall (u, v) \in E \implies \text{index}(u) < \text{index}(v)$$
   $$|L| = |V| \quad \text{and} \quad \text{set}(L) = V$$
 
-### 4. Pedagogical Semester Scheduling
-- **File:** `backend/daa_engine/scheduler.py`
-- Partitions the topological sequence into semesters while respecting:
-  - Prerequisite temporal precedence: $\text{semester}(u) \le \text{semester}(v)$
-  - Maximum courses per semester cap ($k$)
-  - Difficulty ceiling per semester to prevent cognitive overload.
-
 ---
 
 ## 📚 Curriculum Knowledge Base (100 Courses)
@@ -165,22 +175,6 @@ The knowledge base (`backend/knowledge_base/courses.json`) contains **100 offici
 
 ---
 
-## ⚡ Empirical Performance Benchmarks
-
-Evaluated across synthetic curricula topologies from $V=10$ to $V=1000$:
-
-| Topology | $|V|$ | $|E|$ | Algorithm | Median Latency | Correctness |
-| :--- | :---: | :---: | :--- | :---: | :---: |
-| **Sparse DAG** | 100 | 150 | Kahn Toposort | 0.079 ms | **PASSED** |
-| **Sparse DAG** | 1000 | 1500 | Kahn Toposort | 1.134 ms | **PASSED** |
-| **Dense DAG** | 100 | 495 | Kahn Toposort | 0.101 ms | **PASSED** |
-| **Dense DAG** | 1000 | 49,950 | Kahn Toposort | 4.925 ms | **PASSED** |
-| **Linear Chain** | 100 | 99 | Kahn Toposort | 0.059 ms | **PASSED** |
-| **Linear Chain** | 1000 | 999 | Kahn Toposort | 0.790 ms | **PASSED** |
-| **Cyclic Graph** | 1000 | 1503 | DFS Cycle Detect | 0.708 ms | **PASSED (Cycle Isolated)** |
-
----
-
 ## 📁 Project Directory Structure
 
 ```
@@ -194,13 +188,11 @@ Pathwise_DAA_Project/
 │   │   └── models.py                # Pydantic request/response schemas
 │   ├── daa_engine/                  # Pure Python DAA Graph Algorithms
 │   │   ├── graph.py                 # DirectedGraph, Kahn's Toposort, 3-state DFS
-│   │   └── scheduler.py             # Multi-priority semester scheduler
+│   │   └── scheduler.py             # Topological wave scheduler
 │   └── knowledge_base/              # Academic curriculum knowledge base
 │       ├── courses.json             # 100 courses, 136 prerequisite relationships
 │       ├── knowledge_base.py        # In-memory query resolver
 │       └── validate_kb_by_Claude.py # Automated structural validator
-├── benchmarks/
-│   └── benchmark_daa.py             # Performance benchmark suite (V=10 to V=1000)
 ├── final_frontend/                  # React 19 + TypeScript + Vite + Tailwind CSS
 │   ├── src/
 │   │   ├── components/              # Roadmap, CourseForm, DAA Inspector
@@ -256,9 +248,6 @@ Run the complete test suite verifying all 100 courses, DAG acyclicity, Kahn's al
 ```bash
 # Run all 118 unit and integration tests:
 pytest
-
-# Run empirical graph benchmarks:
-python benchmarks/benchmark_daa.py
 ```
 
 ---

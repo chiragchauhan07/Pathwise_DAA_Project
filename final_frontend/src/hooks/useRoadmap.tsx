@@ -1,6 +1,5 @@
 import { createContext, useCallback, useContext, useMemo, useRef, useState, type ReactNode } from 'react';
 import { ApiError } from '../services/api';
-import { saveRoadmap } from '../services/historyService';
 import { generateLearningPath } from '../services/roadmapService';
 import type { LearningPathRequest, LearningPathResponse, RoadmapModel } from '../types/roadmap';
 import { buildRoadmap } from '../utils/roadmapTransform';
@@ -64,7 +63,6 @@ export function RoadmapProvider({ children }: { children: ReactNode }) {
       if (res.ordered_courses.length === 0) throw new ApiError('invalid_response', 'The backend returned an empty learning path.');
       setRoadmap(buildRoadmap(res, req));
       setRequest(req);
-      saveRoadmap(req, res);
       setStatus('success');
     } catch (e) {
       setError(e instanceof ApiError ? e : new ApiError('server', 'Something went wrong while generating the path.'));

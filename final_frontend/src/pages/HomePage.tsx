@@ -4,11 +4,10 @@ import { Alert, ErrorState } from '../components/common/ErrorState';
 import { PageContainer } from '../components/layout/PageContainer';
 import { CourseForm, type CourseFormHandle } from '../components/roadmap/CourseForm';
 import { RoadmapResults } from '../components/roadmap/RoadmapResults';
-import { SavedPaths } from '../components/roadmap/SavedPaths';
 import { useRoadmap } from '../hooks/useRoadmap';
 
 export default function HomePage() {
-  const { status, roadmap, lastRequest, error, draft, setDraft, generate, clearError } = useRoadmap();
+  const { status, roadmap, lastRequest, error, setDraft, generate, clearError } = useRoadmap();
   const formRef = useRef<CourseFormHandle>(null);
   const outRef = useRef<HTMLDivElement>(null);
   const prev = useRef(status);
@@ -42,7 +41,6 @@ export default function HomePage() {
       <div className="mt-8 grid items-start gap-8 xl:grid-cols-[25rem_minmax(0,1fr)]">
         <div className="space-y-2 xl:sticky xl:top-6">
           <CourseForm busy={busy} onSubmit={generate} handleRef={formRef} />
-          <div className="flex justify-end"><SavedPaths disabled={busy} /></div>
         </div>
 
         <div ref={outRef} className="min-w-0 scroll-mt-4" aria-live="polite">
@@ -62,12 +60,12 @@ export default function HomePage() {
           {roadmap && <div className={busy ? 'opacity-50' : ''}><RoadmapResults roadmap={roadmap} /></div>}
           {!roadmap && !busy && status !== 'error' && (
             <div className="card px-6 py-14 text-center">
-              <h2 className="h-card">Your learning path will appear here</h2>
-              <p className="mx-auto mt-2 max-w-sm text-sm text-ink-2">Add at least one course, optionally describe your goal, then generate. {draft.courses.length > 0 ? 'You’re ready to go.' : 'You can start from one of the tracks.'}</p>
+              <h2 className="h-card">Your course registration order will appear here</h2>
+              <p className="mx-auto mt-2 max-w-sm text-sm text-ink-2">Select courses from the catalog above or pick a preset track, then click Generate to compute the topological sequence.</p>
             </div>
           )}
           {roadmap && !busy && (
-            <p className="mt-8 text-sm text-ink-2">See <Link className="font-medium text-accent hover:underline" to="/daa">how the order is computed</Link> or <Link className="font-medium text-accent hover:underline" to="/curriculum">explore the curriculum knowledge base & benchmark topologies</Link>.</p>
+            <p className="mt-8 text-sm text-ink-2">See <Link className="font-medium text-accent hover:underline" to="/daa">how the topological order is computed</Link> or <Link className="font-medium text-accent hover:underline" to="/curriculum">explore the academic course catalog</Link>.</p>
           )}
         </div>
       </div>

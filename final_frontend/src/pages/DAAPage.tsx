@@ -24,10 +24,16 @@ export default function DAAPage() {
       </header>
 
       {/* 1. Core Problem & Mathematical Formulation */}
-      <section className="mt-10 space-y-4">
-        <h2 className="text-xl font-bold tracking-tight text-ink border-b border-divider pb-2">
-          1. Why Topological Sorting?
-        </h2>
+      <section className="mt-10 space-y-6">
+        <div>
+          <h2 className="text-xl font-bold tracking-tight text-ink border-b border-divider pb-2">
+            1. Why Topological Sorting? The Core DAA Principle
+          </h2>
+          <p className="mt-2 text-sm text-ink-2 leading-relaxed">
+            In academic degree systems, course enrollment is not a random collection of subjects—it is a formal dependency network. A valid schedule must satisfy all pedagogical dependencies before higher-level topics are undertaken.
+          </p>
+        </div>
+
         <div className="grid gap-4 sm:grid-cols-3">
           <div className="card p-4 space-y-2">
             <h3 className="font-semibold text-ink text-sm">The Motivation</h3>
@@ -46,6 +52,45 @@ export default function DAAPage() {
             <p className="text-xs text-ink-2 leading-relaxed">
               A valid registration order exists <strong>if and only if</strong> the graph has no directed cycles. Cycles create deadlock dependencies where no course can be taken first.
             </p>
+          </div>
+        </div>
+
+        {/* Detailed Educational Breakdown: Reliable vs Unreliable Planning */}
+        <div className="card p-5 border border-accent/20 bg-accent/5 space-y-4">
+          <h3 className="font-semibold text-ink text-base flex items-center gap-2">
+            <svg className="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            How Topological Ordering Supports Reliable Planning
+          </h3>
+          <p className="text-xs text-ink-2 leading-relaxed">
+            Topological ordering is the mathematical backbone of reliable curriculum planning. Without graph-theoretic scheduling, university enrollment suffers from severe logistical failure modes:
+          </p>
+
+          <div className="grid gap-3 sm:grid-cols-2 text-xs">
+            <div className="card p-4 bg-surface border-divider space-y-2">
+              <div className="font-semibold text-error flex items-center gap-1.5">
+                <span>✕</span> Unreliable (Ad-Hoc / Intuitive) Planning
+              </div>
+              <ul className="list-disc pl-4 space-y-1 text-ink-2 text-[11px] leading-relaxed">
+                <li><strong>Prerequisite Inversion:</strong> Students enroll in advanced subjects without foundational courses, resulting in high dropout and failure rates.</li>
+                <li><strong>Undetected Deadlocks:</strong> Circular prerequisites (e.g. Course A requires B, B requires C, C requires A) freeze graduation paths indefinitely.</li>
+                <li><strong>Unbalanced Term Loads:</strong> Ad-hoc sequencing clusters heavy dependent courses into single semesters, causing severe cognitive overload.</li>
+                <li><strong>Administrative Bottlenecks:</strong> Manual advisor checks are slow, inconsistent, and prone to human oversight.</li>
+              </ul>
+            </div>
+
+            <div className="card p-4 bg-surface border-divider space-y-2">
+              <div className="font-semibold text-success flex items-center gap-1.5">
+                <span>✓</span> Reliable (Topological Sorting) Planning
+              </div>
+              <ul className="list-disc pl-4 space-y-1 text-ink-2 text-[11px] leading-relaxed">
+                <li><strong>Strict Precedence Invariant:</strong> For all edges (u, v), pos(u) &lt; pos(v). Zero forward-dependency violations are mathematically possible.</li>
+                <li><strong>Provable Cycle Immunity:</strong> 3-state DFS identifies directed cycles in O(V + E) time, flagging conflicting prerequisites before registration opens.</li>
+                <li><strong>Natural Concurrent Waves:</strong> All courses with in-degree 0 at step t are mutually independent and can be safely taken in parallel in the same semester.</li>
+                <li><strong>Deterministic &amp; Reproducible:</strong> Consistent min-heap tie-breaking guarantees fair, identical schedules for thousands of students simultaneously.</li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>

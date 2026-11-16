@@ -7,7 +7,7 @@ import { Button } from '../common/Button';
 import { Spinner } from '../common/Spinner';
 
 const MAX_COURSES = 50;
-export interface CourseFormHandle { focusInput: () => void; openOptions: () => void }
+export interface CourseFormHandle { focusInput: () => void; openOptions?: () => void }
 
 const norm = (s: string) => s.trim().toLowerCase();
 
@@ -39,16 +39,9 @@ function nearest(name: string): string[] {
     .map((x) => x.name);
 }
 
-function parseLimit(raw: string, label: string): { value: number | null; error?: string } {
-  const t = raw.trim();
-  if (!t) return { value: null };
-  if (!/^\d+$/.test(t) || Number(t) < 1) return { value: null, error: `${label} must be a whole number of 1 or more.` };
-  return { value: Number(t) };
-}
-
 export function CourseForm({ busy, onSubmit, handleRef }: { busy: boolean; onSubmit: (req: LearningPathRequest) => void; handleRef?: Ref<CourseFormHandle> }) {
   const { draft, setDraft } = useRoadmap();
-  const { courses, goal, maxPerSemester, maxSemesters, optionsOpen } = draft;
+  const { courses } = draft;
   const id = useId();
   const inputRef = useRef<HTMLInputElement>(null);
   const [text, setText] = useState('');
@@ -59,7 +52,7 @@ export function CourseForm({ busy, onSubmit, handleRef }: { busy: boolean; onSub
   const [tried, setTried] = useState(false);
 
   const patch = (p: Partial<typeof draft>) => setDraft((d) => ({ ...d, ...p }));
-  useImperativeHandle(handleRef, () => ({ focusInput: () => inputRef.current?.focus(), openOptions: () => patch({ optionsOpen: true }) }));
+  useImperativeHandle(handleRef, () => ({ focusInput: () => inputRef.current?.focus(), openOptions: () => {} }));
 
   const suggestions = useMemo(() => {
     const q = norm(text);
@@ -124,9 +117,6 @@ export function CourseForm({ busy, onSubmit, handleRef }: { busy: boolean; onSub
     else if (e.key === 'Backspace' && !text && courses.length) patch({ courses: courses.slice(0, -1) });
   };
 
-  const perSem = parseLimit(maxPerSemester, 'Courses per semester');
-  const sems = parseLimit(maxSemesters, 'Semesters');
-
   const submit = (e: FormEvent) => {
     e.preventDefault();
     if (busy) return;
@@ -146,16 +136,12 @@ export function CourseForm({ busy, onSubmit, handleRef }: { busy: boolean; onSub
       setText('');
     }
     if (list.length === 0) { inputRef.current?.focus(); return; }
-    if (perSem.error || sems.error) { patch({ optionsOpen: true }); return; }
     setNote(null);
     setUnrecognizedPrompt(null);
     onSubmit({
       courses: list,
-      learning_goal: goal.trim() || undefined,
       use_ai: false,
       fallback_on_ai_failure: false,
-      max_courses_per_semester: perSem.value,
-      max_semesters: sems.value,
     });
   };
 
@@ -271,7 +257,7 @@ export function CourseForm({ busy, onSubmit, handleRef }: { busy: boolean; onSub
               type="button"
               disabled={busy}
               className="rounded-md px-2 py-1 text-left font-medium text-accent hover:bg-info-bg disabled:text-disabled"
-              onClick={() => { patch({ courses: t.courses, goal: t.goal }); setNote(null); setUnrecognizedPrompt(null); }}
+              onClick={() => { patch({ courses: t.courses }); setNote(null); setUnrecognizedPrompt(null); }}
             >
               {t.title}
             </button>
@@ -287,75 +273,6 @@ export function CourseForm({ busy, onSubmit, handleRef }: { busy: boolean; onSub
             </button>
           )}
         </div>
-      </div>
-
-      <div>
-        <label htmlFor={`${id}-goal`} className="text-sm font-semibold text-ink">Academic Goal / Program Track <span className="font-normal text-muted">(optional)</span></label>
-        <input
-          id={`${id}-goal`}
-          className="field mt-2 text-sm"
-          value={goal}
-          maxLength={200}
-          disabled={busy}
-          placeholder="e.g. B.Tech Computer Science Core Foundations"
-          onChange={(e) => patch({ goal: e.target.value })}
-        />
-      </div>
-
-      <div className="border-t border-divider pt-4">
-        <button
-          type="button"
-          aria-expanded={optionsOpen}
-          aria-controls={`${id}-options`}
-          onClick={() => patch({ optionsOpen: !optionsOpen })}
-          className="flex w-full items-center justify-between rounded-lg py-1 text-sm font-semibold text-ink"
-        >
-          Workload & Semester Scheduling Limits
-          <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden style={{ transform: optionsOpen ? 'rotate(180deg)' : 'none', transition: 'transform .15s' }}>
-            <path d="M2 5l5 5 5-5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-        </button>
-
-        {optionsOpen && (
-          <div id={`${id}-options`} className="mt-4 space-y-4">
-            <div className="grid gap-4 sm:grid-cols-2">
-              <div>
-                <label htmlFor={`${id}-per`} className="text-xs font-medium text-ink">Max courses per semester</label>
-                <input
-                  id={`${id}-per`}
-                  inputMode="numeric"
-                  className="field mt-1.5 text-sm"
-                  placeholder="No limit (Unconstrained)"
-                  value={maxPerSemester}
-                  disabled={busy}
-                  aria-invalid={Boolean(perSem.error)}
-                  aria-describedby={perSem.error ? `${id}-per-err` : undefined}
-                  onChange={(e) => patch({ maxPerSemester: e.target.value })}
-                />
-                {perSem.error && <p id={`${id}-per-err`} className="mt-1 text-xs text-error">{perSem.error}</p>}
-              </div>
-
-              <div>
-                <label htmlFor={`${id}-sem`} className="text-xs font-medium text-ink">Max allowable semesters</label>
-                <input
-                  id={`${id}-sem`}
-                  inputMode="numeric"
-                  className="field mt-1.5 text-sm"
-                  placeholder="No limit"
-                  value={maxSemesters}
-                  disabled={busy}
-                  aria-invalid={Boolean(sems.error)}
-                  aria-describedby={sems.error ? `${id}-sem-err` : undefined}
-                  onChange={(e) => patch({ maxSemesters: e.target.value })}
-                />
-                {sems.error && <p id={`${id}-sem-err`} className="mt-1 text-xs text-error">{sems.error}</p>}
-              </div>
-            </div>
-            <p className="text-[11px] text-support">
-              DAG wave layering places independent courses into concurrent semesters. Specifying capacity constraints activates multi-priority list scheduling.
-            </p>
-          </div>
-        )}
       </div>
 
       <div>
