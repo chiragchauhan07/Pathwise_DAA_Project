@@ -1,8 +1,8 @@
 {
-  "name": "pathwise-fullstack",
-  "version": "1.0.0",
+  "name": "course-registration-assistant",
+  "version": "2.0.0",
   "private": true,
-  "description": "Pathwise — AI-Assisted, Prerequisite-Aware Course Learning Path Generator",
+  "description": "Dependency-Aware Course Registration Assistant — DAA Graph Algorithms & Topological Sorting",
   "scripts": {
     "build": "npm --prefix final_frontend install && npm --prefix final_frontend run build",
     "test": "npm --prefix final_frontend test",

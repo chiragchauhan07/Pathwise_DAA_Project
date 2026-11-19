@@ -1,24 +1,23 @@
-# Pathwise Screenshots & Visual Gallery
+# Screenshots & Visual Gallery
 
-This directory contains visual captures of the Pathwise application in action.
+This directory documents the visual captures of the Dependency-Aware Course Registration Assistant application.
 
 ---
 
 ## 1. Primary User Journey Views
 
-### 1.1 Course Selection & Career Tracks
-* **File:** `home_selection.png` (or interactive in browser at `/`)
-* **Description:** Students can browse 70 curated courses by domain (Core CS, Systems, AI/ML, Data Science, Math, Security, Software Engineering) or select predefined career presets such as *Full-Stack Developer*, *Machine Learning Engineer*, *Systems & Security*, and *Data Scientist*.
+### 1.1 Course Selection & Curricular Tracks
+* **Route:** `/`
+* **Description:** Students can search and select from 100 accredited curriculum courses across Semesters 1 through 8 or pick curricular track presets such as *CS Core*, *AI & ML*, *Software Systems*, or *Core DAA Track*.
 
-### 1.2 Prerequisite-Aware Path & Semester Roadmap
-* **File:** `learning_path_roadmap.png`
-* **Description:** Generated sequence showing the topological order derived from Kahn's algorithm, partitioned into balanced semester blocks respecting prerequisite constraints, maximum course limits, and workload difficulty scores.
+### 1.2 Prerequisite-Aware Roadmap & Semester Waves
+* **Route:** `/` (upon clicking "Generate Registration Order")
+* **Description:** Generated sequence showing the topological order derived from Kahn's algorithm, partitioned into concurrent semester waves, complete with the dedicated educational callout explaining how topological ordering guarantees reliable degree planning.
 
-### 1.3 DAA Algorithm Inspector
-* **File:** `daa_inspector.png` (interactive at `/daa`)
-* **Description:** Visual representation of the underlying Directed Acyclic Graph (DAG), step-by-step Kahn's in-degree transitions, min-heap state, and empirical benchmarks comparing Kahn's vs DFS topological sort.
+### 1.3 Step-by-Step DAA Algorithm Inspector
+* **Route:** `/daa`
+* **Description:** Visual representation of the Directed Acyclic Graph (DAG), inline 6-node trace diagram with initial in-degrees, interactive step-by-step Kahn's in-degree transitions, queue states, and the comparative analysis of reliable topological planning versus ad-hoc scheduling.
 
-### 1.4 AI Engine & Status Inspector
-* **File:** `ai_status_telemetry.png` (interactive at `/ai`)
-* **Description:** Transparent diagnostics displaying Gemini 2.5 Flash Lite readiness, response confidence, course resolution status, and prompt/response telemetry without exposing private credentials.
-
+### 1.4 Academic Course Catalog Explorer
+* **Route:** `/curriculum`
+* **Description:** Expandable catalog explorer containing all 100 courses and 136 prerequisite relationships, complete with unified "Filter and Sort" options (filtering by semester 1–8, category, and difficulty, and sorting alphabetically, by semester, or by difficulty).

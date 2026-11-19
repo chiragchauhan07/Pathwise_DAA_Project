@@ -1,5 +1,5 @@
-# ==============================================================================
-# Pathwise - Local Development Startup Script (PowerShell)
+﻿# ==============================================================================
+# Dependency-Aware Course Registration Assistant - Local Startup Script (PowerShell)
 # Starts the FastAPI Backend (Port 8000) and Vite React Frontend (Port 5173)
 # ==============================================================================
 
@@ -15,7 +15,7 @@ $ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Definition
 Set-Location $ScriptDir
 
 Write-Host "==========================================================" -ForegroundColor Cyan
-Write-Host "   Pathwise: Course Learning Path Generator Launcher     " -ForegroundColor Cyan
+Write-Host "   Dependency-Aware Course Registration Assistant        " -ForegroundColor Cyan
 Write-Host "==========================================================" -ForegroundColor Cyan
 
 # 1. Check Python
@@ -32,7 +32,7 @@ if (Test-Path "$ScriptDir\venv\Scripts\python.exe") {
         $PythonCmd = "python"
         Write-Host "[!] Virtual environment not detected; using system python: $($SysPython.Source)" -ForegroundColor Yellow
     } else {
-        Write-Error "Python 3.12+ is required but was not found on PATH or in .\venv."
+        Write-Error "Python 3.10+ is required but was not found on PATH or in .\venv."
         exit 1
     }
 }
@@ -58,7 +58,7 @@ if (-not (Test-Path "$ScriptDir\.env")) {
 if (-not $SkipInstall) {
     $MissingDeps = $false
     try {
-        & $PythonCmd -c "import fastapi, uvicorn, google.genai, dotenv" 2>$null
+        & $PythonCmd -c "import fastapi, uvicorn, pydantic" 2>$null
         if ($LASTEXITCODE -ne 0) { $MissingDeps = $true }
     } catch {
         $MissingDeps = $true
@@ -87,14 +87,12 @@ if (-not (Test-Path "$FrontendDir\node_modules") -and -not $SkipInstall) {
 # 5. Launch Backend and Frontend Background Jobs
 Write-Host "`n[*] Starting FastAPI Backend on port $BackendPort..." -ForegroundColor Cyan
 $BackendScript = {
-    param($Dir, $Python, $Port, $ApiKey, $Model)
+    param($Dir, $Python, $Port)
     Set-Location $Dir
     $env:PYTHONPATH = $Dir
-    if ($ApiKey) { $env:GEMINI_API_KEY = $ApiKey }
-    if ($Model) { $env:GEMINI_MODEL = $Model }
     & $Python -m uvicorn backend.core_engine.main:app --host 127.0.0.1 --port $Port
 }
-$BackendJob = Start-Job -ScriptBlock $BackendScript -ArgumentList $ScriptDir, $PythonCmd, $BackendPort, $env:GEMINI_API_KEY, $env:GEMINI_MODEL
+$BackendJob = Start-Job -ScriptBlock $BackendScript -ArgumentList $ScriptDir, $PythonCmd, $BackendPort
 
 Write-Host "[*] Starting Vite React Frontend on port $FrontendPort..." -ForegroundColor Cyan
 $FrontendScript = {
@@ -108,7 +106,7 @@ $FrontendJob = Start-Job -ScriptBlock $FrontendScript -ArgumentList $FrontendDir
 Start-Sleep -Seconds 3
 
 Write-Host "`n==========================================================" -ForegroundColor Green
-Write-Host "   Pathwise is running!" -ForegroundColor Green
+Write-Host "   Course Registration Assistant is running!" -ForegroundColor Green
 Write-Host "==========================================================" -ForegroundColor Green
 Write-Host "   Frontend Application: http://localhost:$FrontendPort" -ForegroundColor White
 Write-Host "   FastAPI Documentation: http://127.0.0.1:$BackendPort/docs" -ForegroundColor White
@@ -117,7 +115,6 @@ Write-Host "`nPress Ctrl+C to stop both servers.`n" -ForegroundColor Yellow
 
 try {
     while ($true) {
-        # Check job statuses
         if ($BackendJob.State -ne "Running") {
             Write-Host "`n[!] Backend job stopped unexpectedly:" -ForegroundColor Red
             Receive-Job -Job $BackendJob
@@ -131,11 +128,10 @@ try {
         Start-Sleep -Seconds 1
     }
 } finally {
-    Write-Host "`nStopping Pathwise servers..." -ForegroundColor Yellow
+    Write-Host "`nStopping servers..." -ForegroundColor Yellow
     Stop-Job -Job $BackendJob -ErrorAction SilentlyContinue
     Remove-Job -Job $BackendJob -Force -ErrorAction SilentlyContinue
     Stop-Job -Job $FrontendJob -ErrorAction SilentlyContinue
     Remove-Job -Job $FrontendJob -Force -ErrorAction SilentlyContinue
     Write-Host "Both servers stopped successfully." -ForegroundColor Green
 }
-

@@ -1,6 +1,6 @@
-# Pathwise DAA Algorithms & Mathematical Proofs
+# DAA Graph Algorithms & Mathematical Proofs
 
-The core computational engine of Pathwise is implemented in `backend/daa_engine/` using pure Python without external graph libraries (such as NetworkX). This document details the mathematical formulation, algorithmic complexity, proofs of correctness, and empirical performance benchmarks.
+The core computational engine of the Dependency-Aware Course Registration Assistant is implemented in `backend/daa_engine/` using pure Python without external graph packages. This document details the mathematical formulation, algorithmic complexity, proofs of correctness, and the graph-theoretic foundations of reliable academic planning.
 
 ---
 
@@ -10,10 +10,10 @@ Let $G = (V, E)$ be a directed graph representing an academic curriculum:
 - **Vertices ($V$):** The set of distinct academic courses $\{v_1, v_2, \dots, v_n\}$.
 - **Edges ($E$):** Directed pairs $(u, v)$ such that $u \to v$ signifies that course $u$ is a prerequisite for course $v$.
 - **Goal:**
-  1. Determine if $G$ is a Directed Acyclic Graph (DAG) or contains circular dependencies.
-  2. If acyclic, find a linear ordering $L = [v_{\pi(1)}, v_{\pi(2)}, \dots, v_{\pi(n)}]$ such that for every directed edge $(u, v) \in E$, $\pi^{-1}(u) < \pi^{-1}(v)$.
-  3. Ensure deterministic tie-breaking across different systems and runs.
-  4. Partition $L$ into semesters $S_1, S_2, \dots, S_k$ satisfying capacity and difficulty bounds.
+  1. Determine if $G$ is a Directed Acyclic Graph (DAG) or contains circular prerequisite deadlocks.
+  2. If acyclic, find a linear topological ordering $L = [v_{\pi(1)}, v_{\pi(2)}, \dots, v_{\pi(n)}]$ such that for every directed edge $(u, v) \in E$, $\pi^{-1}(u) < \pi^{-1}(v)$.
+  3. Ensure deterministic tie-breaking across different systems and runs using a priority min-heap.
+  4. Partition $L$ into concurrent semester waves $S_1, S_2, \dots, S_k$ based on in-degree zero synchronization barriers.
 
 ---
 
@@ -24,7 +24,7 @@ Let $G = (V, E)$ be a directed graph representing an academic curriculum:
   - Forward adjacency: $\text{Adj}[u] = \{v \in V \mid (u, v) \in E\}$ stored as `Dict[str, List[str]]`.
   - In-degree dictionary: $\text{in\_degree}[v] = |\{u \in V \mid (u, v) \in E\}|$ stored as `Dict[str, int]`.
   - Edge deduplication set: `Set[Tuple[str, str]]` preventing repeated edges from inflating in-degree counts.
-* **Space Complexity:** $\mathcal{O}(V + E)$, optimal for sparse and dense curricular dependency graphs.
+* **Space Complexity:** $\mathcal{O}(|V| + |E|)$, optimal for curricular dependency graphs.
 
 ---
 
@@ -42,9 +42,9 @@ Let $G = (V, E)$ be a directed graph representing an academic curriculum:
      - For each neighbor $v \in \text{Adj}[u]$:
        - $\text{in\_degree}[v] \leftarrow \text{in\_degree}[v] - 1$.
        - If $\text{in\_degree}[v] = 0$, push $v$ into $Q$.
-  4. If $|L| < |V|$, invoke `detect_cycle_dfs` to isolate cycle components and raise `CycleError`.
-* **Asymptotic Time Complexity:** $\mathcal{O}(E + V \log V)$. Initial heap construction takes $\mathcal{O}(V)$. Each vertex is pushed and popped from the min-heap at most once ($\mathcal{O}(V \log V)$), and every edge is traversed exactly once ($\mathcal{O}(E)$).
-* **Auxiliary Space:** $\mathcal{O}(V + E)$ for in-degree copies, the min-heap, and the output sequence.
+  4. If $|L| < |V|$, invoke `detect_cycle_dfs` to isolate cycle components and raise `CycleConflictError`.
+* **Asymptotic Time Complexity:** $\mathcal{O}(|E| + |V| \log |V|)$. Initial heap construction takes $\mathcal{O}(|V|)$. Each vertex is pushed and popped from the min-heap at most once ($\mathcal{O}(|V| \log |V|)$), and every edge is traversed exactly once ($\mathcal{O}(|E|)$).
+* **Auxiliary Space:** $\mathcal{O}(|V| + |E|)$ for in-degree copies, the min-heap, and the output sequence.
 
 #### Proof of Correctness (Induction on Sequence Length)
 > **Theorem:** If $G$ is a DAG, Kahn's algorithm outputs a valid topological ordering.
@@ -61,14 +61,14 @@ Let $G = (V, E)$ be a directed graph representing an academic curriculum:
 * **Function:** `detect_cycle_dfs(graph)`
 * **Algorithm Mechanism:**
   - Maintains state for each vertex:
-    - `0 (WHITE)`: Unvisited
-    - `1 (GRAY)`: Currently being visited (on active recursion stack)
-    - `2 (BLACK)`: Fully explored
+    - `0 (WHITE)`: Unvisited.
+    - `1 (GRAY)`: Currently active on the DFS recursion stack.
+    - `2 (BLACK)`: Fully explored and verified acyclic.
   - Iterates with an explicit call stack of tuples $(u, \text{neighbor\_index})$ instead of native Python recursion.
   - If a neighbor $v$ is encountered with state `GRAY`, a back-edge $(u, v)$ has been identified.
   - The cycle path is reconstructed by collecting vertices from the stack between $v$ and $u$, followed by $v$.
-* **Asymptotic Time Complexity:** $\mathcal{O}(V \log V + E)$ where sorting the vertex keys upfront provides determinism.
-* **Auxiliary Space:** $\mathcal{O}(V)$ for color state tracking and explicit stack.
+* **Asymptotic Time Complexity:** $\mathcal{O}(|V| + |E|)$.
+* **Auxiliary Space:** $\mathcal{O}(|V|)$ for color state tracking and explicit stack.
 
 ---
 
@@ -79,52 +79,36 @@ Let $G = (V, E)$ be a directed graph representing an academic curriculum:
   1. Cardinality check: $|order| == |V|$.
   2. Set check: $\text{set}(order) == V$ (ensures no duplicates or missing courses).
   3. Precedence assertion: For every edge $(u, v) \in E$, $\text{pos}[u] < \text{pos}[v]$.
-* **Asymptotic Time Complexity:** $\mathcal{O}(V \log V + E)$ (accounting for vertex sorting and edge validation).
-* **Auxiliary Space:** $\mathcal{O}(V + E)$.
+* **Asymptotic Time Complexity:** $\mathcal{O}(|V| + |E|)$.
+* **Auxiliary Space:** $\mathcal{O}(|V|)$.
 
 ---
 
-### 3.4 Multi-Priority Pedagogical Semester Scheduler
+### 3.4 Level-Order Wave Semester Scheduling
 
-* **Function:** `schedule_courses(graph, max_courses_per_semester, max_difficulty_per_semester)`
-* **Constraints Enforced:**
-  1. **Prerequisite Ordering:** A course cannot be scheduled in semester $S_j$ unless all its prerequisites were completed in strictly earlier semesters $S_i$ ($i < j$).
-  2. **Semester Course Capacity:** $|S_j| \le \text{max\_courses\_per\_semester}$ for all semesters $j$.
-  3. **Workload Ceiling:** $\sum_{c \in S_j} \text{difficulty}(c) \le \text{max\_difficulty\_per\_semester}$.
-  4. **Critical-Path Prioritization:** Ties among eligible courses are prioritized by their remaining longest dependency chain length to downstream courses.
-* **Safety Verification:** `verify_semester_schedule(graph, semesters)` checks all constraints deterministically before returning.
+* **Function:** `schedule_courses(graph)`
+* **Grouping Logic:**
+  1. Identifies the initial frontier of courses with $\text{in-degree} = 0$. These courses have no unfulfilled prerequisites and constitute **Semester 1**.
+  2. Removes this frontier and decrements the in-degrees of their outgoing neighbors.
+  3. The next set of courses whose in-degrees become 0 forms **Semester 2**, continuing until all courses are scheduled.
+* **Guarantee:** Guarantees that any course scheduled in Semester $k$ has all its prerequisites scheduled in Semesters $1$ to $k-1$.
 
 ---
 
-## 4. Empirical Performance Benchmarks
+## 4. How Topological Ordering Supports Reliable Planning
 
-Benchmarks executed on standard development hardware (Windows 11, AMD64, Python 3.12.4):
+In academic institutions, course registration without graph algorithms frequently fails due to human oversight and complex dependencies. Topological sorting provides four foundational guarantees that make planning reliable:
 
-| Topology | $|V|$ | $|E|$ | Algorithm | Median Latency (ms) | Result |
-| :--- | :---: | :---: | :--- | :---: | :---: |
-| **Sparse DAG** | 10 | 15 | Kahn Toposort | 0.0078 ms | PASSED |
-| Sparse DAG | 100 | 150 | Kahn Toposort | 0.0791 ms | PASSED |
-| Sparse DAG | 500 | 750 | Kahn Toposort | 0.5054 ms | PASSED |
-| Sparse DAG | 1000 | 1500 | Kahn Toposort | 1.1341 ms | PASSED |
-| **Dense DAG** | 10 | 4 | Kahn Toposort | 0.0066 ms | PASSED |
-| Dense DAG | 100 | 495 | Kahn Toposort | 0.1010 ms | PASSED |
-| Dense DAG | 500 | 12,475 | Kahn Toposort | 1.3967 ms | PASSED |
-| Dense DAG | 1000 | 49,950 | Kahn Toposort | 4.9258 ms | PASSED |
-| **Linear Chain** | 10 | 9 | Kahn Toposort | 0.0096 ms | PASSED |
-| Linear Chain | 100 | 99 | Kahn Toposort | 0.0591 ms | PASSED |
-| Linear Chain | 500 | 499 | Kahn Toposort | 0.3485 ms | PASSED |
-| Linear Chain | 1000 | 999 | Kahn Toposort | 0.7907 ms | PASSED |
-| **Disconnected DAG** | 10 | 5 | Kahn Toposort | 0.0065 ms | PASSED |
-| Disconnected DAG | 100 | 150 | Kahn Toposort | 0.0757 ms | PASSED |
-| Disconnected DAG | 500 | 750 | Kahn Toposort | 0.6386 ms | PASSED |
-| Disconnected DAG | 1000 | 1500 | Kahn Toposort | 1.1606 ms | PASSED |
-| **Cyclic Graph** | 10 | 17 | DFS Cycle Detection | 0.0054 ms | Cycle Identified |
-| Cyclic Graph | 100 | 153 | DFS Cycle Detection | 0.0583 ms | Cycle Identified |
-| Cyclic Graph | 500 | 753 | DFS Cycle Detection | 0.2628 ms | Cycle Identified |
-| Cyclic Graph | 1000 | 1503 | DFS Cycle Detection | 0.7081 ms | Cycle Identified |
+1. **Guaranteed Prerequisite Precedence (Elimination of Forward References):**
+   Topological sorting mathematically guarantees:
+   $$\forall (u, v) \in E \implies \text{index}(u) < \text{index}(v)$$
+   Students can never enroll in advanced courses prematurely, ensuring foundational mastery before specialized studies.
 
-### Scalability Findings
-- Even on dense graphs with **$|V| = 1000$ and $|E| = 49,950$ edges**, Kahn's algorithm completes in under **5.0 milliseconds**.
-- Cycle detection on 1000-vertex cyclic graphs completes in **0.70 milliseconds**.
-- The explicit call stack in DFS eliminates recursion limits, supporting arbitrarily deep prerequisite chains.
+2. **Circular Prerequisite Deadlock Immunity:**
+   A valid schedule exists if and only if the curriculum graph is a DAG. Circular dependencies ($A \to B \to C \to A$) prevent any course from being taken first. 3-state DFS identifies back-edges in $\mathcal{O}(|V| + |E|)$ time and isolates the exact cycle path, preventing registration gridlock.
 
+3. **Natural Concurrent Semester Waves:**
+   At each decay step, all zero-in-degree vertices are mutually independent ($\nexists (u, w) \in E$ between any pair in the wave). This enables universities to safely schedule course cohorts into the same semester concurrently without timetable clashes.
+
+4. **Deterministic and Fair Student Pathways:**
+   By employing deterministic tie-breaking (min-heap ordering), the algorithm guarantees that identical curriculum requirements yield identical, optimal, and reproducible graduation pathways, eliminating advisor bias and scheduling inconsistencies.
